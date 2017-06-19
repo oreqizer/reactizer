@@ -4,14 +4,10 @@ The ultimate boilerplate for [React](https://facebook.github.io/react/)! :dolls:
 
 ### Overview
 
-* TypeScript
+* Flow
 * CSS modules
 * Webpack + hot reloading
 * Isomorphic rendering
-* TSlint
+* ESlint
 
 All is configured and working!
-
-### Credit
-
-Optimization ideas borrowed from [inferno-starter](https://github.com/lukeed/inferno-starter).
