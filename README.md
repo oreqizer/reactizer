@@ -5,7 +5,7 @@ The ultimate boilerplate for [React](https://facebook.github.io/react/)! :dolls:
 ### Overview
 
 * Flow
-* CSS modules
+* Styled components
 * Webpack + hot reloading
 * Isomorphic rendering
 * ESlint
