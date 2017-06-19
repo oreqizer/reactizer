@@ -7,6 +7,7 @@ import { assets } from '../config';
 
 type Props = {
   root: string,
+  sheet: React$Element<*>[],
 };
 
 const Html = (props: Props) => (
@@ -17,6 +18,7 @@ const Html = (props: Props) => (
 
       <link href={assets.vendor.css} rel="stylesheet" />
       <link href={assets.bundle.css} rel="stylesheet" />
+      {props.sheet}
     </head>
     <body>
       <div id="react" dangerouslySetInnerHTML={{ __html: props.root }} />

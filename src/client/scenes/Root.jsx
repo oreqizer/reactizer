@@ -1,13 +1,18 @@
 /* @flow */
 import React from 'react';
+import styled from 'styled-components';
 
-import styles from './Root.css';
+import { colors } from '../styles/variables';
 
+
+const Div = styled.div.attrs({ color: colors.primary })`
+  background: ${props => props.color};
+`;
 
 const Root = () => (
-  <div className={styles.Root}>
+  <Div>
     Reactizer!
-  </div>
+  </Div>
 );
 
 export default Root;
