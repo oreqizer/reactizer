@@ -1,0 +1,7 @@
+.atom
+.idea
+node_modules
+flow-typed
+.tmp
+dist
+npm-debug.log

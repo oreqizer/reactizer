@@ -1,0 +1,5 @@
+@import 'client/styles/variables.css';
+
+.Root {
+  background: var(--color-primary);
+}
