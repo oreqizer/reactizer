@@ -5,9 +5,15 @@ import styled from 'styled-components';
 import { colors } from '../styles/variables';
 
 
-const Div = styled.div.attrs({ color: colors.primary })`
-  background: ${props => props.color};
+const Div = styled.div`
+  background: ${props => props.theme.colorPrimary};
 `;
+
+Div.defaultProps = {
+  theme: {
+    colorPrimary: colors.primary,
+  },
+};
 
 const Root = () => (
   <Div>
