@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 
 import Root from './scenes/Root';
 
@@ -8,7 +8,7 @@ import Root from './scenes/Root';
 const app = document.getElementById('react');
 
 if (app) {
-  render(<Root />, app);
+  hydrate(<Root />, app);
 }
 
 // Hot reload
