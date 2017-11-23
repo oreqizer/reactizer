@@ -1,3 +1,1 @@
-import './app';
-
-import './styles/fonts.css';
+import "./app";

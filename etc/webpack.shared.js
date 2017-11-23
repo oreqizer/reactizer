@@ -1,36 +1,27 @@
-const path = require('path');
-const ExtractText = require('extract-text-webpack-plugin');
-
+const path = require("path");
 
 const babelOptions = {
-  presets: ['react', ['es2015', { modules: false, loose: true }], 'stage-3'],
+  presets: ["react", ["es2015", { modules: false, loose: true }], "stage-2"],
+  plugins: [["babel-plugin-styled-components", { ssr: true, preprocess: true }]],
 };
 
 module.exports = {
   entry: {
-    bundle: path.resolve(__dirname, '../src/client/index.js'),
-    vendor: ['react', 'react-dom', 'normalize.css'],
+    bundle: path.resolve(__dirname, "../src/client/index.js"),
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css'],
+    extensions: [".js", ".jsx"],
     alias: {
-      client: path.resolve(__dirname, '../src/client'),
+      client: path.resolve(__dirname, "../src/client"),
     },
   },
   jsClient: {
     test: /\.jsx?$/,
-    use: [{
-      loader: 'babel-loader',
-      options: babelOptions,
-    }],
-  },
-  cssShared: {
-    test: /\.css$/,
-    use: ExtractText.extract({
-      fallback: 'style-loader',
-      use: [{
-        loader: 'css-loader',
-      }],
-    }),
+    use: [
+      {
+        loader: "babel-loader",
+        options: babelOptions,
+      },
+    ],
   },
 };

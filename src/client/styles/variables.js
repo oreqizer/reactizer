@@ -1,4 +1,4 @@
 /* @flow */
 export const colors = {
-  primary: 'deepskyblue',
+  primary: "deepskyblue",
 };

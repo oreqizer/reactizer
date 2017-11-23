@@ -1,4 +1,9 @@
 {
   "presets": ["react"],
-  "plugins": ["transform-es2015-modules-commonjs"]
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-class-properties",
+    ["module-resolver", { "root": ["./src"] }],
+    ["styled-components", { "ssr": true, "preprocess": true }]
+  ]
 }
