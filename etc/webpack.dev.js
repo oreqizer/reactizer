@@ -1,18 +1,18 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const shared = require("./webpack.shared.js");
+const config = require("./config.js");
 
 module.exports = {
-  entry: shared.entry,
+  entry: config.entry,
   output: {
     path: path.resolve(__dirname, "../.tmp/static"),
     publicPath: "/",
     filename: "[name].js",
   },
-  resolve: shared.resolve,
+  resolve: config.resolve,
   module: {
-    rules: [shared.jsClient],
+    rules: [config.js],
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

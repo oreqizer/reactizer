@@ -5,13 +5,15 @@ import serve from "koa-static";
 import path from "path";
 
 import app from "./app";
-import { port } from "./config";
+
+const port = Number(process.env.PORT || 3000);
 
 const koa = new Koa();
 
 koa.use(logger());
 
 koa.use(serve(path.join(__dirname, "../static/")));
+koa.use(serve(path.join(__dirname, "../static/pages/")));
 
 koa.use(app);
 

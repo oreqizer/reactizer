@@ -15,8 +15,9 @@ module.exports = {
       client: path.resolve(__dirname, "../src/client"),
     },
   },
-  jsClient: {
+  js: {
     test: /\.jsx?$/,
+    exclude: /node_modules/,
     use: [
       {
         loader: "babel-loader",

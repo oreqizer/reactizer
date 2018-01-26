@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const Assets = require("assets-webpack-plugin");
 
-const shared = require("./webpack.shared.js");
+const config = require("./config.js");
 
 const plugins = [
   new webpack.LoaderOptionsPlugin({
@@ -37,14 +37,14 @@ const plugins = [
 ];
 
 module.exports = {
-  entry: shared.entry,
+  entry: config.entry,
   output: {
     path: path.resolve(__dirname, "../dist/static"),
     filename: "[name].[hash].js",
   },
-  resolve: shared.resolve,
+  resolve: config.resolve,
   module: {
-    rules: [shared.jsClient],
+    rules: [config.js],
   },
   plugins,
 };

@@ -2,12 +2,10 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
-import type { Assets } from "../config";
-
 type Props = {
   root: string,
   sheet: React.Element<*>[],
-  assets: Assets,
+  assets: any, // webpack thing
 };
 
 const Html = (props: Props) => (
