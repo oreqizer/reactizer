@@ -1,13 +1,11 @@
 /* @flow */
 /* eslint-disable react/no-danger */
-import React from 'react';
-
-import { assets } from '../config';
-
+import * as React from "react";
 
 type Props = {
   root: string,
-  sheet: React$Element<*>[],
+  sheet: React.Element<*>[],
+  assets: any, // webpack thing
 };
 
 const Html = (props: Props) => (
@@ -16,15 +14,17 @@ const Html = (props: Props) => (
       <title>Reactizer</title>
       <meta charSet="utf-8" />
 
-      <link href={assets.vendor.css} rel="stylesheet" />
-      <link href={assets.bundle.css} rel="stylesheet" />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+        rel="stylesheet"
+      />
       {props.sheet}
     </head>
     <body>
       <div id="react" dangerouslySetInnerHTML={{ __html: props.root }} />
 
-      <script src={assets.vendor.js} />
-      <script src={assets.bundle.js} />
+      <script src={props.assets.vendor.js} />
+      <script src={props.assets.bundle.js} />
     </body>
   </html>
 );

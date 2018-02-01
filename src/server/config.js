@@ -1,31 +1,26 @@
-/* @flow */
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
+const assetsPath = path.join(__dirname, "../assets.json");
 
-const ASSETS = path.join(__dirname, '../assets.json');
+function getAssets() {
+  if (!fs.existsSync(assetsPath)) {
+    return {
+      vendor: { js: "vendor.js", css: "vendor.css" },
+      bundle: { js: "bundle.js", css: "bundle.css" },
+    };
+  }
 
-
-export const production = process.env.NODE_ENV === 'production';
+  return JSON.parse(fs.readFileSync(assetsPath));
+}
 
 export const port = Number(process.env.PORT || 3000);
 
+export const routes = [
+  {
+    path: "/",
+    filename: "index.html",
+  },
+];
 
-type Assets = {
-  bundle: { js: string, css?: string },
-  vendor: { js: string, css?: string },
-};
-
-function loadAssets(): Assets {
-  if (fs.existsSync(ASSETS)) {
-    return JSON.parse(String(fs.readFileSync(ASSETS)));
-  }
-
-  // Styles are inlined in development
-  return {
-    bundle: { js: 'bundle.js' },
-    vendor: { js: 'vendor.js' },
-  };
-}
-
-export const assets = loadAssets();
+export const assets = getAssets();

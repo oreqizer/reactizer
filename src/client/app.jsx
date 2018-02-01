@@ -1,11 +1,10 @@
 /* @flow */
-import React from 'react';
-import { hydrate } from 'react-dom';
+import React from "react";
+import { hydrate } from "react-dom";
 
-import Root from './scenes/Root';
+import Root from "./scenes/Root";
 
-
-const app = document.getElementById('react');
+const app = document.getElementById("react");
 
 if (app) {
   hydrate(<Root />, app);

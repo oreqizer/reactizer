@@ -1,37 +1,28 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractText = require('extract-text-webpack-plugin');
-const Assets = require('assets-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const Assets = require("assets-webpack-plugin");
 
-const shared = require('./webpack.shared.js');
-
-
-const production = process.env.NODE_ENV === 'production';
-
+const config = require("./config.js");
 
 const plugins = [
   new webpack.LoaderOptionsPlugin({
-    minimize: production,
+    minimize: true,
   }),
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'dev'),
+    "process.env.NODE_ENV": JSON.stringify("production"),
   }),
   new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: Infinity,
+    name: "vendor",
+    minChunks: ({ resource }) => /node_modules/.test(resource),
   }),
-  new ExtractText({ filename: '[name].[hash].css', allChunks: true }),
   new Assets({
-    path: 'dist',
-    filename: 'assets.json',
-    prettyPrint: !production,
+    path: "dist",
+    filename: "assets.json",
+    prettyPrint: true,
   }),
-];
-
-if (production) {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({
+  new webpack.optimize.UglifyJsPlugin({
     comments: false,
-    negate_iife: false,  // <- for `v8LazyParse()`
+    negate_iife: false, // <- for `v8LazyParse()`
     comparisons: true,
     conditionals: true,
     dead_code: true,
@@ -42,19 +33,18 @@ if (production) {
     unsafe: true,
     unsafe_comps: true,
     unused: true,
-  }));
-}
-
+  }),
+];
 
 module.exports = {
-  entry: shared.entry,
+  entry: config.entry,
   output: {
-    path: path.resolve(__dirname, '../dist/static'),
-    filename: '[name].[hash].js',
+    path: path.resolve(__dirname, "../dist/static"),
+    filename: "[name].[hash].js",
   },
-  resolve: shared.resolve,
+  resolve: config.resolve,
   module: {
-    rules: [shared.jsClient, shared.cssShared],
+    rules: [config.js],
   },
   plugins,
 };
