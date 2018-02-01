@@ -4,10 +4,10 @@
   "description": "The ultimate react boilerplate!",
   "main": "dist/server.js",
   "scripts": {
-    "start": "npm run clean && npm run babel && run-p run webpack:dev",
+    "start": "npm run clean && npm run babel && run-p server webpack:dev",
     "server": "node dist/server",
-    "render": "node dist/render",
-    "bundle": "npm run clean && npm run babel && npm run webpack",
+    "render": "node dist/server/render",
+    "bundle": "npm run clean && npm run babel && npm run webpack && npm run render",
     "babel": "babel src --out-dir dist",
     "webpack": "webpack --config etc/webpack.build.js",
     "webpack:dev": "webpack-dev-server --config etc/webpack.dev.js --inline --hot",

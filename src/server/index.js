@@ -5,8 +5,7 @@ import serve from "koa-static";
 import path from "path";
 
 import app from "./app";
-
-const port = Number(process.env.PORT || 3000);
+import { port } from "./config";
 
 const koa = new Koa();
 
