@@ -7,7 +7,7 @@ The ultimate boilerplate for [React](https://facebook.github.io/react/)! :dolls:
 * Flow
 * Styled components
 * Webpack + hot reloading
-* Isomorphic rendering
+* Isomorphic & static rendering
 * ESlint
 
 All is configured and working!
