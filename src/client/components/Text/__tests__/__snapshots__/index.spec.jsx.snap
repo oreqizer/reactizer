@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Text should render correctly 1`] = `"lol"`;
+
+exports[`#Text should render correctly as span 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "lol",
+    }
+  }
+/>
+`;

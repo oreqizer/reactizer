@@ -1,50 +1,42 @@
 const path = require("path");
 const webpack = require("webpack");
+const I18nPlugin = require("i18n-webpack-plugin");
 const Assets = require("assets-webpack-plugin");
 
-const config = require("./config.js");
-
-const plugins = [
-  new webpack.LoaderOptionsPlugin({
-    minimize: true,
-  }),
-  new webpack.DefinePlugin({
-    "process.env.NODE_ENV": JSON.stringify("production"),
-  }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: "vendor",
-    minChunks: ({ resource }) => /node_modules/.test(resource),
-  }),
-  new Assets({
-    path: "dist",
-    filename: "assets.json",
-    prettyPrint: true,
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    comments: false,
-    negate_iife: false, // <- for `v8LazyParse()`
-    comparisons: true,
-    conditionals: true,
-    dead_code: true,
-    evaluate: true,
-    if_return: true,
-    join_vars: true,
-    pure_getters: true,
-    unsafe: true,
-    unsafe_comps: true,
-    unused: true,
-  }),
-];
+const common = require("./webpack.common.js");
 
 module.exports = {
-  entry: config.entry,
+  entry: common.entry,
   output: {
     path: path.resolve(__dirname, "../dist/static"),
     filename: "[name].[hash].js",
+    publicPath: "/",
   },
-  resolve: config.resolve,
+  resolve: common.resolve,
   module: {
-    rules: [config.js],
+    rules: [common.loaderJs],
   },
-  plugins,
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        commons: {
+          test: /\/node_modules\//,
+          name: "vendor",
+          chunks: "all",
+        },
+      },
+    },
+  },
+  plugins: [
+    new I18nPlugin(null),
+    new webpack.DefinePlugin({
+      __DEV__: false,
+    }),
+    new Assets({
+      path: "dist",
+      filename: "assets.json",
+      prettyPrint: true,
+    }),
+  ],
 };

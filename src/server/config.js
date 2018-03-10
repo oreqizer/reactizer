@@ -1,3 +1,4 @@
+/* @flow */
 import fs from "fs";
 import path from "path";
 
@@ -16,10 +17,15 @@ function getAssets() {
 
 export const port = Number(process.env.PORT || 3000);
 
-export const routes = [
+export type Route = {
+  url: string,
+  filepath: string,
+};
+
+export const routes: Route[] = [
   {
-    path: "/",
-    filename: "index.html",
+    url: "/",
+    filepath: "",
   },
 ];
 

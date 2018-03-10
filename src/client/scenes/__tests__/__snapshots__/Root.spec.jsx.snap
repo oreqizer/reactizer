@@ -8,6 +8,8 @@ exports[`#Root should render correctly 1`] = `
     }
   }
 >
-  Reactizer!
+  <WithIntl(Text)
+    t="Do you even lift?"
+  />
 </Root__Div>
 `;

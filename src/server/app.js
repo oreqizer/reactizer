@@ -2,12 +2,16 @@
 /* eslint-disable no-param-reassign */
 import type { Context } from "koa";
 
-import markup from "./markup/index";
-import { assets } from "./config";
+import markup from "./markup";
 
 async function app(ctx: Context) {
-  ctx.body = markup(ctx.url, assets);
+  console.log("[server] SSR!", ctx.url);
+
+  const locale = ctx.query.locale || "en";
+
   ctx.status = 200;
+  ctx.type = "text/html; charset=utf-8";
+  ctx.body = markup(ctx.url, locale);
 }
 
 export default app;

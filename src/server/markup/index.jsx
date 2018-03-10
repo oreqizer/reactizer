@@ -1,23 +1,42 @@
 /* @flow */
 import * as React from "react";
-import { renderToString, renderToStaticMarkup } from "react-dom/server";
+// $FlowIssue
+import { renderToString, renderToStaticNodeStream } from "react-dom/server";
+import { StaticRouter } from "react-router-dom";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
 
-import Root from "../../client/scenes/Root";
+import Root from "client/scenes/Root";
+import Provider from "client/services/intl/Provider";
 import Html from "./Html";
+import { assets } from "../config";
 
-type Assets = any; // webpack
+const locales = {
+  en: { "Do you even lift?": "Do you even lift?" },
+  de: { "Do you even lift?": "Hast thou even hoist?" },
+};
 
-// TODO turn into a stream
-function markup(path: string, assets: Assets): string {
+function markup(url: string, locale: string) {
   const sheet = new ServerStyleSheet();
+  const context = {};
   const root = renderToString(
-    <StyleSheetManager sheet={sheet.instance}>
-      <Root />
-    </StyleSheetManager>,
+    <StaticRouter location={url} context={context}>
+      <StyleSheetManager sheet={sheet.instance}>
+        <Provider locale={locale} translations={locales[locale]}>
+          <Root />
+        </Provider>
+      </StyleSheetManager>
+    </StaticRouter>,
   );
 
-  return renderToStaticMarkup(<Html root={root} assets={assets} sheet={sheet.getStyleElement()} />);
+  return renderToStaticNodeStream(
+    <Html
+      root={root}
+      css={sheet.getStyleElement()}
+      assets={assets}
+      locale={locale}
+      translations={locales[locale]}
+    />,
+  );
 }
 
 export default markup;

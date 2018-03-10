@@ -4,15 +4,18 @@ import logger from "koa-logger";
 import serve from "koa-static";
 import path from "path";
 
-import app from "./app";
+import "./globals"; // Must be first!
 import { port } from "./config";
+import pages from "./pages";
+import app from "./app";
 
 const koa = new Koa();
 
 koa.use(logger());
 
 koa.use(serve(path.join(__dirname, "../static/")));
-koa.use(serve(path.join(__dirname, "../static/pages/")));
+
+koa.use(pages);
 
 koa.use(app);
 
