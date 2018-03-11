@@ -8,8 +8,9 @@ const base = path.join(__dirname, "../static/pages");
 
 async function pages(ctx: Context, next: () => Promise<any>) {
   const locale = ctx.query.locale || "en";
+  const theme = ctx.query.theme || "main";
 
-  const filepath = path.join(base, locale, ctx.path, "index.html");
+  const filepath = path.join(base, theme, locale, ctx.path, "index.html");
   if (fs.existsSync(filepath)) {
     console.log("[server] Static page!", ctx.url);
 

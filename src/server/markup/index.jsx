@@ -3,10 +3,11 @@ import * as React from "react";
 // $FlowIssue
 import { renderToString, renderToStaticNodeStream } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
+import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from "styled-components";
 
 import Root from "client/scenes/Root";
 import Provider from "client/services/intl/Provider";
+import main from "client/styles/theme";
 import Html from "./Html";
 import { assets } from "../config";
 
@@ -15,15 +16,22 @@ const locales = {
   de: { "Do you even lift?": "Hast thou even hoist?" },
 };
 
-function markup(url: string, locale: string) {
+const themes = {
+  main,
+  alt: { primary: "crimson" },
+};
+
+function markup(url: string, theme: string, locale: string) {
   const sheet = new ServerStyleSheet();
   const context = {};
   const root = renderToString(
     <StaticRouter location={url} context={context}>
       <StyleSheetManager sheet={sheet.instance}>
-        <Provider locale={locale} translations={locales[locale]}>
-          <Root />
-        </Provider>
+        <ThemeProvider theme={themes[theme]}>
+          <Provider locale={locale} translations={locales[locale]}>
+            <Root />
+          </Provider>
+        </ThemeProvider>
       </StyleSheetManager>
     </StaticRouter>,
   );
@@ -35,6 +43,7 @@ function markup(url: string, locale: string) {
       assets={assets}
       locale={locale}
       translations={locales[locale]}
+      theme={themes[theme]}
     />,
   );
 }

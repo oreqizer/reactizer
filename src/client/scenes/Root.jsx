@@ -2,17 +2,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colors } from "../styles/variables";
+import theme from "../styles/theme";
 import Text from "../components/Text";
 
 const Div = styled.div`
-  background: ${props => props.theme.colorPrimary};
+  background: ${props => props.theme.primary};
 `;
 
 Div.defaultProps = {
-  theme: {
-    colorPrimary: colors.primary,
-  },
+  theme,
 };
 
 const Root = () => (

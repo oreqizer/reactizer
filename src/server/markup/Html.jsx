@@ -20,6 +20,7 @@ type Props = {
   assets: Assets,
   locale: string,
   translations: { [string]: string },
+  theme: { [string]: string },
 };
 
 const Html = (props: Props) => (
@@ -42,6 +43,7 @@ const Html = (props: Props) => (
           __html: `
             window.__LOCALE__ = "${props.locale}";
             window.__TRANSLATIONS__ = ${JSON.stringify(props.translations)};
+            window.__THEME__ = ${JSON.stringify(props.theme)};
          `,
         }}
       />
