@@ -1,5 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`#Price should render correctly 1`] = `"€1,234.00"`;
-
-exports[`#Price should render correctly with state currency 1`] = `"$1,234.00"`;
