@@ -11,13 +11,7 @@ type Props = {
 const Price = (props: Props) =>
   new Intl.NumberFormat(
     props.locale,
-    Object.assign(
-      {
-        style: "currency",
-        currency: props.currency || props.currencyState,
-      },
-      props.format,
-    ),
+    Object.assign({ style: "currency", currency: props.currency }, props.format),
   ).format(props.value);
 
 Price.defaultProps = {
