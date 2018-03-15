@@ -10,4 +10,19 @@ The ultimate boilerplate for [React](https://facebook.github.io/react/)! :dolls:
 * Isomorphic & static rendering
 * ESlint
 
-All is configured and working!
+### Scripts
+
+- `yarn start` - Development
+- `yarn bundle && yarn run` - Production
+
+Static analysis:
+- `yarn test`
+- `yarn lint`
+- `yarn flow`
+
+### Features
+
+- [x] i18n
+- [x] Branding
+- [ ] Storybook
+- [x] Static rendering
