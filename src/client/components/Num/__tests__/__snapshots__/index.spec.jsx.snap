@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Num should render correctly 1`] = `
+<Num
+  format={Object {}}
+  locale="en"
+  translate={[Function]}
+  value={1234}
+/>
+`;

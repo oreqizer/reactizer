@@ -6,15 +6,19 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import Root from "./scenes/Root";
-import Provider from "./services/intl/Provider";
+import Provider from "./services/statics/Provider";
 
 const app = document.getElementById("react");
 
 if (app) {
   hydrate(
     <BrowserRouter>
-      <ThemeProvider theme={window.__THEME__}>
-        <Provider locale={window.__LOCALE__} translations={window.__TRANSLATIONS__}>
+      <ThemeProvider theme={window.__BRAND__.theme}>
+        <Provider
+          locale={window.__LOCALE__}
+          translations={window.__TRANSLATIONS__}
+          brand={window.__BRAND__}
+        >
           <Root />
         </Provider>
       </ThemeProvider>

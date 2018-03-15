@@ -6,8 +6,8 @@ import { StaticRouter } from "react-router-dom";
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from "styled-components";
 
 import Root from "client/scenes/Root";
-import Provider from "client/services/intl/Provider";
-import main from "client/styles/theme";
+import Provider from "client/services/statics/Provider";
+import main from "client/styles/main";
 import Html from "./Html";
 import { assets } from "../config";
 
@@ -16,19 +16,22 @@ const locales = {
   de: { "Do you even lift?": "Hast thou even hoist?" },
 };
 
-const themes = {
+const brands = {
   main,
-  alt: { primary: "crimson" },
+  alt: { name: "Crimsonizer", theme: { primary: "crimson" } },
 };
 
-function markup(url: string, theme: string, locale: string) {
+function markup(url: string, brandId: string, localeId: string) {
+  const brand = brands[brandId];
+  const locale = locales[localeId];
+
   const sheet = new ServerStyleSheet();
   const context = {};
   const root = renderToString(
     <StaticRouter location={url} context={context}>
       <StyleSheetManager sheet={sheet.instance}>
-        <ThemeProvider theme={themes[theme]}>
-          <Provider locale={locale} translations={locales[locale]}>
+        <ThemeProvider theme={brand.theme}>
+          <Provider locale={localeId} translations={locale} brand={brand}>
             <Root />
           </Provider>
         </ThemeProvider>
@@ -41,9 +44,9 @@ function markup(url: string, theme: string, locale: string) {
       root={root}
       css={sheet.getStyleElement()}
       assets={assets}
-      locale={locale}
-      translations={locales[locale]}
-      theme={themes[theme]}
+      locale={localeId}
+      translations={locale}
+      brand={brand}
     />,
   );
 }

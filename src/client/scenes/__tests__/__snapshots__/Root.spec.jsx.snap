@@ -1,15 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`#Root should render correctly 1`] = `
-<Root__Div
-  theme={
+<Root
+  brand={
     Object {
-      "colorPrimary": "deepskyblue",
+      "name": "Reactizer",
+      "theme": Object {
+        "primary": "deepskyblue",
+      },
     }
   }
->
-  <WithIntl(Text)
-    t="Do you even lift?"
-  />
-</Root__Div>
+/>
 `;

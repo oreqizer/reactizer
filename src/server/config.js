@@ -7,8 +7,7 @@ const assetsPath = path.join(__dirname, "../assets.json");
 function getAssets() {
   if (!fs.existsSync(assetsPath)) {
     return {
-      vendor: { js: "vendor.js", css: "vendor.css" },
-      bundle: { js: "bundle.js", css: "bundle.css" },
+      bundle: { js: "bundle.js" },
     };
   }
 
