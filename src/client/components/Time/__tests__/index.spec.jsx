@@ -8,7 +8,7 @@ const Time = WrappedTime.WrappedComponent;
 
 describe("#Time", () => {
   it("should render correctly", () => {
-    const time = new Date(0, 0, 0, 10, 30);
+    const time = new Date(Date.UTC(0, 0, 0, 10, 30));
     const wrapper = shallow(<Time time={time} locale="en" translate={id => id} />);
 
     expect(wrapper).toMatchSnapshot();
