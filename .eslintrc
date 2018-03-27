@@ -16,9 +16,7 @@
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": "./etc/webpack.build.js"
-      }
+      "babel-module": {}
     }
   }
 }
