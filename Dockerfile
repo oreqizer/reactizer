@@ -1,4 +1,4 @@
-FROM node:9.4-slim
+FROM node:carbon
 
 # yarn things
 RUN apt-get update && \
@@ -13,4 +13,4 @@ WORKDIR /tmp/app
 COPY . .
 
 RUN yarn
-RUN npm run bundle:min
+RUN npm run bundle
