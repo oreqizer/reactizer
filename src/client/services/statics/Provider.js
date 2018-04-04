@@ -3,7 +3,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import Polyglot from "node-polyglot";
 
-import type { Values } from "../intl/withIntl";
+import type { Values } from "../../public/services/intl/withIntl";
 import main from "../../styles/main";
 
 type Props = {

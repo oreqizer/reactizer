@@ -2,11 +2,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Day from "../components/Day";
-import Num from "../components/Num";
-import Price from "../components/Price";
-import Text from "../components/Text";
-import Time from "../components/Time";
+import Day from "../public/Day";
+import Num from "../public/Num";
+import Price from "../public/Price";
+import Text from "../public/Text";
+import Time from "../public/Time";
 import main from "../styles/main";
 import withBrand from "../services/brand/withBrand";
 

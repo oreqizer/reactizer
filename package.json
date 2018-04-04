@@ -8,9 +8,10 @@
     "run": "node dist/server",
     "render": "node dist/server/render",
     "bundle": "npm run clean && npm run babel && npm run webpack && npm run render",
-    "babel": "babel src --out-dir dist",
+    "babel": "babel src -d dist",
     "webpack": "webpack --config etc/webpack.build.js --mode production",
     "webpack:dev": "webpack-dev-server --config etc/webpack.dev.js --mode development --inline --hot",
+    "public": "babel src/client/public -d public/lib",
     "test": "jest",
     "lint": "eslint '**/*.{js,jsx}'",
     "lint:fix": "eslint '**/*.{js,jsx}' --fix",
@@ -35,6 +36,7 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",
+    "reactizer-lib": "^0.0.0",
     "styled-components": "^3.2.5"
   },
   "devDependencies": {

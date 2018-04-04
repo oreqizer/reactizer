@@ -2,8 +2,8 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
-import withIntl from "client/services/intl/withIntl";
-import type { Translate, Values } from "client/services/intl/withIntl";
+import withIntl from "../services/intl/withIntl";
+import type { Translate, Values } from "../services/intl/withIntl";
 
 type Props = {
   t: string,

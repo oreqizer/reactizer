@@ -1,5 +1,5 @@
 /* @flow */
-import withIntl from "../../services/intl/withIntl";
+import withIntl from "../services/intl/withIntl";
 
 type Props = {
   value: number,

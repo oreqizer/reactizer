@@ -4,4 +4,5 @@ node_modules
 flow-typed
 .tmp
 dist
+public/lib
 npm-debug.log

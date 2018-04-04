@@ -1,6 +1,6 @@
 /* @flow */
-import withIntl from "client/services/intl/withIntl";
-import { DEFAULT_TIME } from "client/services/intl/consts";
+import withIntl from "../services/intl/withIntl";
+import { DEFAULT_TIME } from "../services/intl/consts";
 
 type Props = {
   time: Date,
