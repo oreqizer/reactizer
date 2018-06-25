@@ -1,10 +1,9 @@
-const fs = require("fs");
+#!/usr/bin/env node
+const fs = require("fs-extra");
 const path = require("path");
 
 const CURR_DIR = __dirname;
 const OUT_DIR = process.cwd();
-
-const [, , ...args] = process.argv; // eslint-disable-line fp/no-rest-parameters
 
 const FILES = [
   // docs
@@ -14,9 +13,9 @@ const FILES = [
   "etc/jestGlobals.js",
   "etc/jestSetup.js",
   "etc/jestSetupFramework.js",
-  "etc/webpack.build.jd",
-  "etc/webpack.common.jd",
-  "etc/webpack.dev.jd",
+  "etc/webpack.build.js",
+  "etc/webpack.common.js",
+  "etc/webpack.dev.js",
   // src
   // ... TODO
   // types
@@ -36,13 +35,23 @@ const FILES = [
   "jest.config.js",
 ];
 
-const files = args.length > 0 ? args.split(" ") : FILES;
+FILES.forEach(file => {
+  const input = path.join(CURR_DIR, "..", file);
+  const out = path.join(OUT_DIR, file);
+  if (input === out) {
+    return;
+  }
 
-files.forEach(file => {
-  const read$ = fs.createReadStream(path.join(CURR_DIR, file));
-  const write$ = fs.createWriteStream(path.join(OUT_DIR, file));
+  fs.ensureFileSync(out);
+
+  const read$ = fs.createReadStream(input);
+  const write$ = fs.createWriteStream(out);
 
   read$.pipe(write$);
+
+  read$.on("error", () => {
+    throw new Error("Failed to read file"); // eslint-disable-line fp/no-throw
+  });
 
   write$.on("error", () => {
     throw new Error("Failed to write file"); // eslint-disable-line fp/no-throw
