@@ -20,6 +20,9 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o dist-storybook"
   },
+  "bin": {
+    "reactizer": "./bin/reactizer.js"
+  },
   "keywords": [
     "react",
     "webpack",
