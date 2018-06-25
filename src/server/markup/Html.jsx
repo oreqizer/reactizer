@@ -1,7 +1,9 @@
-/* @flow */
+// @flow strict
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
+import type { Intl } from "client/records/Intl";
+import type { Theme } from "client/records/Theme";
 import type { Assets } from "../config";
 
 const globalCss = `
@@ -12,23 +14,31 @@ const globalCss = `
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.02em;
   }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
 `;
 
 type Props = {
   root: string,
-  css: React.Node[],
+  css: React.Node,
   assets: Assets,
-  locale: string,
-  translations: { [string]: string },
-  brand: { [string]: string },
+  theme: Theme,
+  intl: Intl,
 };
 
 const Html = (props: Props) => (
-  <html lang="en">
+  <html lang={props.intl.locale}>
     <head>
-      <title>Reactizer</title>
+      <title>{props.theme.name}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+      <meta name="theme-color" content={props.theme.colors.primary} />
 
       {props.assets.vendor && <link rel="preload" href={props.assets.vendor.js} as="script" />}
       <link rel="preload" href={props.assets.bundle.js} as="script" />
@@ -41,9 +51,8 @@ const Html = (props: Props) => (
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            window.__LOCALE__ = "${props.locale}";
-            window.__TRANSLATIONS__ = ${JSON.stringify(props.translations)};
-            window.__BRAND__ = ${JSON.stringify(props.brand)};
+            window.__THEME__ = ${JSON.stringify(props.theme)};
+            window.__INTL__ = ${JSON.stringify(props.intl)};
          `,
         }}
       />

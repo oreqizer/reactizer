@@ -1,40 +1,27 @@
-/* @flow */
-import fs from "fs";
+// @flow strict
+import fs from "fs-extra";
 import path from "path";
 
 import "./globals"; // Must be 1st
-import markup from "./markup/index";
+import markup from "./markup";
 import { routes } from "./config";
 
-const out = path.join(__dirname, "../static/pages");
+const OUT = path.join(__dirname, "../static/pages");
 
-const locales = ["en", "de"];
-const themes = ["main", "alt"];
+const themeIds = ["main", "alt"];
+const localeIds = ["en", "de"];
 
 function render() {
-  fs.mkdirSync(out);
-
-  themes.forEach(theme => {
-    const outTheme = path.join(out, theme);
-    fs.mkdirSync(outTheme);
-
-    locales.forEach(locale => {
-      const outLocale = path.join(outTheme, locale);
-      fs.mkdirSync(outLocale);
-
+  themeIds.forEach(themeId => {
+    localeIds.forEach(localeId => {
       routes.forEach(route => {
-        const outLocalePage = path.join(outLocale, route.filepath);
-        if (route.filepath) {
-          fs.mkdirSync(outLocalePage);
-        }
+        const fileDir = path.join(OUT, themeId, localeId, route.filepath);
+        fs.ensureDirSync(fileDir);
 
-        const htmlStream = markup(route.url, theme, locale);
-        const fileStream = fs.createWriteStream(path.join(outLocalePage, "index.html"));
+        const htmlStream = markup(route.url, themeId, localeId);
+        const fileStream = fs.createWriteStream(path.join(fileDir, "index.html"));
 
         htmlStream.pipe(fileStream);
-        fileStream.on("close", () => {
-          console.log(`[render] Done writing! Theme: ${theme}, url: ${route.url}`); // eslint-disable-line no-console
-        });
 
         fileStream.on("error", err => {
           console.error("[render] Error!", err); // eslint-disable-line no-console

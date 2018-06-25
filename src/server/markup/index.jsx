@@ -1,53 +1,46 @@
-/* @flow */
+// @flow strict
 import * as React from "react";
 // $FlowIssue
 import { renderToString, renderToStaticNodeStream } from "react-dom/server";
-import { StaticRouter } from "react-router-dom";
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from "styled-components";
 
 import Root from "client/scenes/Root";
-import Provider from "client/services/statics/Provider";
-import main from "client/styles/main";
+import * as themeContext from "client/services/theme/context";
+import { themeDefault } from "client/records/Theme";
+import * as intlContext from "client/services/intl/context";
+import { intlDefault } from "client/records/Intl";
 import Html from "./Html";
 import { assets } from "../config";
 
-const locales = {
-  en: { "Do you even lift?": "Do you even lift?" },
-  de: { "Do you even lift?": "Hast thou even hoist?" },
+const themes = {
+  main: themeDefault,
+  alt: { name: "Crimsonizer", colors: { primary: "crimson" } },
 };
 
-const brands = {
-  main,
-  alt: { name: "Crimsonizer", theme: { primary: "crimson" } },
+const intls = {
+  en: intlDefault,
+  de: { locale: "de", translations: { "Do you even lift?": "Hast thou even hoist?" } },
 };
 
-function markup(url: string, brandId: string, localeId: string) {
-  const brand = brands[brandId];
-  const locale = locales[localeId];
+function markup(url: string, themeId: string, localeId: string) {
+  const theme = themes[themeId];
+  const intl = intls[localeId];
 
   const sheet = new ServerStyleSheet();
-  const context = {};
   const root = renderToString(
-    <StaticRouter location={url} context={context}>
-      <StyleSheetManager sheet={sheet.instance}>
-        <ThemeProvider theme={brand.theme}>
-          <Provider locale={localeId} translations={locale} brand={brand}>
+    <StyleSheetManager sheet={sheet.instance}>
+      <ThemeProvider theme={theme}>
+        <themeContext.Provider value={theme}>
+          <intlContext.Provider value={intl}>
             <Root />
-          </Provider>
-        </ThemeProvider>
-      </StyleSheetManager>
-    </StaticRouter>,
+          </intlContext.Provider>
+        </themeContext.Provider>
+      </ThemeProvider>
+    </StyleSheetManager>,
   );
 
   return renderToStaticNodeStream(
-    <Html
-      root={root}
-      css={sheet.getStyleElement()}
-      assets={assets}
-      locale={localeId}
-      translations={locale}
-      brand={brand}
-    />,
+    <Html root={root} css={sheet.getStyleElement()} assets={assets} theme={theme} intl={intl} />,
   );
 }
 

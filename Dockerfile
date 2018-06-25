@@ -1,16 +1,11 @@
-FROM node:carbon
-
-# yarn things
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y apt-transport-https && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y yarn
+FROM node:9-alpine
 
 WORKDIR /tmp/app
-COPY . .
+COPY package.json yarn.lock ./
+RUN yarn --prod
 
-RUN yarn
-RUN npm run bundle
+COPY data data/
+COPY dist dist/
+
+EXPOSE 3000
+CMD yarn run run

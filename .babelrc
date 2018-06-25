@@ -3,7 +3,7 @@
     "@babel/react",
     "@babel/flow",
     ["@babel/env", { "targets": { "node": "current" } }],
-    "@babel/stage-2"
+    ["@babel/stage-2", { "decoratorsLegacy": true }]
   ],
   "plugins": [
     ["styled-components", { "ssr": true }],

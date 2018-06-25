@@ -1,28 +1,26 @@
-/* @flow */
+// @flow strict
 /* eslint-disable no-underscore-dangle */
-import React from "react";
+import * as React from "react";
 import { hydrate } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import Root from "./scenes/Root";
-import Provider from "./services/statics/Provider";
+import { Provider as OurThemeProvider } from "./services/theme/context";
+import { Provider as IntlProvider } from "./services/intl/context";
 
 const app = document.getElementById("react");
 
+// TODO add a translate function to the Intl provider
+
 if (app) {
   hydrate(
-    <BrowserRouter>
-      <ThemeProvider theme={window.__BRAND__.theme}>
-        <Provider
-          locale={window.__LOCALE__}
-          translations={window.__TRANSLATIONS__}
-          brand={window.__BRAND__}
-        >
+    <ThemeProvider theme={window.__THEME__}>
+      <OurThemeProvider value={window.__THEME__}>
+        <IntlProvider value={window.__INTL__}>
           <Root />
-        </Provider>
-      </ThemeProvider>
-    </BrowserRouter>,
+        </IntlProvider>
+      </OurThemeProvider>
+    </ThemeProvider>,
     app,
   );
 }
@@ -30,6 +28,7 @@ if (app) {
 // Hot reload
 // ---
 
+// TODO add react-hot-loader
 /* eslint-disable no-undef */
 if (module.hot) {
   module.hot.accept();

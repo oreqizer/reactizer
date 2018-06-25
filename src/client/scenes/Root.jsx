@@ -1,44 +1,38 @@
-/* @flow */
-import React from "react";
+// @flow strict
+import * as React from "react";
 import styled from "styled-components";
 
-import Day from "../public/Day";
-import Num from "../public/Num";
-import Price from "../public/Price";
-import Text from "../public/Text";
-import Time from "../public/Time";
-import main from "../styles/main";
-import withBrand from "../services/brand/withBrand";
+import Text from "../components/Text";
+import { Consumer as ThemeConsumer } from "../services/theme/context";
+import { Consumer as IntlConsumer } from "../services/intl/context";
+import { themeDefault } from "../records/Theme";
+import type { ThemeProps } from "../records/Theme";
 
 const H1 = styled.h1`
   margin-top: 0;
 `;
 
 const Div = styled.div`
-  background: ${props => props.theme.primary};
+  background: ${(props: ThemeProps) => props.theme.colors.primary};
 `;
 
 Div.defaultProps = {
-  theme: main.theme,
+  theme: themeDefault,
 };
 
-type Props = {
-  brand: typeof main,
-};
-
-const Root = (props: Props) => (
-  <Div>
-    <H1>{props.brand.name}</H1>
-    <Text t={__("Do you even lift?")} />
-    <br />
-    <Day date={new Date()} />
-    <br />
-    <Num value={1337} />
-    <br />
-    <Time time={new Date()} />
-    <br />
-    <Price value={1337} currency="EUR" />
-  </Div>
+const Root = () => (
+  <ThemeConsumer>
+    {theme => (
+      <IntlConsumer>
+        {intl => (
+          <Div>
+            <H1>{`${theme.name} "${intl.locale}"`}</H1>
+            <Text t={__("Do you even lift?")} />
+          </Div>
+        )}
+      </IntlConsumer>
+    )}
+  </ThemeConsumer>
 );
 
-export default withBrand(Root);
+export default Root;

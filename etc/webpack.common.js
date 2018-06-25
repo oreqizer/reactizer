@@ -5,7 +5,7 @@ const babelOptions = {
     "@babel/react",
     "@babel/flow",
     ["@babel/env", { targets: { esmodules: true } }],
-    "@babel/stage-2",
+    ["@babel/stage-2", { decoratorsLegacy: true }],
   ],
   plugins: [["styled-components", { ssr: true }]],
 };

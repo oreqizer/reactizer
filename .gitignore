@@ -1,8 +1,12 @@
 .atom
 .idea
-node_modules
-flow-typed
 .tmp
+coverage
+node_modules
+data
 dist
+dist-storybook
 public/lib
+.env
 npm-debug.log
+yarn-error.log

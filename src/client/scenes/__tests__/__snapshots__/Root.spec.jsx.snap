@@ -1,14 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#Root should render correctly 1`] = `
-<Root
-  brand={
-    Object {
-      "name": "Reactizer",
-      "theme": Object {
-        "primary": "deepskyblue",
-      },
-    }
-  }
-/>
-`;
+exports[`#Root render 1`] = `<[object Object] />`;

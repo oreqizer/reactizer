@@ -1,4 +1,18 @@
+[strict]
+unsafe-getters-setters
+untyped-import
+untyped-type-import
+
+[lints]
+all=error
+# Due to Relay
+nonstrict-import=off
+unclear-type=off
+sketchy-null=off
+
 [ignore]
+<PROJECT_ROOT>\/data\/.*
+<PROJECT_ROOT>\/node_modules\/graphviz\/.*
 
 [include]
 
@@ -7,7 +21,8 @@ types/
 
 [options]
 emoji=true
-module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=src
+module.name_mapper='^client\(.*\)$' -> '<PROJECT_ROOT>/src/client/\1'
+module.name_mapper='^server\(.*\)$' -> '<PROJECT_ROOT>/src/server/\1'
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpected
