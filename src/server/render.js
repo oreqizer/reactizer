@@ -1,19 +1,33 @@
-/* @flow */
-import fs from "fs";
+// @flow strict
+import fs from "fs-extra";
 import path from "path";
 
-import markup from "./markup/index";
-import { routes, assets } from "./config";
+import "./globals"; // Must be 1st
+import markup from "./markup";
+import { routes } from "./config";
 
-const outPath = path.join(__dirname, "../static/pages");
+const OUT = path.join(__dirname, "../static/pages");
+
+const themeIds = ["main", "alt"];
+const localeIds = ["en", "de"];
 
 function render() {
-  fs.mkdirSync(outPath);
+  themeIds.forEach(themeId => {
+    localeIds.forEach(localeId => {
+      routes.forEach(route => {
+        const fileDir = path.join(OUT, themeId, localeId, route.filepath);
+        fs.ensureDirSync(fileDir);
 
-  routes.forEach(route => {
-    const html = markup(route.path, assets);
+        const htmlStream = markup(route.url, themeId, localeId);
+        const fileStream = fs.createWriteStream(path.join(fileDir, "index.html"));
 
-    fs.writeFileSync(path.join(outPath, route.filename), html);
+        htmlStream.pipe(fileStream);
+
+        fileStream.on("error", err => {
+          console.error("[render] Error!", err); // eslint-disable-line no-console
+        });
+      });
+    });
   });
 }
 

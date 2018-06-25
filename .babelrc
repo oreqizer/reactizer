@@ -1,9 +1,14 @@
 {
-  "presets": ["react"],
+  "presets": [
+    "@babel/react",
+    "@babel/flow",
+    ["@babel/env", { "targets": { "node": "current" } }],
+    ["@babel/stage-2", { "decoratorsLegacy": true }]
+  ],
   "plugins": [
-    "transform-es2015-modules-commonjs",
-    "transform-class-properties",
-    ["module-resolver", { "root": ["./src"] }],
-    ["styled-components", { "ssr": true, "preprocess": true }]
+    ["styled-components", { "ssr": true }],
+    ["module-resolver", {
+      "root": ["./src"]
+    }]
   ]
 }

@@ -5,20 +5,39 @@
     "prettier",
     "prettier/react",
     "prettier/flowtype",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:fp/recommended"
   ],
   "plugins": [
     "prettier",
-    "flowtype"
+    "flowtype",
+    "fp"
   ],
+  "env": {
+    "jest": true
+  },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/order": ["error", {
+      "groups": [["builtin", "external"], ["internal", "parent", "sibling", "index"]],
+      "newlines-between": "always"
+    }],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["etc/**", "stories/**", "**/__{tests,mocks}__/*"]
+    }],
+    "camelcase": "off", // GraphQL
+    "fp/no-nil": "off", // Side effects
+    "fp/no-class": "off", // React
+    "fp/no-this": "off", // React
+    "fp/no-mutation": "off", // React
+    "fp/no-unused-expression": "off", // 'fs' calls, for example
+    "react/default-props-match-prop-types": "off", // Flow/ESlint conflict
+    "react/require-default-props": "off", // Somehow semantically wrong
+    "jsx-a11y/anchor-is-valid": "off" // Relative paths bullshit
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": "./etc/webpack.build.js"
-      }
+      "babel-module": {}
     }
   }
 }

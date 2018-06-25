@@ -1,8 +1,13 @@
 const path = require("path");
 
 const babelOptions = {
-  presets: ["react", ["es2015", { modules: false, loose: true }], "stage-2"],
-  plugins: [["babel-plugin-styled-components", { ssr: true, preprocess: true }]],
+  presets: [
+    "@babel/react",
+    "@babel/flow",
+    ["@babel/env", { targets: { esmodules: true } }],
+    ["@babel/stage-2", { decoratorsLegacy: true }],
+  ],
+  plugins: [["styled-components", { ssr: true }]],
 };
 
 module.exports = {
@@ -10,19 +15,20 @@ module.exports = {
     bundle: path.resolve(__dirname, "../src/client/index.js"),
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".css"],
     alias: {
       client: path.resolve(__dirname, "../src/client"),
+      server: path.resolve(__dirname, "../src/server"),
     },
   },
-  js: {
+  loaderJs: {
     test: /\.jsx?$/,
-    exclude: /node_modules/,
     use: [
       {
         loader: "babel-loader",
         options: babelOptions,
       },
     ],
+    exclude: /node_modules/,
   },
 };

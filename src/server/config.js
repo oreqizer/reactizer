@@ -1,25 +1,35 @@
-import fs from "fs";
+// @flow strict
+import fs from "fs-extra";
 import path from "path";
 
 const assetsPath = path.join(__dirname, "../assets.json");
 
-function getAssets() {
+export type Assets = {
+  bundle: { js: string },
+  vendor?: { js: string },
+};
+
+function getAssets(): Assets {
   if (!fs.existsSync(assetsPath)) {
     return {
-      vendor: { js: "vendor.js", css: "vendor.css" },
-      bundle: { js: "bundle.js", css: "bundle.css" },
+      bundle: { js: "bundle.js" },
     };
   }
 
-  return JSON.parse(fs.readFileSync(assetsPath));
+  return fs.readJsonSync(assetsPath);
 }
 
 export const port = Number(process.env.PORT || 3000);
 
-export const routes = [
+export type Route = {
+  url: string,
+  filepath: string,
+};
+
+export const routes: Route[] = [
   {
-    path: "/",
-    filename: "index.html",
+    url: "/",
+    filepath: "",
   },
 ];
 

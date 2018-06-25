@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#Root should render correctly 1`] = `
-<Root__Div
-  theme={
-    Object {
-      "colorPrimary": "deepskyblue",
-    }
-  }
->
-  Reactizer!
-</Root__Div>
-`;
+exports[`#Root render 1`] = `<[object Object] />`;

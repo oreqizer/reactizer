@@ -1,0 +1,66 @@
+image: node:9
+
+stages:
+  - build
+  - release
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+  policy: pull
+
+before_script:
+  - yarn || true # Don't blow up when 'yarn' doesn't exist
+
+install:
+  stage: build
+  script:
+    - echo 🐖
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+    policy: pull-push
+
+build:
+  stage: build
+  script:
+    - yarn bundle
+  artifacts:
+    paths:
+      - data/
+      - dist/
+
+storybook:
+  stage: build
+  script:
+    - yarn storybook:build
+  artifacts:
+    paths:
+      - dist-storybook/
+
+test:
+  stage: build
+  script:
+    - yarn test --coverage
+
+lint:
+  stage: build
+  script:
+    - yarn lint
+
+madge:
+  stage: build
+  script:
+    - yarn madge
+
+flow:
+  stage: build
+  script:
+    - yarn flow check
+
+release:
+  stage: release
+  script:
+    - echo "Upload to S3"

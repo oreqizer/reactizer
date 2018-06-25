@@ -1,33 +1,25 @@
 const path = require("path");
 const webpack = require("webpack");
+const I18nPlugin = require("i18n-webpack-plugin");
 
-const config = require("./config.js");
+const common = require("./webpack.common.js");
 
 module.exports = {
-  entry: config.entry,
+  entry: common.entry,
   output: {
     path: path.resolve(__dirname, "../.tmp/static"),
     publicPath: "/",
     filename: "[name].js",
   },
-  resolve: config.resolve,
+  resolve: common.resolve,
   module: {
-    rules: [config.js],
+    rules: [common.loaderJs],
   },
+  devtool: "cheap-module-eval-source-map",
   plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.SourceMapDevToolPlugin({
-      exclude: /vendor/,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-    }),
-    new webpack.LoaderOptionsPlugin({
-      debug: true,
-    }),
+    new I18nPlugin(null),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("dev"),
+      __DEV__: true,
     }),
   ],
   devServer: {

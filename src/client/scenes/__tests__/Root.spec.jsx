@@ -1,13 +1,13 @@
-/* @flow */
+// @flow strict
 import * as React from "react";
 import { shallow } from "enzyme";
 
 import Root from "../Root";
 
 describe("#Root", () => {
-  it("should render correctly", () => {
+  test("render", () => {
     const wrapper = shallow(<Root />);
 
-    expect(wrapper.getElement()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
