@@ -7,7 +7,7 @@ const babelOptions = {
     ["@babel/env", { targets: { esmodules: true } }],
     ["@babel/stage-2", { decoratorsLegacy: true }],
   ],
-  plugins: [["styled-components", { ssr: true }]],
+  plugins: [["styled-components", { ssr: true }], "ramda", "react-hot-loader/babel"],
 };
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
     bundle: path.resolve(__dirname, "../src/client/index.js"),
   },
   resolve: {
-    extensions: [".js", ".jsx", ".css"],
+    extensions: [".js", ".jsx"],
     alias: {
       client: path.resolve(__dirname, "../src/client"),
       server: path.resolve(__dirname, "../src/server"),

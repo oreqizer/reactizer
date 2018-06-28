@@ -3,6 +3,7 @@ module.exports = {
   setupTestFrameworkScriptFile: "./etc/jestSetupFramework.js",
   snapshotSerializers: ["enzyme-to-json/serializer"],
   testPathIgnorePatterns: ["dist"],
+  coverageReporters: ["json", "lcov", "text-summary"],
   coverageThreshold: {
     global: {
       // branches: 100,

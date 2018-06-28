@@ -27,16 +27,12 @@ const FILES = [
   "src/client/.eslintrc",
   "src/server/markup/index.jsx",
   "src/server/.eslintrc",
-  "src/server/app.js",
   "src/server/config.js",
-  "src/server/globals.js",
-  "src/server/index.js",
-  "src/server/pages.js",
   "src/server/render.js",
   // types
   "types/globals.js.flow",
   "types/webpack.js.flow",
-  // configs
+  // root
   ".babelrc",
   ".editorconfig",
   ".eslintignore",
@@ -44,7 +40,6 @@ const FILES = [
   ".flowconfig",
   ".gitlab-ci.yml",
   ".prettierrc",
-  "CONTRIBUTING.md",
   "Dockerfile",
   "jest.config.js",
 ];
@@ -62,13 +57,19 @@ const FILES_INIT = [
   "src/client/app.jsx",
   "src/client/index.js",
   "src/server/markup/Html.jsx",
+  "src/server/app.js",
   "src/server/data.js",
+  "src/server/globals.js",
+  "src/server/index.js",
+  "src/server/pages.js",
   "src/static/favicon/android-chrome-192x192.png",
   "src/static/favicon/android-chrome-384x384.png",
   "src/static/favicon/favicon.ico",
   "src/static/favicon/favicon-16x16.png",
   "src/static/favicon/favicon-32x32.png",
   "src/static/manifest.json",
+  // root
+  "CONTRIBUTING.md",
 ];
 
 function updatePackage() {

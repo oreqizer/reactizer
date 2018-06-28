@@ -1,6 +1,7 @@
 // @flow strict
 import * as React from "react";
 import styled from "styled-components";
+import { hot } from "react-hot-loader";
 
 import Text from "../components/Text";
 import { Consumer as ThemeConsumer } from "../services/theme/context";
@@ -13,7 +14,7 @@ const H1 = styled.h1`
 `;
 
 const Div = styled.div`
-  background: ${(props: ThemeProps) => props.theme.colors.primary};
+  background: ${({ theme }: ThemeProps) => theme.colors.primary};
 `;
 
 Div.defaultProps = {
@@ -35,4 +36,5 @@ const Root = () => (
   </ThemeConsumer>
 );
 
-export default Root;
+// eslint-disable-next-line no-undef
+export default hot(module)(Root);
