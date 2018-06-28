@@ -70,6 +70,7 @@ if (fs.existsSync(OUT_PKG)) {
   fs.writeJsonSync(
     OUT_PKG,
     R.merge(out, {
+      scripts: R.merge(out.scripts, input.scripts),
       dependencies: depsSorted,
       devDependencies: devDepsSorted,
     }),
