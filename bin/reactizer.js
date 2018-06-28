@@ -25,6 +25,7 @@ const FILES = [
   "etc/webpack.dev.js",
   // src
   "src/client/.eslintrc",
+  "src/server/markup/index.jsx",
   "src/server/.eslintrc",
   "src/server/app.js",
   "src/server/config.js",
@@ -48,8 +49,30 @@ const FILES = [
   "jest.config.js",
 ];
 
-const OUT_PKG = path.join(OUT_DIR, "package.json");
-if (fs.existsSync(OUT_PKG)) {
+const FILES_INIT = [
+  // src
+  "src/client/components/Text/index.jsx",
+  "src/client/components/Text/__tests__/index.spec.jsx",
+  "src/client/records/Intl.jsx",
+  "src/client/records/Theme.jsx",
+  "src/client/scenes/Root.jsx",
+  "src/client/scenes/Root/__tests__/Root.spec.jsx",
+  "src/client/services/intl/context.js",
+  "src/client/services/theme/context.js",
+  "src/client/app.jsx",
+  "src/client/index.js",
+  "src/server/markup/Html.jsx",
+  "src/server/data.js",
+  "src/static/favicon/android-chrome-192x192.png",
+  "src/static/favicon/android-chrome-384x384.png",
+  "src/static/favicon/favicon.ico",
+  "src/static/favicon/favicon-16x16.png",
+  "src/static/favicon/favicon-32x32.png",
+  "src/static/manifest.json",
+];
+
+function updatePackage() {
+  const OUT_PKG = path.join(OUT_DIR, "package.json");
   const input = fs.readJsonSync(path.join(CURR_DIR, "..", "package.json"));
   const out = fs.readJsonSync(OUT_PKG);
 
@@ -80,10 +103,40 @@ if (fs.existsSync(OUT_PKG)) {
   );
 }
 
+updatePackage();
+
 FILES.forEach(file => {
   const input = path.join(CURR_DIR, "..", file);
   const out = path.join(OUT_DIR, file);
   if (input === out) {
+    return;
+  }
+
+  fs.ensureFileSync(out);
+
+  const read$ = fs.createReadStream(input);
+  const write$ = fs.createWriteStream(out);
+
+  read$.pipe(write$);
+
+  read$.on("error", err => {
+    console.error("Failed to read file", err); // eslint-disable-line no-console
+  });
+
+  write$.on("error", err => {
+    console.error("Failed to write file", err); // eslint-disable-line no-console
+  });
+});
+
+FILES_INIT.forEach(file => {
+  const input = path.join(CURR_DIR, "..", file);
+  const out = path.join(OUT_DIR, file);
+  if (input === out) {
+    return;
+  }
+
+  // Init only
+  if (fs.existsSync(out)) {
     return;
   }
 

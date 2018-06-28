@@ -6,21 +6,10 @@ import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from "styled-compo
 
 import Root from "client/scenes/Root";
 import * as themeContext from "client/services/theme/context";
-import { themeDefault } from "client/records/Theme";
 import * as intlContext from "client/services/intl/context";
-import { intlDefault } from "client/records/Intl";
 import Html from "./Html";
 import { assets } from "../config";
-
-const themes = {
-  main: themeDefault,
-  alt: { name: "Crimsonizer", colors: { primary: "crimson" } },
-};
-
-const intls = {
-  en: intlDefault,
-  de: { locale: "de", translations: { "Do you even lift?": "Hast thou even hoist?" } },
-};
+import { themes, intls } from "../data";
 
 function markup(url: string, themeId: string, localeId: string) {
   const theme = themes[themeId];

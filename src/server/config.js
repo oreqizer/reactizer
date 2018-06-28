@@ -12,7 +12,7 @@ export type Assets = {
 function getAssets(): Assets {
   if (!fs.existsSync(assetsPath)) {
     return {
-      bundle: { js: "bundle.js" },
+      bundle: { js: "/bundle.js" },
     };
   }
 

@@ -5,20 +5,21 @@ import path from "path";
 import "./globals"; // Must be 1st
 import markup from "./markup";
 import { routes } from "./config";
+import { themes, intls } from "./data";
 
 const OUT = path.join(__dirname, "../static/pages");
 
-const themeIds = ["main", "alt"];
-const localeIds = ["en", "de"];
+const themeIds = Object.keys(themes);
+const intlIds = Object.keys(intls);
 
 function render() {
   themeIds.forEach(themeId => {
-    localeIds.forEach(localeId => {
+    intlIds.forEach(intlId => {
       routes.forEach(route => {
-        const fileDir = path.join(OUT, themeId, localeId, route.filepath);
+        const fileDir = path.join(OUT, themeId, intlId, route.filepath);
         fs.ensureDirSync(fileDir);
 
-        const htmlStream = markup(route.url, themeId, localeId);
+        const htmlStream = markup(route.url, themeId, intlId);
         const fileStream = fs.createWriteStream(path.join(fileDir, "index.html"));
 
         htmlStream.pipe(fileStream);
