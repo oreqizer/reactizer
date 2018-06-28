@@ -24,14 +24,14 @@ const FILES = [
   "etc/webpack.common.js",
   "etc/webpack.dev.js",
   // src
-  "client/.eslintrc",
-  "server/.eslintrc",
-  "server/app.js",
-  "server/config.js",
-  "server/globals.js",
-  "server/index.js",
-  "server/pages.js",
-  "server/render.js",
+  "src/client/.eslintrc",
+  "src/server/.eslintrc",
+  "src/server/app.js",
+  "src/server/config.js",
+  "src/server/globals.js",
+  "src/server/index.js",
+  "src/server/pages.js",
+  "src/server/render.js",
   // types
   "types/globals.js.flow",
   "types/webpack.js.flow",
@@ -41,7 +41,6 @@ const FILES = [
   ".eslintignore",
   ".eslintrc",
   ".flowconfig",
-  ".gitignore",
   ".gitlab-ci.yml",
   ".prettierrc",
   "CONTRIBUTING.md",
@@ -94,11 +93,11 @@ FILES.forEach(file => {
 
   read$.pipe(write$);
 
-  read$.on("error", () => {
-    throw new Error("Failed to read file"); // eslint-disable-line fp/no-throw
+  read$.on("error", err => {
+    console.error("Failed to read file", err); // eslint-disable-line no-console
   });
 
-  write$.on("error", () => {
-    throw new Error("Failed to write file"); // eslint-disable-line fp/no-throw
+  write$.on("error", err => {
+    console.error("Failed to write file", err); // eslint-disable-line no-console
   });
 });
