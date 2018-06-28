@@ -53,10 +53,10 @@ const FILES_INIT = [
   // src
   "src/client/components/Text/index.jsx",
   "src/client/components/Text/__tests__/index.spec.jsx",
-  "src/client/records/Intl.jsx",
-  "src/client/records/Theme.jsx",
+  "src/client/records/Intl.js",
+  "src/client/records/Theme.js",
   "src/client/scenes/Root.jsx",
-  "src/client/scenes/Root/__tests__/Root.spec.jsx",
+  "src/client/scenes/__tests__/Root.spec.jsx",
   "src/client/services/intl/context.js",
   "src/client/services/theme/context.js",
   "src/client/app.jsx",
