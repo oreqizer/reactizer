@@ -4,7 +4,7 @@ The best **React** boilerplate!
 
 ## CLI
 
-Comes with an updater tool! Simply overwrites all files, it's up to you to revert any custom changes you want to keep.
+Comes with an **updater tool**! Simply overwrites all config files, it's up to you to revert any custom changes you want to keep.
 
 * `yarn add -D reactizer`
 * `yarn reactizer`
