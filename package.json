@@ -15,7 +15,7 @@
     "webpack": "webpack --config etc/webpack.build.js --mode production",
     "webpack:dev": "webpack-dev-server --config etc/webpack.dev.js --mode development --inline --hot",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint './**/*.{js,jsx}'",
     "madge": "madge -c src/server/index.js src/client/index.js",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o dist-storybook"
