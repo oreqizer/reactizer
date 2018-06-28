@@ -8,13 +8,13 @@ const OUT_DIR = process.cwd();
 
 const FILES = [
   // docs
-  "01git.md",
-  "02general.md",
-  "03structure.md",
-  "04rendering.md",
-  "05translations.md",
-  "06styled.md",
-  "07templates.md",
+  "docs/01git.md",
+  "docs/02general.md",
+  "docs/03structure.md",
+  "docs/04rendering.md",
+  "docs/05translations.md",
+  "docs/06styled.md",
+  "docs/07templates.md",
   // etc
   "etc/.eslintrc",
   "etc/jestGlobals.js",
@@ -24,10 +24,7 @@ const FILES = [
   "etc/webpack.common.js",
   "etc/webpack.dev.js",
   // src
-  "client/app.jsx",
-  "client/index.jsx",
-  "server/markup/Html.jsx",
-  "server/markup/index.jsx",
+  "client/.eslintrc",
   "server/.eslintrc",
   "server/app.js",
   "server/config.js",
