@@ -1,0 +1,26 @@
+// you can use this file to add your custom webpack plugins, loaders and anything you like.
+// This is just the basic way to add additional webpack configurations.
+// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
+
+// IMPORTANT
+// When you add this file, we won't add the default configurations which is similar
+// to "React Create App". This only has babel loader to load JavaScript.
+const webpack = require("webpack");
+const I18nPlugin = require("i18n-webpack-plugin");
+
+const common = require("../etc/webpack.common");
+
+module.exports = {
+  resolve: common.resolve,
+  module: {
+    rules: [
+      common.loaderJs,
+    ],
+  },
+  plugins: [
+    new I18nPlugin(null),
+    new webpack.DefinePlugin({
+      __DEV__: true,
+    }),
+  ],
+};

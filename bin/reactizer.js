@@ -7,6 +7,12 @@ const CURR_DIR = __dirname;
 const OUT_DIR = process.cwd();
 
 const FILES = [
+  // storybook
+  ".storybook/.eslintrc",
+  ".storybook/addons.js",
+  ".storybook/config.js",
+  ".storybook/preview-head.html",
+  ".storybook/webpack.config.js",
   // docs
   "docs/01git.md",
   "docs/02general.md",
@@ -68,6 +74,8 @@ const FILES_INIT = [
   "src/static/favicon/favicon-16x16.png",
   "src/static/favicon/favicon-32x32.png",
   "src/static/manifest.json",
+  // stories
+  "stories/Text.stories.jsx",
   // root
   "CONTRIBUTING.md",
 ];
