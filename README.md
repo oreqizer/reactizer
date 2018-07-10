@@ -28,6 +28,7 @@ Use **yarn** as a package manager.
 - [x] Internationalization
 - [x] Theming
 - [x] Tests via **Jest** and **Enzyme**
+- [x] Storybook
 - [x] Flow
 - [x] ESLint
 
