@@ -23,7 +23,7 @@
       "newlines-between": "always"
     }],
     "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": ["etc/**", "stories/**", "**/__{tests,mocks}__/*"]
+      "devDependencies": ["etc/**", "stories/**", "**/__tests__/*"]
     }],
     "flowtype/require-valid-file-annotation": ["error", "always", { "annotationStyle": "line" }],
     // OFF
