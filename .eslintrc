@@ -26,6 +26,7 @@
       "devDependencies": ["etc/**", "stories/**", "**/__tests__/*"]
     }],
     "flowtype/require-valid-file-annotation": ["error", "always", { "annotationStyle": "line" }],
+    "react/display-name": "error",
     // OFF
     "camelcase": "off", // GraphQL
     "fp/no-nil": "off", // Side effects
