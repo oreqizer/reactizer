@@ -1,1 +1,2 @@
+// @flow strict
 import "./app";

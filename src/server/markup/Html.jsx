@@ -28,20 +28,20 @@ type Props = {
   intl: Intl,
 };
 
-const Html = (props: Props) => (
-  <html lang={props.intl.locale}>
+const Html = ({ root, css, assets, theme, intl }: Props) => (
+  <html lang={intl.locale}>
     <head>
-      <title>{props.theme.name}</title>
+      <title>{theme.name}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <link rel="manifest" href="/manifest.json" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-      <meta name="theme-color" content={props.theme.colors.primary} />
+      <meta name="theme-color" content={theme.colors.primary} />
 
-      {props.assets.vendor && <link rel="preload" href={props.assets.vendor.js} as="script" />}
-      <link rel="preload" href={props.assets.bundle.js} as="script" />
+      {assets.vendor && <link rel="preload" href={assets.vendor.js} as="script" />}
+      <link rel="preload" href={assets.bundle.js} as="script" />
 
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
@@ -51,18 +51,18 @@ const Html = (props: Props) => (
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            window.__THEME__ = ${JSON.stringify(props.theme)};
-            window.__INTL__ = ${JSON.stringify(props.intl)};
+            window.__THEME__ = ${JSON.stringify(theme)};
+            window.__INTL__ = ${JSON.stringify(intl)};
          `,
         }}
       />
-      {props.css}
+      {css}
     </head>
     <body>
-      <div id="react" dangerouslySetInnerHTML={{ __html: props.root }} />
+      <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
 
-      {props.assets.vendor && <script src={props.assets.vendor.js} />}
-      <script src={props.assets.bundle.js} />
+      {assets.vendor && <script src={assets.vendor.js} />}
+      <script src={assets.bundle.js} />
     </body>
   </html>
 );

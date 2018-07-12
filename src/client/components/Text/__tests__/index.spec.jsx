@@ -1,4 +1,4 @@
-/* eslint-disable flowtype/no-types-missing-file-annotation */
+// @flow strict
 import * as React from "react";
 import { shallow } from "enzyme";
 

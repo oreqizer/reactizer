@@ -25,6 +25,8 @@
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": ["etc/**", "stories/**", "**/__{tests,mocks}__/*"]
     }],
+    "flowtype/require-valid-file-annotation": ["error", "always", { "annotationStyle": "line" }],
+    // OFF
     "camelcase": "off", // GraphQL
     "fp/no-nil": "off", // Side effects
     "fp/no-class": "off", // React

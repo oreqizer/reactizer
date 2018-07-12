@@ -1,3 +1,4 @@
+/* eslint-disable flowtype/require-valid-file-annotation */
 module.exports = {
   setupFiles: ["raf/polyfill", "./etc/jestSetup.js", "./etc/jestGlobals.js"],
   setupTestFrameworkScriptFile: "./etc/jestSetupFramework.js",
