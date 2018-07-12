@@ -4,7 +4,6 @@ import logger from "koa-logger";
 import serve from "koa-static";
 import path from "path";
 
-import "./globals"; // Must be first!
 import { port } from "./config";
 import pages from "./pages";
 import app from "./app";

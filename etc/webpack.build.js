@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const I18nPlugin = require("i18n-webpack-plugin");
 const Assets = require("assets-webpack-plugin");
 
 const common = require("./webpack.common.js");
@@ -29,7 +28,6 @@ module.exports = {
     },
   },
   plugins: [
-    new I18nPlugin(null),
     new webpack.DefinePlugin({
       __DEV__: false,
     }),

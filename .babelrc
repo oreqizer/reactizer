@@ -6,6 +6,7 @@
     ["@babel/stage-2", { "decoratorsLegacy": true }]
   ],
   "plugins": [
+    "id",
     ["styled-components", { "ssr": true }],
     ["module-resolver", {
       "root": ["./src"]

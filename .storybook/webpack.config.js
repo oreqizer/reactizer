@@ -6,7 +6,6 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const webpack = require("webpack");
-const I18nPlugin = require("i18n-webpack-plugin");
 
 const common = require("../etc/webpack.common");
 
@@ -18,7 +17,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new I18nPlugin(null),
     new webpack.DefinePlugin({
       __DEV__: true,
     }),

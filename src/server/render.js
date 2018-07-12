@@ -2,7 +2,6 @@
 import fs from "fs-extra";
 import path from "path";
 
-import "./globals"; // Must be 1st
 import markup from "./markup";
 import { routes } from "./config";
 import { themes, intls } from "./data";

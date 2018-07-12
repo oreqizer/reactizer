@@ -7,7 +7,7 @@ const babelOptions = {
     ["@babel/env", { targets: { esmodules: true } }],
     ["@babel/stage-2", { decoratorsLegacy: true }],
   ],
-  plugins: [["styled-components", { ssr: true }], "ramda", "react-hot-loader/babel"],
+  plugins: ["id", ["styled-components", { ssr: true }], "ramda", "react-hot-loader/babel"],
 };
 
 module.exports = {
