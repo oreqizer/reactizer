@@ -6,10 +6,9 @@ Make sure these tasks run without errors:
 * `yarn test`
 * `yarn lint`
 * `yarn flow check`
+* `yarn madge`
 
 ### Development
-
-Run `yarn gulp fetch`  before developing.
 
 Run `yarn start` and enjoy at **:8080**!
 
