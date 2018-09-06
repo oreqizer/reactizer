@@ -22,6 +22,26 @@ Docs:
 
 Use **yarn** as a package manager.
 
+### Usage
+
+Just browse the files! You'll get a feel for what's going on quickly.
+
+#### Server
+
+Adjust the following files to your needs:
+* `src/server/config.js` - static config of assets, routes...
+* `src/server/data.js` - load any JSONs with i18n, theming...
+
+To alter the generated markup, see `src/server/markup`. It contains an entry function for both **static** and **dynamic** rendering.
+
+Any static files go into the `src/static` folder.
+
+#### Client
+
+Main entry points:
+* `src/client/app.jsx` - initial client render
+* `src/client/scenes/Root.jsx` - first common component for client/server
+
 ### Features
 
 - [x] **Static** and **dynamic** SSR
