@@ -2,10 +2,11 @@
   "presets": [
     "@babel/react",
     "@babel/flow",
-    ["@babel/env", { "targets": { "node": "current" } }],
-    ["@babel/stage-2", { "decoratorsLegacy": true }]
+    ["@babel/env", { "targets": { "node": "current" } }]
   ],
   "plugins": [
+    "@babel/transform-runtime",
+    "@babel/proposal-class-properties",
     "id",
     ["styled-components", { "ssr": true }],
     ["module-resolver", {

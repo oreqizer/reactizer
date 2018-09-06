@@ -4,10 +4,16 @@ const babelOptions = {
   presets: [
     "@babel/react",
     "@babel/flow",
-    ["@babel/env", { targets: { esmodules: true } }],
-    ["@babel/stage-2", { decoratorsLegacy: true }],
+    ["@babel/env", { modules: false, targets: { browsers: "last 2 versions" } }],
   ],
-  plugins: ["id", ["styled-components", { ssr: true }], "ramda", "react-hot-loader/babel"],
+  plugins: [
+    "@babel/transform-runtime",
+    "@babel/proposal-class-properties",
+    "id",
+    ["styled-components", { ssr: true }],
+    "ramda",
+    "react-hot-loader/babel",
+  ],
 };
 
 module.exports = {

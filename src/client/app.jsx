@@ -28,7 +28,6 @@ if (app) {
 // Hot reload
 // ---
 
-// TODO add react-hot-loader
 /* eslint-disable no-undef */
 if (module.hot) {
   module.hot.accept();
