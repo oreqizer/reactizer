@@ -1,4 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies, flowtype/require-valid-file-annotation */
+/* eslint-disable import/no-extraneous-dependencies */
+
+// @noflow
 const gulp = require("gulp");
 
 const statics = () => gulp.src("src/static/**").pipe(gulp.dest("dist/static"));

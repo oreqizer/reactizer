@@ -1,6 +1,6 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
+// @noflow
 module.exports = {
-  setupFiles: ["raf/polyfill", "./etc/jestSetup.js", "./etc/jestGlobals.js"],
+  setupFiles: ["raf/polyfill", "./etc/jestSetup.js"],
   setupTestFrameworkScriptFile: "./etc/jestSetupFramework.js",
   snapshotSerializers: ["enzyme-to-json/serializer"],
   testPathIgnorePatterns: ["dist"],

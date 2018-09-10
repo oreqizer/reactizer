@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+
+// @noflow
 const fs = require("fs-extra");
 const path = require("path");
 const R = require("ramda");
@@ -23,7 +25,6 @@ const FILES = [
   "docs/07templates.md",
   // etc
   "etc/.eslintrc",
-  "etc/jestGlobals.js",
   "etc/jestSetup.js",
   "etc/jestSetupFramework.js",
   "etc/webpack.build.js",
@@ -65,7 +66,6 @@ const FILES_INIT = [
   "src/server/markup/Html.jsx",
   "src/server/app.js",
   "src/server/data.js",
-  "src/server/globals.js",
   "src/server/index.js",
   "src/server/pages.js",
   "src/static/favicon/android-chrome-192x192.png",
