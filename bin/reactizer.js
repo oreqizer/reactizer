@@ -78,6 +78,7 @@ const FILES_INIT = [
   "stories/Text.stories.jsx",
   // root
   "CONTRIBUTING.md",
+  "gulpfile.js",
 ];
 
 function updatePackage() {
