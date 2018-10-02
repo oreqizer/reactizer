@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`#Root render 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Root__Div
+  theme={
+    Object {
+      "colors": Object {
+        "primary": "deepskyblue",
+      },
+      "name": "Reactizer",
+    }
+  }
+>
+  <Root__H1>
+    Reactizer "en"
+  </Root__H1>
+  <Text
+    html={false}
+    t="Do you even lift?"
+  />
+</Root__Div>
 `;

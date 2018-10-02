@@ -5,8 +5,6 @@
 // IMPORTANT
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
-const webpack = require("webpack");
-
 const common = require("../etc/webpack.common");
 
 module.exports = {
@@ -16,9 +14,4 @@ module.exports = {
       common.loaderJs,
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      __DEV__: true,
-    }),
-  ],
 };

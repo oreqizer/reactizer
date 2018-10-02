@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#Text render 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`#Text render 1`] = `"lol"`;
 
 exports[`#Text render as span 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "lol",
+    }
+  }
+/>
 `;

@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const Assets = require("assets-webpack-plugin");
 
 const common = require("./webpack.common.js");
@@ -28,9 +27,6 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.DefinePlugin({
-      __DEV__: false,
-    }),
     new Assets({
       path: "dist",
       filename: "assets.json",
