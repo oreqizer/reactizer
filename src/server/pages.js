@@ -16,7 +16,7 @@ async function pages(ctx: Context, next: () => Promise<any>) {
     ctx.type = "text/html; charset=utf-8";
     ctx.body = fs.createReadStream(filepath);
   } else {
-    next();
+    await next();
   }
 }
 
