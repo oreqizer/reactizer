@@ -6,7 +6,7 @@ import type { Context } from "koa";
 
 const base = path.join(__dirname, "../static/pages");
 
-async function pages(ctx: Context, next: () => Promise<any>) {
+async function pages(ctx: Context, next: () => Promise<void>) {
   const locale = ctx.query.locale || "en";
   const theme = ctx.query.theme || "main";
 

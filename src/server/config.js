@@ -1,5 +1,6 @@
 // @flow strict
-import fs from "fs-extra";
+import * as fs from "fs";
+import * as fsx from "fs-extra";
 import path from "path";
 
 const assetsPath = path.join(__dirname, "../assets.json");
@@ -16,10 +17,10 @@ function getAssets(): Assets {
     };
   }
 
-  return fs.readJsonSync(assetsPath);
+  return fsx.readJsonSync(assetsPath);
 }
 
-export const port = Number(process.env.PORT || 3000);
+export const port = Number(process.env.PORT !== undefined ? Number(process.env.PORT) : 3000);
 
 export type Route = {
   url: string,
