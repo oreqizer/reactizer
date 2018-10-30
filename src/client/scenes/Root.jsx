@@ -1,10 +1,9 @@
 // @flow strict
 import * as React from "react";
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 import { hot } from "react-hot-loader";
 
 import Text from "../components/Text";
-import { Consumer as ThemeConsumer } from "../services/theme/context";
 import { Consumer as IntlConsumer } from "../services/intl/context";
 import { themeDefault } from "../records/Theme";
 import type { ThemeProps } from "../records/Theme";

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`#Root render 1`] = `
-<Root__Div
+<ForwardRef
   theme={
     Object {
       "colors": Object {
@@ -11,12 +11,12 @@ exports[`#Root render 1`] = `
     }
   }
 >
-  <Root__H1>
+  <ForwardRef>
     Reactizer "en"
-  </Root__H1>
+  </ForwardRef>
   <Text
     html={false}
     t="Do you even lift?"
   />
-</Root__Div>
+</ForwardRef>
 `;
