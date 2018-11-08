@@ -2,30 +2,16 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
-import type { Intl } from "client/records/Intl";
+import type { IntlRaw } from "client/records/Intl";
 import type { Theme } from "client/records/Theme";
 import type { Assets } from "../config";
-
-const globalCss = `
-  body {
-    color: #212121;
-    font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.02em;
-  }
-
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
-`;
 
 type Props = {
   root: string,
   css: React.Node,
   assets: Assets,
   theme: Theme,
-  intl: Intl,
+  intl: IntlRaw,
 };
 
 const Html = ({ root, css, assets, theme, intl }: Props) => (
@@ -47,7 +33,6 @@ const Html = ({ root, css, assets, theme, intl }: Props) => (
         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
         rel="stylesheet"
       />
-      <style dangerouslySetInnerHTML={{ __html: globalCss }} />
       <script
         dangerouslySetInnerHTML={{
           __html: `

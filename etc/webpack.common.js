@@ -8,7 +8,9 @@ const babelOptions = {
   ],
   plugins: [
     "@babel/transform-runtime",
+    "@babel/transform-react-constant-elements",
     "@babel/proposal-class-properties",
+    "@babel/proposal-optional-chaining",
     "id",
     ["styled-components", { ssr: true }],
     "ramda",

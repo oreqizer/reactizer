@@ -11,6 +11,9 @@ exports[`#Root render 1`] = `
     }
   }
 >
+  <GlobalStyleComponent
+    suppressMultiMountWarning={false}
+  />
   <ForwardRef>
     Reactizer "en"
   </ForwardRef>
@@ -19,5 +22,23 @@ exports[`#Root render 1`] = `
     t="Do you even lift?"
     values={Object {}}
   />
+  <ForwardRef
+    href="/?theme=alt"
+  >
+    <Text
+      html={false}
+      t="Switch theme"
+      values={Object {}}
+    />
+  </ForwardRef>
+  <ForwardRef
+    href="/?locale=de"
+  >
+    <Text
+      html={false}
+      t="Switch locale"
+      values={Object {}}
+    />
+  </ForwardRef>
 </ForwardRef>
 `;

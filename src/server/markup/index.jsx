@@ -6,13 +6,15 @@ import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from "styled-compo
 import Root from "client/scenes/Root";
 import InitIntl from "client/components/InitIntl";
 import { Provider as IntlProvider } from "client/services/intl/context";
+import type { Theme } from "client/records/Theme";
+import type { IntlRaw } from "client/records/Intl";
 import Html from "./Html";
 import { assets } from "../config";
 import { themes, intls } from "../data";
 
 function markup(url: string, themeId: string, localeId: string) {
-  const theme = themes[themeId];
-  const intlRaw = intls[localeId];
+  const theme: Theme = themes[themeId];
+  const intlRaw: IntlRaw = intls[localeId];
 
   const sheet = new ServerStyleSheet();
   const root = ReactDOM.renderToString(
