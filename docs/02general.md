@@ -24,15 +24,7 @@ Components for wrapping other components in order to change the way they are rep
 
 ## Flow
 
-Write types **as specific as possible**. No `Object` or `Function`! Use `any` where it makes sense, meaning you really _don't care_ about the value:
-
-```js
-type Props = {|
-  onClick: (ev: SyntheticEvent<HTMLButtonElement>) => any,
-|};
-```
-
-Only use the `*` type if you _really_ know what you're doing. See [docs](https://flow.org) if in doubt.
+Write types **as specific as possible**. No `any`, `Object` nor `Function`!
 
 ## Ramda
 

@@ -1,17 +1,33 @@
 # Translations
 
-A `translate` function is located in the `client/services/intl/context.js` context object as a property.
+A `t` function is located in the `client/services/intl/context.js` context object as a property.
 
-## Text component
+## InitIntl
 
-Uses the `translate` function internally. Has three props:
+Eats the `IntlRaw` type and provides you with the `Intl` type:
 
 ```js
-type Props = {
+const Root = () => (
+  <InitIntl intl={raw}>
+    {intl => (
+      <IntlProvider value={intl}>
+        <App />
+      </IntlProvider>
+    )}
+  </InitIntl>
+);
+```
+
+## Text
+
+A component that uses the `t` function internally. Has three props:
+
+```js
+type Props = {|
   t: string, // the translation key
-  values?: Values, // placeholder values
-  html?: boolean, // optional flag that allows adding inner HTML
-};
+  values: { [key: string]: string }, // placeholder values
+  html: boolean, // optional flag that allows adding inner HTML
+|};
 ```
 
 Note that the `html` prop also wraps the translation in an extra `<span>`.

@@ -11,7 +11,6 @@ Use the following schema: `<author>/<dash-cased-task>`
 oreqizer/git-doc
 ```
 
-
 ## Commits
 
 Use the following schema: `<context>: Short imperative message with this casing`

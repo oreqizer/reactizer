@@ -17,26 +17,6 @@ const Input = styled.input`
 export default Input;
 ```
 
-Primitives have one problem - they're impossible to properly Flow-type. Define **propTypes** for their props instead:
-
-```js
-// @flow
-import PropTypes from "prop-types";
-import styled from "styled-components";
-
-const Input = styled.input`
-    color: ${props => props.color};
-`;
-
-Input.propTypes = {
-    color: PropTypes.oneOf(["black", "crimson"]).isRequired,
-};
-
-export default Input;
-```
-
-Although not statically analysable, this is currently the best solution I came up with.
-
 ### Default theme
 
 Every component that uses theme **must** have a `defaultProps` with the `theme` property set:
@@ -59,10 +39,6 @@ export default Input;
 ```
 
 This is to allow easy testing without having to provide `theme` every time.
-
-### Extending
-
-Use `.extend`, only wrap in `styled(...)` when absolutely necessary. This is limited to components that need a `className` to be styled, such as `react-router`'s `Link` or `react-icons`.
 
 ### Nesting
 
