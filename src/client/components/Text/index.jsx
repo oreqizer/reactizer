@@ -4,27 +4,22 @@ import * as React from "react";
 
 import { Consumer } from "client/services/intl/context";
 
-// TODO add actual translation
 type Props = {
   t: string,
-  // values?: { [key: string]: string | number },
+  values: { [key: string]: string },
   html: boolean,
 };
 
-const Text = (props: Props) => (
+const Text = ({ t, values, html }: Props) => (
   <Consumer>
     {intl =>
-      props.html ? (
-        <span dangerouslySetInnerHTML={{ __html: intl.translations[props.t] || props.t }} />
-      ) : (
-        intl.translations[props.t] || props.t
-      )
+      html ? <span dangerouslySetInnerHTML={{ __html: intl.t(t, values) }} /> : intl.t(t, values)
     }
   </Consumer>
 );
 
 Text.defaultProps = {
-  // values: {},
+  values: {},
   html: false,
 };
 

@@ -17,6 +17,7 @@ exports[`#Root render 1`] = `
   <Text
     html={false}
     t="Do you even lift?"
+    values={Object {}}
   />
 </ForwardRef>
 `;
