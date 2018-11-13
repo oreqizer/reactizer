@@ -16,10 +16,6 @@ const Global = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.02em;
   }
-
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
 `;
 
 const H1 = styled.h1`
@@ -27,11 +23,13 @@ const H1 = styled.h1`
 `;
 
 const Div = styled.div`
+  box-sizing: border-box;
   background: ${({ theme }: ThemeProps) => theme.colors.primary};
   padding: 20px;
 `;
 
 const A = styled.a`
+  box-sizing: border-box;
   display: inline-block;
   height: 40px;
   line-height: 40px;
