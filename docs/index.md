@@ -1,7 +1,3 @@
-# Reactizer
-
-The best **React** boilerplate!
-
 ## CLI
 
 Comes with an **updater tool**! Simply overwrites all config files, it's up to you to revert any custom changes you want to keep.
@@ -60,3 +56,4 @@ Static analysis:
 - `yarn lint`
 - `yarn flow`
 - `yarn madge`
+
