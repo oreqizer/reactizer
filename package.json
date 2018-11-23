@@ -20,7 +20,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o dist-storybook",
     "example": "rimraf docs/app docs/storybook && run-p example:app example:storybook",
-    "example:app": "copyfiles -u 2 dist/static/**/* docs/app && copyfiles -u 5 docs/app/pages/main/en/index.html docs/app",
+    "example:app": "yarn bundle && copyfiles -u 2 'dist/static/**/*' docs/app && copyfiles -u 5 docs/app/pages/main/en/index.html docs/app",
     "example:storybook": "build-storybook -o docs/storybook"
   },
   "bin": {

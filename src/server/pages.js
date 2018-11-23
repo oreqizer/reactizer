@@ -7,7 +7,7 @@ import type { Context } from "koa";
 const base = path.join(__dirname, "../static/pages");
 
 async function pages(ctx: Context, next: () => Promise<void>) {
-  const [theme = "en", locale = "main"] = ctx.path.slice(1); // /<theme>/<locale>
+  const [theme = "main", locale = "en"] = ctx.path.slice(1).split("/"); // /<theme>/<locale>
 
   const filepath = path.join(base, theme, locale, ctx.path, "index.html");
   if (fs.existsSync(filepath)) {
