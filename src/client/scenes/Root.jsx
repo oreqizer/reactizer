@@ -8,7 +8,7 @@ import { Consumer as IntlConsumer } from "../services/intl/context";
 import { themeDefault } from "../records/Theme";
 import type { ThemeProps } from "../records/Theme";
 
-const URL = "https://oreqizer.github.io/reactizer";
+const URL = "https://oreqizer.github.io/reactizer/app/pages";
 
 const Global = createGlobalStyle`
   body {
