@@ -15,14 +15,6 @@ const FILES = [
   ".storybook/config.js",
   ".storybook/preview-head.html",
   ".storybook/webpack.config.js",
-  // docs
-  "docs/01git.md",
-  "docs/02general.md",
-  "docs/03structure.md",
-  "docs/04rendering.md",
-  "docs/05translations.md",
-  "docs/06styled.md",
-  "docs/07templates.md",
   // etc
   "etc/.eslintrc",
   "etc/jestSetup.js",
