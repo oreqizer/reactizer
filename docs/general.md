@@ -18,9 +18,9 @@ Make use of `React.PureComponent` where it makes sense.
 
 ### Utility components
 
-Components for wrapping other components in order to change the way they are represented.
+Components for wrapping other components in order to change the way they are represented, for example `Desktop` or `Mobile` for viewport-only components, or `ClientOnly` for displaying things only on the client.
 
-> Note: wrap components with utility components where they are used, do not put utility components directly into other components.
+Wrap components with utility components where **they are used**, do not put utility components directly into their definition.
 
 ## Flow
 

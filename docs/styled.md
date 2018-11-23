@@ -102,5 +102,3 @@ const InputText = (props: Props) => (
 
 export default InputText;
 ```
-
-> It is a bad practice to allow passing `className` as a prop as it creates an implicit relationship. Avoid it at all costs. Do any necessary modifications via explicit props, or find a different solution.
