@@ -15,6 +15,11 @@ Comes with an **updater tool**! Simply overwrites all config files, it's up to y
 * `yarn add -D reactizer`
 * `yarn reactizer`
 
+## Example
+
+* [App](./app)
+* [Storybook](./storybook)
+
 ## Usage
 
 Just browse the files! You'll get a feel for what's going on quickly.

@@ -1,7 +1,7 @@
 // @flow strict
 export const themes = {
-  main: { name: "Reactizer", colors: { primary: "deepskyblue" } },
-  alt: { name: "Crimsonizer", colors: { primary: "crimson" } },
+  main: { id: "main", name: "Reactizer", colors: { primary: "deepskyblue" } },
+  alt: { id: "alt", name: "Crimsonizer", colors: { primary: "crimson" } },
 };
 
 export const intls = {

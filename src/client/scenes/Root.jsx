@@ -59,10 +59,10 @@ const Root = () => (
             <Global />
             <H1>{`${theme.name} "${intl.locale}"`}</H1>
             <Text t={__("Do you even lift?")} />
-            <A href={theme.name === "Reactizer" ? "/?theme=alt" : "/"}>
+            <A href={`/${theme.id === "main" ? "alt" : "main"}/${intl.locale}`}>
               <Text t={__("Switch theme")} />
             </A>
-            <A href={intl.locale === "en" ? "/?locale=de" : "/"}>
+            <A href={`/${theme.id}/${intl.locale === "en" ? "de" : "en"}`}>
               <Text t={__("Switch locale")} />
             </A>
           </Div>

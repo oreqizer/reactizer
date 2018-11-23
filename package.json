@@ -18,7 +18,10 @@
     "lint": "eslint './**/*.{js,jsx}'",
     "madge": "madge -c src/server/index.js src/client/index.js",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook -o dist-storybook"
+    "storybook:build": "build-storybook -o dist-storybook",
+    "example": "rimraf docs/app docs/storybook && run-p example:app example:storybook",
+    "example:app": "copyfiles -u 2 dist/static/**/* docs/app && copyfiles -u 5 docs/app/pages/main/en/index.html docs/app",
+    "example:storybook": "build-storybook -o docs/storybook"
   },
   "bin": {
     "reactizer": "./bin/reactizer.js"
@@ -68,6 +71,7 @@
     "babel-plugin-ramda": "^1.6.3",
     "babel-plugin-styled-components": "^1.8.0",
     "babel-preset-airbnb": "^3.0.1",
+    "copyfiles": "^2.1.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.4",
