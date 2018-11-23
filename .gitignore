@@ -1,4 +1,5 @@
 .atom
+.cache
 .idea
 .tmp
 coverage
