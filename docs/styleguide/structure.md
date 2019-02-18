@@ -13,6 +13,8 @@ components/
     components/
       SubComponent/
         index.jsx <- A component used in 'index.jsx' or other subcomponents
+    services/
+      getName.js <- A component's mini service
 ```
 
 **Can have**
@@ -85,6 +87,8 @@ scenes/
 ### Services
 
 Code that performs computations or provides a certain functionality.
+
+Nest in a folder when it is a *global* service, no need for a nested folder when it belongs to a *component* or a *scene*.
 
 ```
 services/
