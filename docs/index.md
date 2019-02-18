@@ -3,11 +3,10 @@
 Use **yarn** as a package manager.
 
 * [Git](./git)
-* [General](./general)
+* [Styleguide](./styleguide)
 * [Folder structure](./structure)
 * [Rendering](./rendering)
 * [Translations](./translations)
-* [Styled components](./styled)
 * [File templates](./templates)
 
 Comes with an **updater tool**! Simply overwrites all config files, it's up to you to revert any custom changes you want to keep.

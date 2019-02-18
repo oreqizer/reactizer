@@ -11,6 +11,8 @@ Use the following schema: `<author>/<dash-cased-task>`
 oreqizer/git-doc
 ```
 
+Squash commits if the author makes a mess.
+
 ## Commits
 
 Use the following schema: `<context>: Short imperative message with this casing`

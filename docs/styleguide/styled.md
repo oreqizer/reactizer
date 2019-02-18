@@ -42,7 +42,7 @@ This is to allow easy testing without having to provide `theme` every time.
 
 ### Nesting
 
-The **only** valid use case for nesting is when having to style a dynamically injected component class:
+Usually the only valid use case for nesting is when having to style a dynamically injected component class:
 
 ```js
 // @flow strict
@@ -72,6 +72,28 @@ export default MyComponent;
 ```
 
 Or having to style already styled 3rd party things, such as Google autocompleter.
+
+Nest, just don't abuse!
+
+### Types
+
+Use `React.ComponentType<Props>`. This disables class methods, though. If that's a problem, just `// $FlowExpected: Bad typings`.
+
+```js
+// @flow strict
+import * as React from "react";
+import styled from "styled-components";
+
+type Props = {|
+  background: "black" | "white";
+|};
+
+const Input: React.ComponentType<Props> = styled.input`
+    background: ${(props: Props) => props.background};
+`;
+
+export default Input;
+```
 
 ## Components
 
