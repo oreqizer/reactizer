@@ -8,7 +8,8 @@ Here https://oreqizer.github.io/reactizer/
 
 ## Features
 
-- [x] **Static** and **dynamic** SSR
+- [x] Next
+- [x] TypeScript
 - [x] Internationalization
 - [x] Theming
 - [x] Tests via **Jest** and **Enzyme**

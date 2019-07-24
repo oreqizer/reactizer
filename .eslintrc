@@ -49,15 +49,13 @@
     "@typescript-eslint/explicit-function-return-type": "off", // Inference, duh
     "@typescript-eslint/no-var-requires": "off", // Configs
     "@typescript-eslint/prefer-interface": "off", // Why the fuck would I?
-    "@typescript-eslint/camelcase": "off" // Relay
+    "@typescript-eslint/camelcase": "off", // Relay
+    "@typescript-eslint/explicit-member-accessibility": "off" // WTF
   },
   "settings": {
     "import/resolver": {
       "babel-module": {
         "root": ["./src"],
-        "extensions": [".js", ".ts", ".tsx"]
-      },
-      "node": {
         "extensions": [".js", ".ts", ".tsx"]
       }
     }

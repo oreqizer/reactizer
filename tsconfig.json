@@ -1,26 +1,27 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    // Target latest version of ECMAScript.
     "target": "esnext",
-    // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
-    // JSX
-    "jsx": "react",
-    // Process & infer types from .js files.
+    "jsx": "preserve",
     "allowJs": true,
-    // Don't emit; allow Babel to transform files.
     "noEmit": true,
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
     "strict": true,
-    // Disallow features that require cross-file information for emit.
     "isolatedModules": true,
-    // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    // Fixes overriding
-    "types": ["react", "jest"],
-    // Absolute imports
-    "baseUrl": "src"
+    "types": [
+      "react",
+      "jest"
+    ],
+    "baseUrl": "src",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src",

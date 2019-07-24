@@ -1,12 +1,13 @@
 .atom
 .cache
 .idea
-.tmp
+.next
+.vscode/**/*
+!.vscode/settings.json
 coverage
-node_modules
 dist
-dist-storybook
-public/lib
+node_modules
 .env
 npm-debug.log
 yarn-error.log
+stats.json

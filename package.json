@@ -1,20 +1,13 @@
 {
   "name": "reactizer",
-  "version": "0.10.1",
-  "description": "The ultimate react boilerplate!",
+  "version": "0.11.0",
+  "description": "The ultimate React boilerplate!",
   "main": "dist/server.js",
   "scripts": {
-    "start": "rimraf dist && run-p devserver webpack:dev",
-    "devserver": "yarn babel && run-p run:dev babel:dev",
-    "run": "node dist/server",
-    "run:dev": "nodemon dist/server",
-    "render": "node dist/server/render",
-    "bundle": "rimraf dist && run-p babel webpack && yarn render",
-    "babel": "babel src -d dist --env-name server --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
-    "babel:dev": "yarn babel --watch --source-maps inline",
-    "webpack": "webpack --config etc/webpack.build.js --mode production",
-    "webpack:dev": "webpack-dev-server --config etc/webpack.dev.js --mode development --inline --hot --progress --colors --https",
-    "webpack:stats": "env NODE_ENV=production yarn webpack -- --json > stats.json",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "bundle": "printenv && rimraf dist && gulp && yarn build",
     "syncgql": "run-s schema generate relay",
     "relay": "relay-compiler --src src --schema ./schema.graphql --extensions ts tsx --artifactDirectory src/__generated__ --language typescript",
     "relay:validate": "yarn relay --validate",
@@ -23,19 +16,15 @@
     "keys": "node etc/bin/keys",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
+    "report": "env NODE_ENV=production yarn webpack --json > stats.json",
     "types": "tsc",
+    "audit": "yarn audit --prod",
     "ci": "run-p test:coverage lint types madge",
     "lint": "eslint './**/*.{js,ts,tsx,jsx}'",
-    "madge": "madge -c src/server/index.ts src/client/index.ts",
+    "madge": "madge -c src/index.ts",
     "storybook": "start-storybook -p 6006 -s static",
     "storybook:build": "build-storybook -o dist/static/storybook -s static",
     "heroku-postbuild": "yarn bundle"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn ci"
-    }
   },
   "commitlint": {
     "extends": [
@@ -119,6 +108,7 @@
     "@types/koa-static": "^4.0.1",
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.9.1",
+    "@types/next": "^8.0.6",
     "@types/node": "^12.6.8",
     "@types/node-polyglot": "^0.4.33",
     "@types/ramda": "^0.26.18",
@@ -139,7 +129,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.6",
     "babel-plugin-id": "^1.0.1",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-ramda": "^2.0.0",
     "babel-plugin-relay": "^5.0.0",
     "compression-webpack-plugin": "^3.0.0",

@@ -11,7 +11,7 @@ cache:
   policy: pull
 
 before_script:
-  - yarn || true # Don't blow up when 'yarn' doesn't exist
+  - yarn --frozen-lockfile --production=false || true # Don't blow up when 'yarn' doesn't exist
 
 install:
   stage: build
@@ -32,6 +32,12 @@ build:
       - data/
       - dist/
 
+audit:
+  stage: build
+  script:
+    - yarn audit
+  allow_failure: true
+
 storybook:
   stage: build
   script:
@@ -39,9 +45,12 @@ storybook:
   artifacts:
     paths:
       - dist-storybook/
+  only:
+    - develop
 
 test:
   stage: build
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   script:
     - yarn test --coverage
 
@@ -55,12 +64,36 @@ lint:
   script:
     - yarn lint
 
+#relay:
+#  stage: build
+#  script:
+#    # maybe also syncgql
+#    - yarn relay --validate
+
+types:
+  stage: build
+  script:
+    - yarn types
+
 madge:
   stage: build
   script:
     - yarn madge
 
-release:
+release dev:
+  image: ruby
   stage: release
   script:
-    - echo 🎉
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_API_KEY
+  only:
+    - develop
+
+release prod:
+  image: ruby
+  stage: release
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_PROD_APP --api-key=$HEROKU_PROD_API_KEY
+  only:
+    - master
