@@ -12,6 +12,6 @@ Here https://oreqizer.github.io/reactizer/
 - [x] Internationalization
 - [x] Theming
 - [x] Tests via **Jest** and **Enzyme**
+- [x] TypeScript
 - [x] Storybook
-- [x] Flow
 - [x] ESLint
