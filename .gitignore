@@ -4,7 +4,6 @@
 .tmp
 coverage
 node_modules
-data
 dist
 dist-storybook
 public/lib

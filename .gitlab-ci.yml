@@ -1,4 +1,4 @@
-image: node:9
+image: node:12
 
 stages:
   - build
@@ -45,6 +45,11 @@ test:
   script:
     - yarn test --coverage
 
+types:
+  stage: build
+  script:
+    - yarn types
+
 lint:
   stage: build
   script:
@@ -55,12 +60,7 @@ madge:
   script:
     - yarn madge
 
-flow:
-  stage: build
-  script:
-    - yarn flow check
-
 release:
   stage: release
   script:
-    - echo "Upload to S3"
+    - echo 🎉

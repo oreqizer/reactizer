@@ -1,42 +1,45 @@
 const path = require("path");
+const webpack = require("webpack");
+const dotenv = require("dotenv-safe");
+const LoadablePlugin = require("@loadable/webpack-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
 
-const babelOptions = {
-  presets: [
-    "@babel/react",
-    "@babel/flow",
-    ["@babel/env", { modules: false, targets: { browsers: "last 2 versions" } }],
-  ],
-  plugins: [
-    "@babel/transform-runtime",
-    "@babel/transform-react-constant-elements",
-    "@babel/proposal-class-properties",
-    "@babel/proposal-optional-chaining",
-    "id",
-    ["styled-components", { ssr: true }],
-    "ramda",
-    "react-hot-loader/babel",
-  ],
-};
+const env = dotenv.config({
+  path: path.resolve(__dirname, "../.env"),
+  example: path.resolve(__dirname, "../.env.example"),
+});
 
 module.exports = {
   entry: {
-    bundle: path.resolve(__dirname, "../src/client/index.js"),
+    main: path.resolve(__dirname, "../src/client/index.ts"),
   },
   resolve: {
-    extensions: [".js", ".jsx"],
-    alias: {
-      client: path.resolve(__dirname, "../src/client"),
-      server: path.resolve(__dirname, "../src/server"),
-    },
+    extensions: [".js", ".ts", ".tsx"],
   },
-  loaderJs: {
-    test: /\.jsx?$/,
-    use: [
+  plugins: [
+    new webpack.EnvironmentPlugin(env.required),
+    new GenerateSW({
+      importWorkboxFrom: "cdn",
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [],
+    }),
+    new LoadablePlugin({
+      writeToDisk: { filename: "dist" },
+    }),
+  ],
+  module: {
+    rules: [
       {
-        loader: "babel-loader",
-        options: babelOptions,
+        test: /\.tsx?$/,
+        use: ["babel-loader"],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.mjs$/,
+        type: "javascript/auto",
+        include: /node_modules/,
       },
     ],
-    exclude: /node_modules/,
   },
 };

@@ -1,2 +1,0 @@
-// @flow strict
-import "./app";

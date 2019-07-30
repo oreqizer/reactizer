@@ -1,11 +1,15 @@
-FROM node:9-alpine
+FROM node:12-alpine
 
 WORKDIR /tmp/app
 COPY package.json yarn.lock ./
-RUN yarn --prod
+RUN yarn
 
-COPY data data/
-COPY dist dist/
+COPY static static/
+
+RUN yarn bundle
+
+RUN rm -rf node_modules
+RUN yarn --prod
 
 EXPOSE 3000
 CMD yarn run run
