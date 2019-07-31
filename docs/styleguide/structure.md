@@ -55,7 +55,6 @@ records/
 
 **Example:**
 ```js
-// @flow strict
 export type Kek = {
   bur: string;
 };
