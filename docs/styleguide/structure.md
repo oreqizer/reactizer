@@ -34,7 +34,7 @@ Contains _constants_. Prefer granular exporting than one huge blob. Utilize **TS
 
 ```
 consts/
-  cookies.ts <- Keys used for storing cookies
+    cookies.ts <- Keys used for storing cookies
 ```
 
 **Cannot have**
@@ -50,7 +50,7 @@ Contains _data types_ and _functions_ operating on the data type.
 
 ```
 records/
-  Kek.ts <- A record with its functions
+    Kek.ts <- A record with its functions
 ```
 
 **Example:**
@@ -93,6 +93,25 @@ scenes/
 
 **Cannot have**
 * subscenes
+
+### Styles
+
+A special folder that contains styling-related things, such as the `theme` definition and `mixins`.
+
+```
+styles/
+    mixins/ <- Reusable styles
+        box.ts
+        line.ts
+    theme.ts <- Main theme definition and utilies
+```
+
+**Cannot have**
+* components
+* consts
+* records
+* services
+* scenes
 
 ### Services
 
