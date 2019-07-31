@@ -21,10 +21,27 @@ components/
 
 **Can have**
 * subcomponents
-* services
+* consts
 * records
+* services
 
 **Cannot have**
+* scenes
+
+## Consts
+
+Contains _constants_. Prefer granular exporting than one huge blob. Utilize **TS** `enum` type.
+
+```
+consts/
+  cookies.ts <- Keys used for storing cookies
+```
+
+**Cannot have**
+* components
+* subconsts
+* records
+* services
 * scenes
 
 ## Records
@@ -48,6 +65,7 @@ export const wrapBur = (str: string, kek: Kek) => str + kek.bur + str;
 
 **Cannot have**
 * components
+* consts
 * subrecords
 * services
 * scenes
@@ -69,6 +87,7 @@ scenes/
 
 **Can have**
 * components
+* consts
 * records
 * services
 
