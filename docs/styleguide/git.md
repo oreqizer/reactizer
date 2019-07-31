@@ -2,6 +2,10 @@
 
 Always **rebase**!
 
+## MRs
+
+FF-only!
+
 ## Branches
 
 Use the following schema: `<author>/<dash-cased-task>`
@@ -15,23 +19,4 @@ Squash commits if the author makes a mess.
 
 ## Commits
 
-Use the following schema: `<context>: Short imperative message with this casing`
-
-**Example:**
-```
-components: Add Price
-```
-
-**Example - additional info:**
-```
-general: Remove 'babel-plugin-ramda'
-
-See https://github.com/megawac/babel-plugin-ramda/issues/39
-```
-
-**Example - attached issue:**
-```
-Root: Add intl context
-
-Closes #2
-```
+Follow `@commitlint/config-conventional`.

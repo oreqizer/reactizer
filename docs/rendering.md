@@ -7,13 +7,13 @@ There are **three** types of rendering:
 
 ### Root
 
-Located in `src/client/scenes/Root.jsx`.
+Located in `src/client/scenes/Root.tsx`.
 
 Serves as a common entrypoint to the application for all render strategies. Root doesn't differentiate in which environment it is rendered. Initial render should be **pure**, solely based on _props_, initial _state_ and _context_.
 
 ## Client-side
 
-Located in `src/client/app.jsx`.
+Located in `src/client/app.tsx`.
 
 Happens in the client's browser. Needs to happen ASAP, thus the data required for the render should be kept minimal and should be available _immediately_.
 
@@ -32,7 +32,7 @@ Has two roles:
 * Render **markup** for the client to immediately display
 * Prepare basic **data** for the client, such as _translations_ and _theme_
 
-Common render function for both _static_ and _dynamic_ server-side rendering is located in `src/server/markup/index.jsx`. The function is kept pure, spits out consistent markup for the same arguments.
+Common render function for both _static_ and _dynamic_ server-side rendering is located in `src/server/markup/index.tsx`. The function is kept pure, spits out consistent markup for the same arguments.
 
 Request markup flow:
 * page rendered **statically** - markup is served to the client
@@ -40,7 +40,7 @@ Request markup flow:
 
 ### Static
 
-Located in `src/server/render.js`.
+Located in `src/server/render.ts`.
 
 Happens at **build time**. Saves an `index.html` file for every:
 * Locale
@@ -49,11 +49,11 @@ Happens at **build time**. Saves an `index.html` file for every:
 
 The output structure is `dist/static/pages/<theme>/<locale>/<page>/index.html`.
 
-The generated pages are served by `src/server/pages.js`, but serving can be done on an upper layer, too.
+The generated pages are served by `src/server/pages.ts`, but serving can be done on an upper layer, too.
 
 ### Dynamic
 
-Located in `src/server/app.js`.
+Located in `src/server/app.ts`.
 
 Happens at **runtime**. Generates a HTML stream that is served to the client.
 

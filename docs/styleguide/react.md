@@ -1,8 +1,6 @@
 # React
 
-Import as `import * as React from "react";`. This is mainly due to _Flow_ types.
-
-Make use of `React.PureComponent` where it makes sense.
+Import as `import * as React from "react";`.
 
 ## Nomenclature
 
@@ -16,11 +14,7 @@ Utilise **composition**. Separate presentational and container components.
 
 ## Utilities
 
-Components for wrapping other components in order to change the way they are represented, for example `Desktop` or `Mobile` for viewport-only components, or `ClientOnly` for displaying things only on the client.
-
-Wrap components with utility components where **they are used**, do not put utility components directly into their definition.
-
-Make use of the [render props](https://reactjs.org/docs/render-props.html) pattern.
+Either create custom **hooks**, or **render props** components. Hooks are preferred.
 
 ## Testing
 
@@ -29,10 +23,10 @@ Assert that the component **passes props** down the tree correctly. Having a hig
 **Example:**
 ```js
 // Component
-type Props = {|
-  value: string,
-  onChange: (value: string) => void,
-|}
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+}
 
 const MyComponent = ({ value, onChange }: Props) => (
   <Wrapper>
@@ -54,8 +48,4 @@ test("render", () => {
 });
 ```
 
-Test all conditional branches, assert that different branches are rendered based on different *props* and *state* combination.
-
-> Feel free to mount the component when testing stuff with context.
-
-Test all **methods** in containers. Mock side effects if needed.
+Test all conditional branches, assert that different branches are rendered based on different *props* combination.

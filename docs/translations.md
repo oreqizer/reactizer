@@ -1,6 +1,6 @@
 # Translations
 
-A `t` function is located in the `client/services/intl/context.js` context object as a property.
+A `t` function is located in the `client/services/intl/context.ts` context object as a property.
 
 ## InitIntl
 
@@ -23,11 +23,11 @@ const Root = () => (
 A component that uses the `t` function internally. Has three props:
 
 ```js
-type Props = {|
-  t: string, // the translation key
-  values: { [key: string]: string }, // placeholder values
-  html: boolean, // optional flag that allows adding inner HTML
-|};
+type Props = {
+  t: string; // the translation key
+  values: { [key: string]: string }; // placeholder values
+  html: boolean; // optional flag that allows adding inner HTML
+};
 ```
 
 Note that the `html` prop also wraps the translation in an extra `<span>`.

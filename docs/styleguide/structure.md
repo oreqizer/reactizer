@@ -1,20 +1,22 @@
 # Folder structure
 
-All files should have a `__tests__` folder next to them, with a `<filename>.spec.js` test.
+All files should have a `__tests__` folder next to them, with a `<filename>.spec.ts` test.
 
 ## Components
 
-Contains components.
+Contains _components_.
+
+> Sub-components can go only one level deep. Sub-components cannot have nested sub-components.
 
 ```
 components/
   MyComponent/
-    index.jsx <- The main component, only this is allowed to be imported
+    index.tsx <- The main component, only this is allowed to be imported
     components/
       SubComponent/
-        index.jsx <- A component used in 'index.jsx' or other subcomponents
+        index.tsx <- A component used in 'index.tsx' or other subcomponents
     services/
-      getName.js <- A component's mini service
+      getName.ts <- A component's mini service
 ```
 
 **Can have**
@@ -25,36 +27,21 @@ components/
 **Cannot have**
 * scenes
 
-## Primitives
-
-Contains _styled components_.
-
-```
-primitives/
-  MyComponent.jsx <- A styled component
-```
-
-**Cannot have**
-* subcomponents
-* scenes
-* services
-* records
-
 ## Records
 
-Contains data types and their associated functions.
+Contains _data types_ and _functions_ operating on the data type.
 
 ```
 records/
-  Kek.js <- A record with its functions
+  Kek.ts <- A record with its functions
 ```
 
 **Example:**
 ```js
 // @flow strict
-export type Kek = {|
-  bur: string,
-|};
+export type Kek = {
+  bur: string;
+};
 
 export const wrapBur = (str: string, kek: Kek) => str + kek.bur + str;
 ```
@@ -67,22 +54,26 @@ export const wrapBur = (str: string, kek: Kek) => str + kek.bur + str;
 
 ## Scenes
 
-Visible sections of a website. Often defined by the URL, smaller sub-scenes can be tabs or just sections on the page.
+Visible sections of a website. Often defined by the URL.
+
+> Scene's private components can have sub-components
 
 ```
 scenes/
     NavBar/
         components/
             Hamburger/
-                index.jsx <- component private for the scene
-        index.jsx <- the scene root
+                index.tsx <- component private for the scene
+        index.tsx <- the scene root
 ```
 
 **Can have**
 * components
 * records
-* subscenes
 * services
+
+**Cannot have**
+* subscenes
 
 ### Services
 
@@ -93,8 +84,8 @@ Nest in a folder when it is a *global* service, no need for a nested folder when
 ```
 services/
     intl/
-        context.js
-        translate.js
+        context.ts
+        translate.ts
 ```
 
 **Can have**
