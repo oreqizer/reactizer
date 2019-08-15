@@ -24,13 +24,13 @@ module.exports = {
       minSize: 25000, // 25kb
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /\/node_modules\//,
           name(module) {
             // top-level package name
-            const pkg = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            const [, scope, pkg] = module.context.match(/\/node_modules\/(@.*?\/)?(.*?)(\/|$)/);
 
             // some servers don't like @ symbols
-            return `npm.${pkg.replace("@", "")}`;
+            return `npm.${scope ? `${scope.replace("@", "").replace("/", "")}__${pkg}` : pkg}`;
           },
         },
       },
