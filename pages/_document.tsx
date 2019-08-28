@@ -1,10 +1,8 @@
 /* eslint-disable fp/no-class, react/no-danger */
 import * as React from "react";
 import Document from "next/document";
-import { ServerStyleSheet, ThemeProvider } from "styled-components";
+import { ServerStyleSheet } from "styled-components";
 
-import InitIntl from "client/components/InitIntl";
-import { Provider as IntlProvider } from "client/services/intl/context";
 import { themes, intls } from "server/data";
 
 export default class MyDocument extends Document {
@@ -12,15 +10,18 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
-    // TODO determine these from the URL query
-    const theme = themes.main;
-    const intlRaw = intls["en-GB"];
-
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
+
+      ctx.query = {
+        ...ctx.query,
+        // TODO determine these from the URL
+        theme: themes.main,
+        intl: intls["en-GB"],
+      };
 
       const initialProps = await Document.getInitialProps(ctx);
       return {
