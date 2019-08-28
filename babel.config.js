@@ -9,7 +9,7 @@ module.exports = api => {
     presets: ["@babel/react", "@babel/typescript", env],
     plugins: [
       "@babel/transform-runtime",
-      "@babel/plugin-syntax-dynamic-import",
+      "@babel/syntax-dynamic-import",
       "@babel/proposal-class-properties",
       "@babel/proposal-optional-chaining",
       "@loadable",
