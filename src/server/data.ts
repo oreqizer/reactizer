@@ -1,18 +1,13 @@
-import path from "path";
-import fsx from "fs-extra";
-
 import { IntlRaw } from "client/records/Intl";
 import { makeTheme, Theme } from "client/styles/theme";
-
-const LOCALES = path.join(__dirname, "../../static/locales");
-const THEMES = path.join(__dirname, "../../static/themes");
+import themeFiles from "../../static/themes";
+import localeFiles from "../../static/locales";
 
 const loadIntls = () =>
-  fsx
-    .readdirSync(LOCALES)
-    .map(file => ({
-      locale: file.replace(".json", ""),
-      translations: fsx.readJsonSync(path.join(LOCALES, file)),
+  Object.keys(localeFiles)
+    .map(locale => ({
+      locale,
+      translations: localeFiles[locale],
     }))
     .reduce(
       (acc, locale) => ({
@@ -25,11 +20,10 @@ const loadIntls = () =>
 export const intls: { [key: string]: IntlRaw } = loadIntls();
 
 const loadThemes = () =>
-  fsx
-    .readdirSync(THEMES)
-    .map(file => ({
-      id: file.replace(".json", ""),
-      theme: makeTheme(fsx.readJsonSync(path.join(THEMES, file))),
+  Object.keys(themeFiles)
+    .map(theme => ({
+      id: theme,
+      theme: makeTheme(themeFiles[theme]),
     }))
     .reduce(
       (acc, theme) => ({
