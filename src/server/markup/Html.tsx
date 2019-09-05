@@ -1,20 +1,28 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
-import { IntlRaw } from "client/records/Intl";
-import { Theme } from "client/styles/theme";
-
 type Props = {
   root: string;
   styles: React.ReactNode;
   preloadable: React.ReactNode;
   loadable: React.ReactNode;
-  theme: Theme;
-  intl: IntlRaw;
+  color: string;
+  locale: string;
+  themeFile: string;
+  intlFile: string;
 };
 
-const Html = ({ root, styles, preloadable, loadable, theme, intl }: Props) => (
-  <html lang={intl.locale}>
+const Html = ({
+  root,
+  styles,
+  preloadable,
+  loadable,
+  color,
+  locale,
+  themeFile,
+  intlFile,
+}: Props) => (
+  <html lang={locale}>
     <head>
       <title>Reactizer</title>
       <meta charSet="utf-8" />
@@ -34,7 +42,7 @@ const Html = ({ root, styles, preloadable, loadable, theme, intl }: Props) => (
         href="/images/icons/icon-16x16.png"
       />
       <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png" />
-      <meta name="theme-color" content={theme.colorProductNormal} />
+      <meta name="theme-color" content={color} />
       {/* <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> */}
 
       {preloadable}
@@ -49,15 +57,8 @@ const Html = ({ root, styles, preloadable, loadable, theme, intl }: Props) => (
       />
       <link href="/fonts/style.css" rel="stylesheet" />
 
-      <script
-        type="application/javascript"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.__THEME__ = ${JSON.stringify(theme)};
-            window.__INTL__ = ${JSON.stringify(intl)};
-         `,
-        }}
-      />
+      <script src={`/generated/themes/${themeFile}`} />
+      <script src={`/generated/locales/${intlFile}`} />
 
       {styles}
     </head>

@@ -5,7 +5,10 @@ import { IntlRaw } from "client/records/Intl";
 import { makeTheme, Theme } from "client/styles/theme";
 
 const LOCALES = path.join(__dirname, "../../static/locales");
+const LOCALE_MAP = path.join(__dirname, "../../static/generated/locales/map.json");
+
 const THEMES = path.join(__dirname, "../../static/themes");
+const THEME_MAP = path.join(__dirname, "../../static/generated/themes/map.json");
 
 const loadIntls = () =>
   fsx
@@ -23,6 +26,7 @@ const loadIntls = () =>
     );
 
 export const intls: { [key: string]: IntlRaw } = loadIntls();
+export const intlMap: { [key: string]: string } = fsx.readJSONSync(LOCALE_MAP);
 
 const loadThemes = () =>
   fsx
@@ -40,3 +44,4 @@ const loadThemes = () =>
     );
 
 export const themes: { [key: string]: Theme } = loadThemes();
+export const themeMap: { [key: string]: string } = fsx.readJSONSync(THEME_MAP);
