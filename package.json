@@ -5,11 +5,11 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "rimraf dist && run-p devserver webpack:dev",
-    "devserver": "yarn babel && run-p run:dev babel:dev",
+    "devserver": "run-p statics babel && run-p run:dev babel:dev",
     "run": "node dist/server",
     "run:dev": "nodemon dist/server",
     "render": "node dist/server/render",
-    "bundle": "rimraf dist && run-p babel webpack && yarn render",
+    "bundle": "rimraf dist && run-p babel webpack && run-p statics render",
     "babel": "babel src -d dist --env-name server --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
     "babel:dev": "yarn babel --watch --source-maps inline",
     "webpack": "webpack --config etc/webpack.build.js --mode production",

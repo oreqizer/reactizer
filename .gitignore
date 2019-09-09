@@ -5,8 +5,7 @@
 coverage
 node_modules
 dist
-dist-storybook
-public/lib
+static/generated
 .env
 npm-debug.log
 yarn-error.log
