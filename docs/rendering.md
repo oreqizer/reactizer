@@ -7,7 +7,7 @@ There are **three** types of rendering:
 
 ### Root
 
-Located in `src/client/scenes/Root.tsx`.
+Located in `src/client/Root.tsx`.
 
 Serves as a common entrypoint to the application for all render strategies. Root doesn't differentiate in which environment it is rendered. Initial render should be **pure**, solely based on _props_, initial _state_ and _context_.
 

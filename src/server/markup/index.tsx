@@ -3,7 +3,7 @@ import * as ReactDOM from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router";
 
-import Root from "client/scenes/Root";
+import Root from "client/Root";
 import { Theme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
 import { extractor } from "server/config";

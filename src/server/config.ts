@@ -11,6 +11,6 @@ export const extractor = new ChunkExtractor({ statsFile: LOADABLE_STATS });
 export const routes: string[] = ["/"].concat(
   fsx
     .readdirSync(ROUTES)
-    .filter(folder => folder.match(/[a-zA-Z]+/))
+    .filter(folder => folder.match(/^[a-zA-Z]+$/))
     .map(folder => `/${folder}`),
 );

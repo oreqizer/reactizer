@@ -3,7 +3,7 @@ import * as React from "react";
 import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
-import Root from "client/scenes/Root";
+import Root from "client/Root";
 import { Theme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
 

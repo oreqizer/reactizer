@@ -2,7 +2,7 @@ import * as React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import { Index } from "client/scenes/Routes";
+import { Index } from "client/Routes";
 import routes from "client/consts/routes";
 import { Theme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
