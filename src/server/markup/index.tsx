@@ -18,7 +18,7 @@ function markup(url: string, themeId: string, localeId: string) {
   const root = ReactDOM.renderToString(
     extractor.collectChunks(
       sheet.collectStyles(
-        <StaticRouter>
+        <StaticRouter location={url}>
           <Root theme={theme} intlRaw={intlRaw} />
         </StaticRouter>,
       ),
