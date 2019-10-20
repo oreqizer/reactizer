@@ -94,7 +94,7 @@ const THEME = {
   colorBlueDarker: "#004680",
   // FONT
   // ---
-  fontFamily: '"Helvetica Neue", "Calibri Light", sans-serif',
+  fontFamily: '"Lato", "Helvetica Neue", "Calibri Light", sans-serif',
   // Z-INDEX
   // ---
   zBackground: -1,
