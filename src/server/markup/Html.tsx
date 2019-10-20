@@ -55,7 +55,7 @@ const Html = ({
         href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
         rel="stylesheet"
       />
-      <link href="/fonts/style.css" rel="stylesheet" />
+      {/* <link href="/fonts/style.css" rel="stylesheet" /> */}
 
       <script src={`/generated/themes/${themeFile}`} />
       <script src={`/generated/locales/${intlFile}`} />
