@@ -1,4 +1,5 @@
-declare var window: Window;
+// eslint-disable-next-line no-undef
+declare var window: Window & typeof globalThis;
 declare var __: (key: string) => string;
 
 interface Window {

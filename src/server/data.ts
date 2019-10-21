@@ -4,11 +4,11 @@ import fsx from "fs-extra";
 import { IntlRaw } from "client/records/Intl";
 import { makeTheme, Theme } from "client/styles/theme";
 
-const LOCALES = path.join(__dirname, "../../static/locales");
-const LOCALE_MAP = path.join(__dirname, "../../static/generated/locales/map.json");
+const LOCALES = path.join(__dirname, "../static/locales");
+const LOCALE_MAP = path.join(__dirname, "../static/generated/locales/map.json");
 
-const THEMES = path.join(__dirname, "../../static/themes");
-const THEME_MAP = path.join(__dirname, "../../static/generated/themes/map.json");
+const THEMES = path.join(__dirname, "../static/themes");
+const THEME_MAP = path.join(__dirname, "../static/generated/themes/map.json");
 
 const loadIntls = () =>
   fsx

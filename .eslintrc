@@ -49,7 +49,8 @@
     "@typescript-eslint/explicit-function-return-type": "off", // Inference, duh
     "@typescript-eslint/no-var-requires": "off", // Configs
     "@typescript-eslint/prefer-interface": "off", // Why the fuck would I?
-    "@typescript-eslint/camelcase": "off" // Relay
+    "@typescript-eslint/camelcase": "off", // Relay
+    "@typescript-eslint/ban-ts-ignore": "off" // Broken types
   },
   "settings": {
     "import/resolver": {

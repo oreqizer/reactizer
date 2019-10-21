@@ -2,8 +2,8 @@ const fsx = require("fs-extra");
 const path = require("path");
 const md5 = require("md5");
 
-const PATH = path.join(__dirname, "../../static");
-const OUT = path.join(__dirname, "../../static/generated");
+const PATH = path.join(__dirname, "../../dist/static");
+const OUT = path.join(__dirname, "../../dist/static/generated");
 
 const FOLDERS = ["locales", "themes"];
 const GLOBALS = { locales: "__INTL__", themes: "__THEME__" };

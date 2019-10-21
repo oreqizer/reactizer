@@ -8,7 +8,7 @@ import {
   retryMiddleware,
   authMiddleware,
   cacheMiddleware,
-} from "react-relay-network-modern";
+} from "react-relay-network-modern/node8";
 
 const __DEV__ = process.env.NODE_ENV !== "production"; // eslint-disable-line no-underscore-dangle
 

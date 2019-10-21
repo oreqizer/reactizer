@@ -12,6 +12,7 @@ module.exports = api => {
       "@babel/syntax-dynamic-import",
       "@babel/proposal-class-properties",
       "@babel/proposal-optional-chaining",
+      "@babel/proposal-nullish-coalescing-operator",
       "@loadable",
       "id",
       ["relay", { artifactDirectory: "src/__generated__" }],

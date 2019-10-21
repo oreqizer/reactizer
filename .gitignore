@@ -5,7 +5,6 @@
 coverage
 node_modules
 dist
-static/generated
 .env
 npm-debug.log
 yarn-error.log

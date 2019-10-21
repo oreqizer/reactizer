@@ -4,7 +4,7 @@ WORKDIR /tmp/app
 COPY package.json yarn.lock ./
 RUN yarn
 
-COPY static static/
+COPY src/static static/
 
 RUN yarn bundle
 

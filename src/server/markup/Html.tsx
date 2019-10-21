@@ -25,9 +25,10 @@ const Html = ({
   <html lang={locale}>
     <head>
       <title>Reactizer</title>
+
       <meta charSet="utf-8" />
       {/* https://webkit.org/blog/7929/designing-websites-for-iphone-x/ */}
-      <meta name="viewport" content="width=device-width, initial-scale=1; viewport-fit=cover" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <link rel="manifest" href="/manifest.json?v=3" />
       <link
         rel="shortcut icon"
@@ -55,7 +56,6 @@ const Html = ({
         href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
         rel="stylesheet"
       />
-      <link href="/fonts/style.css" rel="stylesheet" />
 
       <script src={`/generated/themes/${themeFile}`} />
       <script src={`/generated/locales/${intlFile}`} />
