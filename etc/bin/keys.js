@@ -2,7 +2,7 @@ const path = require("path");
 const fsx = require("fs-extra");
 const x = require("i18n-extract");
 
-const OUT = path.join(__dirname, "../../static/locales/");
+const OUT = path.join(__dirname, "../../src/static/locales/");
 
 const keys = x.extractFromFiles(
   [path.join(__dirname, "../../src/**/*.tsx"), path.join(__dirname, "../../src/**/*.ts")],
