@@ -13,14 +13,11 @@ const THEME_MAP = path.join(__dirname, "../static/generated/themes/map.json");
 const loadIntls = () =>
   fsx
     .readdirSync(LOCALES)
-    .map(file => ({
-      locale: file.replace(".json", ""),
-      translations: fsx.readJsonSync(path.join(LOCALES, file)),
-    }))
+    .map(file => fsx.readJsonSync(path.join(LOCALES, file)))
     .reduce(
       (acc, locale) => ({
         ...acc,
-        [locale.locale]: locale,
+        [locale.id]: locale,
       }),
       {},
     );

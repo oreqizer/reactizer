@@ -55,12 +55,16 @@ locales.forEach(locale => {
     .reduce(
       (acc, key) => ({
         ...acc,
-        [key]: existing[key] || processed[key],
+        [key]: existing.translations[key] || processed[key],
       }),
       {},
     );
 
-  fsx.outputJsonSync(file, res, {
-    spaces: 2,
-  });
+  fsx.outputJsonSync(
+    file,
+    { ...existing, translations: res },
+    {
+      spaces: 2,
+    },
+  );
 });

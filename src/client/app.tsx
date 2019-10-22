@@ -3,19 +3,20 @@ import * as React from "react";
 import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
+
 import Root from "client/Root";
-import { Theme } from "client/styles/theme";
+import { Palette, makeTheme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
 
 const app = document.getElementById("react");
-const theme: Theme = window.__THEME__;
+const theme: Palette = window.__THEME__;
 const intlRaw: IntlRaw = window.__INTL__;
 
 loadableReady(() => {
   if (app) {
     hydrate(
       <BrowserRouter>
-        <Root theme={theme} intlRaw={intlRaw} />
+        <Root theme={makeTheme(theme)} intlRaw={intlRaw} />
       </BrowserRouter>,
       app,
     );

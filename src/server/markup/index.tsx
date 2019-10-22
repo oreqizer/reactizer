@@ -7,7 +7,7 @@ import Root from "client/Root";
 import { Theme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
 import { extractor } from "server/config";
-import { themes, themeMap, intls, intlMap } from "server/data";
+import { themes, intls } from "server/data";
 import Html from "./Html";
 
 function markup(url: string, themeId: string, localeId: string) {
@@ -32,9 +32,8 @@ function markup(url: string, themeId: string, localeId: string) {
       preloadable={extractor.getLinkElements()}
       loadable={extractor.getScriptElements()}
       color={theme.colorProductNormal}
-      locale={localeId}
-      themeFile={themeMap[themeId]}
-      intlFile={intlMap[localeId]}
+      themeId={themeId}
+      localeId={localeId}
     />,
   );
 }

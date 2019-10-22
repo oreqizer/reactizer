@@ -1,28 +1,20 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
+import { themeMap, intlMap } from "server/data";
+
 type Props = {
   root: string;
   styles: React.ReactNode;
   preloadable: React.ReactNode;
   loadable: React.ReactNode;
   color: string;
-  locale: string;
-  themeFile: string;
-  intlFile: string;
+  themeId: string;
+  localeId: string;
 };
 
-const Html = ({
-  root,
-  styles,
-  preloadable,
-  loadable,
-  color,
-  locale,
-  themeFile,
-  intlFile,
-}: Props) => (
-  <html lang={locale}>
+const Html = ({ root, styles, preloadable, loadable, color, themeId, localeId }: Props) => (
+  <html lang={localeId}>
     <head>
       <title>Reactizer</title>
 
@@ -57,8 +49,8 @@ const Html = ({
         rel="stylesheet"
       />
 
-      <script src={`/generated/themes/${themeFile}`} />
-      <script src={`/generated/locales/${intlFile}`} />
+      <script src={`/generated/themes/${themeMap[themeId]}`} />
+      <script src={`/generated/locales/${intlMap[localeId]}`} />
 
       {styles}
     </head>

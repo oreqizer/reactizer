@@ -13,7 +13,7 @@ type Props = {
 const InitIntl = ({ intl, children }: Props) =>
   children({
     ...intl,
-    t: (k, v) => new Polyglot({ locale: intl.locale, phrases: intl.translations }).t(k, v),
+    t: (k, v) => new Polyglot({ locale: intl.id, phrases: intl.translations }).t(k, v),
   });
 
 export default InitIntl;
