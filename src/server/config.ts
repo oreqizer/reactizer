@@ -24,6 +24,6 @@ export const extractor = new ChunkExtractor({
 export const routes: string[] = ["/"].concat(
   fsx
     .readdirSync(path.resolve(__dirname, "../client/scenes"))
-    .filter(folder => folder.match(/^[a-zA-Z]+$/))
-    .map(folder => `/${folder}`),
+    .filter(folder => folder !== "Index")
+    .map(folder => `/${folder.toLowerCase()}`),
 );
