@@ -14,7 +14,7 @@ module.exports = {
     main: path.resolve(__dirname, "../src/client/index.ts"),
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: [".js", ".mjs", ".ts", ".tsx"],
   },
   plugins: [
     new webpack.EnvironmentPlugin(env.required),
