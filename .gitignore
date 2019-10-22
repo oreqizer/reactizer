@@ -7,4 +7,5 @@ node_modules
 dist
 .env
 npm-debug.log
+stats.json
 yarn-error.log
