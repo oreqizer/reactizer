@@ -4,7 +4,7 @@
   "description": "The ultimate React boilerplate!",
   "main": "dist/server/index.js",
   "scripts": {
-    "start": "rimraf dist && statics && run-p devserver webpack:dev",
+    "start": "rimraf dist && yarn statics && run-p devserver webpack:dev",
     "devserver": "run-p statics babel && run-p run:dev babel:dev",
     "run": "node dist/server",
     "run:dev": "nodemon dist/server",
