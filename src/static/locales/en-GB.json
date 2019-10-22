@@ -1,4 +1,6 @@
 {
   "id": "en-GB",
-  "translations": {}
+  "translations": {
+    "Home": "Home"
+  }
 }

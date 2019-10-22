@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 
 import { Index } from "client/Routes";
@@ -19,6 +20,10 @@ const Root = ({ theme, intlRaw }: Props) => (
     <InitIntl intl={intlRaw}>
       {intl => (
         <IntlProvider value={intl}>
+          <Helmet titleTemplate="%s | Reactizer" defaultTitle={`${intl.t(__("Home"))} | Reactizer`}>
+            <html lang={intl.id} />
+          </Helmet>
+
           <Switch>
             <Route path={routes.INDEX} exact render={() => <Index />} />
 

@@ -1,10 +1,12 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
+import { HelmetData } from "react-helmet";
 
 import { themeMap, intlMap } from "server/data";
 
 type Props = {
   root: string;
+  helmet: HelmetData;
   styles: React.ReactNode;
   preloadable: React.ReactNode;
   loadable: React.ReactNode;
@@ -13,30 +15,19 @@ type Props = {
   localeId: string;
 };
 
-const Html = ({ root, styles, preloadable, loadable, color, themeId, localeId }: Props) => (
-  <html lang={localeId}>
+const Html = ({ root, helmet, styles, preloadable, loadable, color, themeId, localeId }: Props) => (
+  <html {...helmet.htmlAttributes.toComponent()} lang={localeId}>
     <head>
-      <title>Reactizer</title>
-
       <meta charSet="utf-8" />
       {/* https://webkit.org/blog/7929/designing-websites-for-iphone-x/ */}
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      <link rel="manifest" href="/manifest.json?v=3" />
-      <link
-        rel="shortcut icon"
-        type="image/png"
-        sizes="32x32"
-        href="/images/icons/icon-32x32.png"
-      />
-      <link
-        rel="shortcut icon"
-        type="image/png"
-        sizes="16x16"
-        href="/images/icons/icon-16x16.png"
-      />
-      <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png" />
       <meta name="theme-color" content={color} />
-      {/* <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> */}
+
+      <link rel="manifest" href="/manifest.json?v=3" />
+
+      {helmet.title.toComponent()}
+      {helmet.meta.toComponent()}
+      {helmet.link.toComponent()}
 
       {preloadable}
 
@@ -54,7 +45,7 @@ const Html = ({ root, styles, preloadable, loadable, color, themeId, localeId }:
 
       {styles}
     </head>
-    <body>
+    <body {...helmet.bodyAttributes.toComponent()}>
       <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
 
       {loadable}

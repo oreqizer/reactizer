@@ -44,6 +44,7 @@
     "fp/no-unused-expression": "off", // 'fs' calls, for example
     "react/default-props-match-prop-types": "off", // Flow/ESlint conflict
     "react/require-default-props": "off", // Somehow semantically wrong
+    "react/jsx-props-no-spreading": "off", // Has use cases
     "react/prop-types": "off", // Broken rule
     "jsx-a11y/anchor-is-valid": "off", // Relative paths bullshit
     "@typescript-eslint/explicit-function-return-type": "off", // Inference, duh

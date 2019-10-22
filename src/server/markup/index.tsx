@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router";
+import { Helmet } from "react-helmet";
 
 import Root from "client/Root";
 import { Theme } from "client/styles/theme";
@@ -25,9 +26,12 @@ function markup(url: string, themeId: string, localeId: string) {
     ),
   );
 
+  const helmet = Helmet.renderStatic();
+
   return ReactDOM.renderToStaticNodeStream(
     <Html
       root={root}
+      helmet={helmet}
       styles={sheet.getStyleElement()}
       preloadable={extractor.getLinkElements()}
       loadable={extractor.getScriptElements()}
