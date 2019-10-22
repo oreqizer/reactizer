@@ -1,8 +1,8 @@
 {
   "name": "reactizer",
   "version": "0.10.1",
-  "description": "The ultimate react boilerplate!",
-  "main": "dist/server.js",
+  "description": "The ultimate React boilerplate!",
+  "main": "dist/server/index.js",
   "scripts": {
     "start": "rimraf dist && statics && run-p devserver webpack:dev",
     "devserver": "run-p statics babel && run-p run:dev babel:dev",
@@ -67,7 +67,6 @@
   "dependencies": {
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
-    "commitlint": "^8.2.0",
     "dotenv-safe": "^8.1.0",
     "fs-extra": "^8.1.0",
     "history": "^4.10.1",
@@ -78,10 +77,8 @@
     "node-polyglot": "^2.4.0",
     "ramda": "^0.26.1",
     "react": "^16.10.2",
-    "react-async": "^9.0.0",
     "react-dom": "^16.10.2",
     "react-hot-loader": "^4.12.15",
-    "react-icons": "^3.7.0",
     "react-relay": "^6.0.0",
     "react-relay-network-modern": "^4.2.0",
     "react-router": "^5.1.2",
@@ -145,6 +142,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-ramda": "^2.0.0",
     "babel-plugin-relay": "^6.0.0",
+    "commitlint": "^8.2.0",
     "compression-webpack-plugin": "^3.0.0",
     "copyfiles": "^2.1.1",
     "enzyme": "^3.10.0",
