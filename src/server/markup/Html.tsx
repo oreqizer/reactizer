@@ -38,6 +38,8 @@ const Html = ({ root, helmet, styles, preloadable, loadable, color, themeId, loc
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
 
+      <link rel="preload" href={`/generated/themes/${themeMap[themeId]}`} as="script" />
+      <link rel="preload" href={`/generated/locales/${intlMap[localeId]}`} as="script" />
       {preloadable}
 
       <Sentry />
@@ -53,8 +55,8 @@ const Html = ({ root, helmet, styles, preloadable, loadable, color, themeId, loc
     <body {...helmet.bodyAttributes.toComponent()}>
       <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
 
-      <script defer src={`/generated/themes/${themeMap[themeId]}`} />
-      <script defer src={`/generated/locales/${intlMap[localeId]}`} />
+      <script src={`/generated/themes/${themeMap[themeId]}`} />
+      <script src={`/generated/locales/${intlMap[localeId]}`} />
       {loadable}
     </body>
   </html>
