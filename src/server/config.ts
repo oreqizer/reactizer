@@ -13,6 +13,9 @@ dotenv.config({
 export const ENVIRONMENT = process.env.ENV || "dev";
 export const PRODUCTION = process.env.NODE_ENV === "production";
 export const PORT = process.env.PORT || "3000";
+export const BASENAME = String(process.env.BASENAME);
+export const SENTRY_SERVER = String(process.env.SENTRY_SERVER);
+export const SENTRY_CLIENT = String(process.env.SENTRY_CLIENT);
 
 // Build thingies
 // ---

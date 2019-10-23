@@ -2,4 +2,5 @@
 coverage
 dist
 src/static
+types
 *.graphql.ts

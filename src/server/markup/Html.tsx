@@ -1,8 +1,16 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 import { HelmetData } from "react-helmet";
+import path from "path";
+import fsx from "fs-extra";
 
 import { themeMap, intlMap } from "server/data";
+import Favicon from "server/markup/scripts/Favicon";
+import Sentry from "server/markup/scripts/Sentry";
+
+const CSS_NORMALIZE = fsx.readFileSync(
+  path.resolve(__dirname, "../../../node_modules/normalize.css/normalize.css"),
+);
 
 type Props = {
   root: string;
@@ -24,6 +32,7 @@ const Html = ({ root, helmet, styles, preloadable, loadable, color, themeId, loc
       <meta name="theme-color" content={color} />
 
       <link rel="manifest" href="/manifest.json?v=3" />
+      <Favicon />
 
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
@@ -31,23 +40,21 @@ const Html = ({ root, helmet, styles, preloadable, loadable, color, themeId, loc
 
       {preloadable}
 
-      <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
-        rel="stylesheet"
-      />
+      <Sentry />
+
       <link
         href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
         rel="stylesheet"
       />
 
-      <script src={`/generated/themes/${themeMap[themeId]}`} />
-      <script src={`/generated/locales/${intlMap[localeId]}`} />
-
+      <style dangerouslySetInnerHTML={{ __html: String(CSS_NORMALIZE) }} />
       {styles}
     </head>
     <body {...helmet.bodyAttributes.toComponent()}>
       <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
 
+      <script defer src={`/generated/themes/${themeMap[themeId]}`} />
+      <script defer src={`/generated/locales/${intlMap[localeId]}`} />
       {loadable}
     </body>
   </html>
