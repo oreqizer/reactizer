@@ -11,31 +11,18 @@ const OUT = path.join(__dirname, "../static/pages");
 const themeIds = Object.keys(themes);
 const intlIds = Object.keys(intls);
 
-const makeStream = (themeId: string, localeId: string, url: string): Promise<void> =>
-  new Promise((resolve, reject) => {
-    const fileDir = path.join(OUT, themeId, localeId, url);
-    fsx.ensureDirSync(fileDir);
+const makeStream = (themeId: string, localeId: string, url: string): Promise<void> => {
+  const fileDir = path.join(OUT, themeId, localeId, url);
+  fsx.ensureDirSync(fileDir);
 
-    const context: StaticRouterContext = {};
-    const htmlStream = markup({ url, context, themeId, localeId });
-    if (!htmlStream) {
-      reject(new Error(`Invalid pre-render URL: ${context.url}`));
-      return;
-    }
+  const context: StaticRouterContext = {};
+  const html = markup({ url, context, themeId, localeId });
+  if (!html) {
+    return Promise.reject(new Error(`Invalid pre-render URL: ${context.url}`));
+  }
 
-    const fileStream = fsx.createWriteStream(path.join(fileDir, "index.html"));
-
-    fileStream.write("<!DOCTYPE html>");
-    htmlStream.pipe(fileStream);
-
-    fileStream.on("error", err => {
-      reject(err);
-    });
-
-    fileStream.on("finish", () => {
-      resolve();
-    });
-  });
+  return fsx.writeFile(path.join(fileDir, "index.html"), `<!DOCTYPE html>${html}`);
+};
 
 const makeRoutes = (themeId: string, intlId: string): Promise<void>[] =>
   // @ts-ignore - dunno what is its problem

@@ -22,15 +22,15 @@ async function app(ctx: Context) {
   }
 
   const context: StaticRouterContext = {};
-  const stream = markup({ url: ctx.url, context, themeId, localeId });
-  if (!stream && context.url) {
+  const html = markup({ url: ctx.url, context, themeId, localeId });
+  if (!html && context.url) {
     ctx.redirect(context.url);
     return;
   }
 
   ctx.status = 200;
   ctx.type = "text/html; charset=utf-8";
-  ctx.body = stream;
+  ctx.body = `<!DOCTYPE html>${html}`;
 }
 
 export default app;

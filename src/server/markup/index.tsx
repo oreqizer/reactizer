@@ -40,7 +40,7 @@ function markup({ url, context, themeId, localeId }: Input) {
     return null;
   }
 
-  return ReactDOM.renderToStaticNodeStream(
+  return ReactDOM.renderToStaticMarkup(
     <Html
       root={root}
       helmet={helmet}
