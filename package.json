@@ -52,17 +52,7 @@
   },
   "resolutions": {
     "@types/react": "^16.9.9",
-    "@types/react-dom": "^16.9.2",
-    "@types/react-relay": "^6.0.1",
-    "@types/react-router": "^5.1.2",
-    "@types/react-router-dom": "^5.1.0",
-    "@types/relay-runtime": "^5.0.0",
-    "graphql": "^14.5.8",
-    "babel-plugin-relay": "^6.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-relay": "^5.0.0",
-    "relay-runtime": "^5.0.0"
+    "react-helmet/react-side-effect": "2.1.0"
   },
   "dependencies": {
     "@loadable/component": "^5.10.3",

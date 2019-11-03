@@ -2987,7 +2987,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/relay-runtime@*", "@types/relay-runtime@^5.0.0", "@types/relay-runtime@^5.0.3":
+"@types/relay-runtime@*", "@types/relay-runtime@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-5.0.3.tgz#92daa14f70a76d38f8b850d470d79e11e34c0408"
   integrity sha512-JSnnY+Qfc5/airey+gXxRgfmBX7PzABH0G8+nYYfhtBdioD+mzl2X9VQCgJLiwFGnFvdZXZcGS3p91OrZEsdWQ==
@@ -8243,7 +8243,14 @@ graphql-tools@4.0.5:
     iterall "^1.1.3"
     uuid "^3.1.0"
 
-graphql@^0.13.1, graphql@^14.0.0, graphql@^14.0.2, graphql@^14.5.8:
+graphql@^0.13.1:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.2.tgz#4c740ae3c222823e7004096f832e7b93b2108270"
+  integrity sha512-QZ5BL8ZO/B20VA8APauGBg3GyEgZ19eduvpLWoq5x7gMmWnHoy8rlQWPLmWgFvo1yNgjSEFMesmS4R6pPr7xog==
+  dependencies:
+    iterall "^1.2.1"
+
+graphql@^14.0.0, graphql@^14.0.2, graphql@^14.5.8:
   version "14.5.8"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.5.8.tgz#504f3d3114cb9a0a3f359bbbcf38d9e5bf6a6b3c"
   integrity sha512-MMwmi0zlVLQKLdGiMfWkgQD7dY/TUKt4L+zgJ/aR0Howebod3aNgP5JkgvAULiR2HPVZaP2VEElqtdidHweLkg==
@@ -9578,7 +9585,7 @@ istanbul-reports@^2.2.6:
   dependencies:
     handlebars "^4.1.2"
 
-iterall@^1.1.3, iterall@^1.2.2:
+iterall@^1.1.3, iterall@^1.2.1, iterall@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
   integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
@@ -12967,7 +12974,7 @@ react-dom@^16.10.2:
     prop-types "^15.6.2"
     scheduler "^0.16.2"
 
-react-dom@^16.8.3, react-dom@^16.8.6:
+react-dom@^16.8.3:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
   integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
@@ -13105,16 +13112,6 @@ react-relay-network-modern@^4.2.0:
   optionalDependencies:
     "@types/relay-runtime" "^5.0.3"
 
-react-relay@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-5.0.0.tgz#66af68e8e5fad05879a3f21f895a0296ef2741a8"
-  integrity sha512-gpUvedaCaPVPT0nMrTbev2TzrU0atgq2j/zAnGHiR9WgqRXwtHsK6FWFN65HRbopO2DzuJx9VZ2I3VO6uL5EMA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    fbjs "^1.0.0"
-    nullthrows "^1.1.0"
-    relay-runtime "5.0.0"
-
 react-relay@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-6.0.0.tgz#2a54274a471ef801a465704e58f1db91059ad1d3"
@@ -13168,12 +13165,10 @@ react-select@^3.0.0:
     react-input-autosize "^2.2.2"
     react-transition-group "^2.2.1"
 
-react-side-effect@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.2.0.tgz#0e940c78faba0c73b9b0eba9cd3dda8dfb7e7dae"
-  integrity sha512-v1ht1aHg5k/thv56DRcjw+WtojuuDHFUgGfc+bFHOWsF4ZK6C2V57DO0Or0GPsg6+LSTE0M6Ry/gfzhzSwbc5w==
-  dependencies:
-    shallowequal "^1.0.1"
+react-side-effect@2.1.0, react-side-effect@^1.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
+  integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
 react-sizeme@^2.6.7:
   version "2.6.10"
@@ -13233,7 +13228,7 @@ react@^16.10.2:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@^16.8.3, react@^16.8.6:
+react@^16.8.3:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==
@@ -13568,15 +13563,7 @@ relay-compiler@6.0.0, relay-compiler@^6.0.0:
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
-relay-runtime@5.0.0, relay-runtime@6.0.0, relay-runtime@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-5.0.0.tgz#7c688ee621d6106a2cd9f3a3706eb6d717c7f660"
-  integrity sha512-lrC2CwfpWWHBAN608eENAt5Bc5zqXXE2O9HSo8tc6Gy5TxfK+fU+x9jdwXQ2mXxVPgANYtYeKzU5UTfcX0aDEw==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    fbjs "^1.0.0"
-
-relay-runtime@^6.0.0:
+relay-runtime@6.0.0, relay-runtime@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-6.0.0.tgz#073ec2408f41a28c3a7310d71dd5f42f8e4e4bf3"
   integrity sha512-zIXQqFfe0zBCVzKbMGEPMvKFxfbE3pY2RbZsKBvHAr/vMDj6OX9E+f4R4udE5xvMbI7g+baYFHi2I9NDEydGaQ==
@@ -14207,7 +14194,7 @@ shallow-equal@^1.1.0:
   resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.0.tgz#fd828d2029ff4e19569db7e19e535e94e2d1f5cc"
   integrity sha512-Z21pVxR4cXsfwpMKMhCEIO1PCi5sp7KEp+CmOpBQ+E8GpHwKOw2sEzk7sgblM3d/j4z4gakoWEoPcjK0VJQogA==
 
-shallowequal@1.1.0, shallowequal@^1.0.1, shallowequal@^1.1.0:
+shallowequal@1.1.0, shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
