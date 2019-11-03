@@ -5,6 +5,7 @@ const LoadablePlugin = require("@loadable/webpack-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
 
 const env = dotenv.config({
+  allowEmptyValues: true,
   path: path.resolve(__dirname, "../.env"),
   example: path.resolve(__dirname, "../.env.example"),
 });

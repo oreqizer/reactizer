@@ -3,11 +3,12 @@ import logger from "koa-logger";
 import helmet from "koa-helmet";
 import serve from "koa-static";
 import compress from "koa-compress";
+import sslify from "koa-sslify";
 import * as Sentry from "@sentry/node";
 import path from "path";
 
-import { ENVIRONMENT, PRODUCTION, PORT, SENTRY_SERVER } from "server/config";
-import pages from "server/pages";
+import { ENV, PRODUCTION, PORT, SENTRY_SERVER } from "server/config";
+import notfound from "server/404";
 import app from "server/app";
 
 const koa = new Koa();
@@ -15,7 +16,7 @@ const koa = new Koa();
 if (PRODUCTION) {
   Sentry.init({
     dsn: SENTRY_SERVER,
-    environment: ENVIRONMENT,
+    environment: ENV,
   });
 
   koa.on("error", err => {
@@ -23,6 +24,8 @@ if (PRODUCTION) {
   });
 
   koa.use(compress());
+
+  koa.use(sslify());
 }
 
 koa.use(helmet());
@@ -36,7 +39,7 @@ koa.use(
   }),
 );
 
-koa.use(pages);
+koa.use(notfound);
 
 koa.use(app);
 

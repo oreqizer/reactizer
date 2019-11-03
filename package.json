@@ -76,9 +76,9 @@
     "koa-compress": "^3.0.0",
     "koa-helmet": "^5.2.0",
     "koa-logger": "^3.2.1",
+    "koa-sslify": "^4.0.3",
     "koa-static": "^5.0.0",
     "node-polyglot": "^2.4.0",
-    "normalize.css": "^8.0.1",
     "ramda": "^0.26.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -91,7 +91,8 @@
     "regenerator-runtime": "^0.13.3",
     "relay-runtime": "^6.0.0",
     "rhythm-fns": "^1.0.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "styled-normalize": "^8.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -124,6 +125,7 @@
     "@types/koa-compress": "^2.0.9",
     "@types/koa-helmet": "^3.1.2",
     "@types/koa-logger": "^3.1.1",
+    "@types/koa-sslify": "^4.0.1",
     "@types/koa-static": "^4.0.1",
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.9.1",
