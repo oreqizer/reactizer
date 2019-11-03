@@ -3,7 +3,7 @@ import logger from "koa-logger";
 import helmet from "koa-helmet";
 import serve from "koa-static";
 import compress from "koa-compress";
-import sslify from "koa-sslify";
+import sslify, { xForwardedProtoResolver } from "koa-sslify";
 import * as Sentry from "@sentry/node";
 import path from "path";
 
@@ -25,7 +25,11 @@ if (PRODUCTION) {
 
   koa.use(compress());
 
-  koa.use(sslify());
+  koa.use(
+    sslify({
+      resolver: xForwardedProtoResolver,
+    }),
+  );
 }
 
 koa.use(helmet());

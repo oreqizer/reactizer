@@ -35,11 +35,6 @@ const Root = ({ theme, intlRaw }: Props) => (
 
             <Favicon />
 
-            <link
-              href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
-              rel="stylesheet"
-            />
-
             <Sentry />
           </Helmet>
 
