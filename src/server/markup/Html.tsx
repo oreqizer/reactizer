@@ -20,6 +20,10 @@ const Html = ({ root, helmet, styles, preloadable, loadable, themeId, localeId }
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
+      {helmet.script.toComponent()}
+      {helmet.style.toComponent()}
+
+      <link href={process.env.API_URL} rel="preconnect" />
 
       <link rel="preload" href={`/generated/themes/${themeMap[themeId]}`} as="script" />
       <link rel="preload" href={`/generated/locales/${intlMap[localeId]}`} as="script" />
