@@ -9,7 +9,12 @@ import Root from "client/Root";
 import { Palette, makeTheme } from "./styles/theme";
 import { IntlRaw } from "./records/Intl";
 
-Sentry.init(window.__SENTRY__);
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  debug: process.env.NODE_ENV !== "production",
+  release: process.env.SENTRY_RELEASE,
+  environment: process.env.SENTRY_ENVIRONMENT,
+});
 
 const app = document.getElementById("react");
 const theme: Palette = window.__THEME__;

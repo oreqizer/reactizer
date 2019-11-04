@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import Root from "client/Root";
 import { Theme } from "client/styles/theme";
 import { IntlRaw } from "client/records/Intl";
-import { BASENAME, extractor } from "server/config";
+import { extractor } from "server/config";
 import { themes, intls } from "server/data";
 import Html from "server/markup/Html";
 
@@ -26,7 +26,7 @@ function markup({ url, context, themeId, localeId }: Input) {
   const root = ReactDOM.renderToString(
     extractor.collectChunks(
       sheet.collectStyles(
-        <StaticRouter context={context} location={url} basename={BASENAME}>
+        <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
           <Root theme={theme} intlRaw={intlRaw} />
         </StaticRouter>,
       ),

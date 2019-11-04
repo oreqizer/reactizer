@@ -7,18 +7,20 @@ import sslify, { xForwardedProtoResolver } from "koa-sslify";
 import * as Sentry from "@sentry/node";
 import path from "path";
 
-import { ENV, PRODUCTION, PORT, SENTRY_SERVER } from "server/config";
+import { PRODUCTION, PORT } from "server/config";
 import notfound from "server/404";
 import app from "server/app";
 
 const koa = new Koa();
 
-if (PRODUCTION) {
-  Sentry.init({
-    dsn: SENTRY_SERVER,
-    environment: ENV,
-  });
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  debug: PRODUCTION,
+  release: process.env.SENTRY_RELEASE,
+  environment: process.env.ENV,
+});
 
+if (PRODUCTION) {
   koa.on("error", err => {
     Sentry.captureException(err);
   });

@@ -12,14 +12,6 @@ import { IntlRaw } from "client/records/Intl";
 import InitIntl from "client/components/InitIntl";
 import { Provider as IntlProvider } from "client/services/intl/context";
 
-const SENTRY = `
-  window.__SENTRY__ = {
-    dsn: "${process.env.SENTRY_CLIENT}",
-    debug: ${String(process.env.NODE_ENV !== "production")},
-    environment: "${process.env.ENV || "dev"}",
-  };
-`;
-
 type Props = {
   theme: Theme;
   intlRaw: IntlRaw;
@@ -63,8 +55,6 @@ const Root = ({ theme, intlRaw }: Props) => (
             <link rel="icon" type="image/png" sizes="16x16" href="/head/favicon-16x16.png" />
 
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-
-            <script dangerouslySetInnerHTML={{ __html: SENTRY }} />
           </Helmet>
 
           <Normalize />

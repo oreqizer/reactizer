@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const CompressionPlugin = require("compression-webpack-plugin");
+const SentryPlugin = require("@sentry/webpack-plugin");
 
 const common = require("./webpack.common.js");
 
@@ -39,7 +39,11 @@ module.exports = {
   plugins: [
     ...common.plugins,
     new webpack.HashedModuleIdsPlugin(),
-    new CompressionPlugin(),
+    new SentryPlugin({
+      include: path.resolve(__dirname, "../src/client"),
+      debug: __DEV__,
+      ext: ["ts", "tsx"],
+    }),
     new BundleAnalyzerPlugin({
       analyzerMode: __DEV__ ? "static" : "disabled",
     }),
