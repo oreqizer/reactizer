@@ -39,14 +39,15 @@ module.exports = {
   plugins: [
     ...common.plugins,
     new webpack.HashedModuleIdsPlugin(),
-    new SentryPlugin({
-      release: process.env.SOURCE_VERSION,
-      include: path.resolve(__dirname, "../src/client"),
-      debug: __DEV__,
-      ext: ["ts", "tsx"],
-    }),
+    process.env.SENTRY_RELEASE &&
+      new SentryPlugin({
+        release: process.env.SENTRY_RELEASE,
+        include: path.resolve(__dirname, "../src"),
+        debug: __DEV__,
+        ext: ["ts", "tsx"],
+      }),
     new BundleAnalyzerPlugin({
       analyzerMode: __DEV__ ? "static" : "disabled",
     }),
-  ],
+  ].filter(Boolean),
 };

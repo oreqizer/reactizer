@@ -30,7 +30,7 @@
     "madge": "madge -c src/server/index.ts src/client/index.ts",
     "storybook": "start-storybook -p 6006 -s src/static",
     "storybook:build": "build-storybook -o dist/static/storybook -s src/static",
-    "heroku-postbuild": "yarn bundle"
+    "heroku-postbuild": "SENTRY_RELEASE=$SOURCE_VERSION yarn bundle"
   },
   "husky": {
     "hooks": {
