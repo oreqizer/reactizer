@@ -40,6 +40,7 @@ module.exports = {
     ...common.plugins,
     new webpack.HashedModuleIdsPlugin(),
     new SentryPlugin({
+      release: process.env.SOURCE_VERSION,
       include: path.resolve(__dirname, "../src/client"),
       debug: __DEV__,
       ext: ["ts", "tsx"],
