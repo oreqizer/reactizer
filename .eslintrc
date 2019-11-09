@@ -22,7 +22,8 @@
     "node": true
   },
   "globals": {
-    "__": true
+    "__": true,
+    "process": true
   },
   "rules": {
     "prettier/prettier": "error",
