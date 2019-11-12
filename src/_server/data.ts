@@ -1,8 +1,8 @@
 import path from "path";
 import fsx from "fs-extra";
 
-import { IntlRaw } from "client/records/Intl";
-import { makeTheme, Theme } from "client/styles/theme";
+import { IntlRaw } from "app/records/Intl";
+import { makeTheme, Theme } from "app/styles/theme";
 
 const LOCALES = path.join(__dirname, "../static/locales");
 const LOCALE_MAP = path.join(__dirname, "../static/generated/locales/map.json");

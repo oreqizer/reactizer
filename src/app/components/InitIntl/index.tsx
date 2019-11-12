@@ -1,7 +1,7 @@
 import * as React from "react";
 import Polyglot from "node-polyglot";
 
-import { IntlRaw, Intl } from "client/records/Intl";
+import { IntlRaw, Intl } from "app/records/Intl";
 
 type Arg = Intl;
 

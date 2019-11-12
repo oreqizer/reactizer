@@ -1,8 +1,8 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
 
-import { Consumer } from "client/services/intl/context";
-import { Values } from "client/records/Intl";
+import { Consumer } from "app/services/intl/context";
+import { Values } from "app/records/Intl";
 
 type Props = {
   t?: string;

@@ -18,12 +18,12 @@ export const PORT = process.env.PORT || "3000";
 // ---
 export const extractor = new ChunkExtractor({
   statsFile: path.resolve(__dirname, "../loadable-stats.json"),
+  entrypoints: ["app"],
 });
 
-// Only reads flat ones by default
 export const routes: string[] = ["/"].concat(
   fsx
-    .readdirSync(path.resolve(__dirname, "../client/scenes"))
+    .readdirSync(path.resolve(__dirname, "../app/pages"))
     .filter(folder => folder !== "Index")
     .map(folder => `/${folder.toLowerCase()}`),
 );

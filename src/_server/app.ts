@@ -4,7 +4,7 @@ import path from "path";
 import { Context } from "koa";
 import { StaticRouterContext } from "react-router";
 
-import markup from "server/markup";
+import markup from "_server/markup";
 
 const PAGES = path.join(__dirname, "../../static/pages");
 

@@ -1,7 +1,7 @@
 // @flow strict
 import styled, { StyledComponent } from "styled-components";
 
-import { Theme, getBoxMargin } from "client/styles/theme";
+import { Theme, getBoxMargin } from "app/styles/theme";
 
 type X =
   | "flex-start"

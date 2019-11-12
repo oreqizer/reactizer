@@ -1,7 +1,7 @@
 import styled, { StyledComponent } from "styled-components";
 
-import { Theme } from "client/styles/theme";
-import boxMixin, { Props as BoxProps } from "client/styles/mixins/box";
+import { Theme } from "app/styles/theme";
+import boxMixin, { Props as BoxProps } from "app/styles/mixins/box";
 
 type Props = BoxProps & {
   children: React.ReactNode;

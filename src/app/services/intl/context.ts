@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { intlDefault, Intl } from "client/records/Intl";
+import { intlDefault, Intl } from "app/records/Intl";
 
 const context: React.Context<Intl> = React.createContext(intlDefault);
 

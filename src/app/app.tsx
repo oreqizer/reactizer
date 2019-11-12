@@ -5,9 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
 
-import Root from "client/Root";
-import { Palette, makeTheme } from "./styles/theme";
-import { IntlRaw } from "./records/Intl";
+import Root from "app/Root";
+import { Palette, makeTheme } from "app/styles/theme";
+import { IntlRaw } from "app/records/Intl";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,

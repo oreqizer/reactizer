@@ -2,7 +2,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
-import Line from "client/components/Line";
+import Line from "app/components/Line";
 
 storiesOf("Line", module)
   .addDecorator(withKnobs)

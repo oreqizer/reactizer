@@ -5,12 +5,12 @@ import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
 
-import { Index } from "client/Routes";
-import routes from "client/consts/routes";
-import { Theme } from "client/styles/theme";
-import { IntlRaw } from "client/records/Intl";
-import InitIntl from "client/components/InitIntl";
-import { Provider as IntlProvider } from "client/services/intl/context";
+import { Index } from "app/Routes";
+import routes from "app/consts/routes";
+import { Theme } from "app/styles/theme";
+import { IntlRaw } from "app/records/Intl";
+import InitIntl from "app/components/InitIntl";
+import { Provider as IntlProvider } from "app/services/intl/context";
 
 type Props = {
   theme: Theme;

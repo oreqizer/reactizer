@@ -7,9 +7,9 @@ import sslify, { xForwardedProtoResolver } from "koa-sslify";
 import * as Sentry from "@sentry/node";
 import path from "path";
 
-import { PRODUCTION, PORT } from "server/config";
-import notfound from "server/404";
-import app from "server/app";
+import { PRODUCTION, PORT } from "_server/config";
+import notfound from "_server/404";
+import app from "_server/app";
 
 const koa = new Koa();
 
@@ -17,7 +17,7 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN,
   debug: PRODUCTION,
   release: process.env.SENTRY_RELEASE,
-  environment: process.env.ENV,
+  environment: process.env.SENTRY_ENVIRONMENT,
 });
 
 if (PRODUCTION) {
@@ -39,11 +39,13 @@ koa.use(helmet());
 koa.use(logger());
 
 const YEAR = 1000 * 60 * 60 * 24 * 365;
-koa.use(
-  serve(path.join(__dirname, "../static/"), {
-    maxage: PRODUCTION ? YEAR : 0,
-  }),
-);
+const opts = {
+  maxage: PRODUCTION ? YEAR : 0,
+};
+
+koa.use(serve(path.join(__dirname, "../static/"), opts));
+
+koa.use(serve(path.join(__dirname, "../../public/"), opts));
 
 koa.use(notfound);
 

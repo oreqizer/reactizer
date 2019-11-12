@@ -4,12 +4,12 @@ import { ServerStyleSheet } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
 
-import Root from "client/Root";
-import { Theme } from "client/styles/theme";
-import { IntlRaw } from "client/records/Intl";
-import { extractor } from "server/config";
-import { themes, intls } from "server/data";
-import Html from "server/markup/Html";
+import Root from "app/Root";
+import { Theme } from "app/styles/theme";
+import { IntlRaw } from "app/records/Intl";
+import { extractor } from "_server/config";
+import { themes, intls } from "_server/data";
+import Html from "_server/markup/Html";
 
 type Input = {
   url: string;

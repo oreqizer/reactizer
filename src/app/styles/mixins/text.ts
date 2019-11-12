@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import { ThemeProps, getLineHeight, getLineMargin, FONT_SIZE } from "client/styles/theme";
+import { ThemeProps, getLineHeight, getLineMargin, FONT_SIZE } from "app/styles/theme";
 
 export type Props = {
   fontSize?: number;

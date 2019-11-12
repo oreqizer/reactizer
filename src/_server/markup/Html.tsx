@@ -2,7 +2,7 @@
 import * as React from "react";
 import { HelmetData } from "react-helmet";
 
-import { themeMap, intlMap } from "server/data";
+import { themeMap, intlMap } from "_server/data";
 
 type Props = {
   root: string;

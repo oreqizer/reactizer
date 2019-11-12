@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const dotenv = require("dotenv-safe");
 const LoadablePlugin = require("@loadable/webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
 
 const env = dotenv.config({
@@ -12,13 +13,17 @@ const env = dotenv.config({
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "../src/client/index.ts"),
+    app: path.resolve(__dirname, "../src/app/index.ts"),
   },
   resolve: {
     extensions: [".js", ".mjs", ".ts", ".tsx"],
   },
   plugins: [
     new webpack.EnvironmentPlugin(env.required),
+    new CompressionPlugin({
+      filename: "[path].br[query]",
+      algorithm: "brotliCompress",
+    }),
     new GenerateSW({
       importWorkboxFrom: "cdn",
       clientsClaim: true,
