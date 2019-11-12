@@ -26,11 +26,11 @@ if (arg && !ARGS[arg]) {
 
 const FILES = [
   // storybook
-  ...glob.sync(path.resolve(CURR_DIR, "../storybook/**")),
+  ...glob.sync(path.resolve(CURR_DIR, "../storybook/**/*.*")),
   // etc
-  ...glob.sync(path.resolve(CURR_DIR, "../etc/**")),
+  ...glob.sync(path.resolve(CURR_DIR, "../etc/**/*.*")),
   // src
-  ...glob.sync(path.resolve(CURR_DIR, "../src/server/**")),
+  ...glob.sync(path.resolve(CURR_DIR, "../src/server/**/*.*")),
   // types
   "types/globals.js.flow",
   // root
