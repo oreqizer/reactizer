@@ -7,7 +7,7 @@ const R = require("ramda");
 const glob = require("glob");
 const chalk = require("chalk");
 
-const CURR_DIR = __dirname;
+const ROOT = path.resolve(__dirname, "../boiler");
 const OUT_DIR = process.cwd();
 
 const arg = process.argv[2];
@@ -26,13 +26,13 @@ if (arg && !ARGS[arg]) {
 
 const FILES = [
   // storybook
-  ...glob.sync(path.resolve(CURR_DIR, "../storybook/**/*.*")),
+  ...glob.sync(path.resolve(ROOT, "storybook/**/*.*")),
   // etc
-  ...glob.sync(path.resolve(CURR_DIR, "../etc/**/*.*")),
+  ...glob.sync(path.resolve(ROOT, "etc/**/*.*")),
   // src
-  ...glob.sync(path.resolve(CURR_DIR, "../src/server/**/*.*")),
+  ...glob.sync(path.resolve(ROOT, "src/server/**/*.*")),
   // types
-  "types/globals.js.flow",
+  "types/globals.d.ts",
   // root
   ".editorconfig",
   ".eslintignore",
@@ -75,15 +75,15 @@ const copyFiles = files =>
 if (arg === ARGS.init) {
   console.log("Initializing...");
 
-  const root = glob.sync(path.join(CURR_DIR, "../{*,.*}")).filter(e => fsx.lstatSync(e).isFile());
-  const app = glob.sync(path.join(CURR_DIR, "../src/app/**"));
+  const root = glob.sync(path.join(ROOT, "{*,.*}")).filter(e => fsx.lstatSync(e).isFile());
+  const app = glob.sync(path.join(ROOT, "src/app/**"));
 
   copyFiles([...FILES, ...root, ...app]);
 }
 
 function updatePackage() {
   const OUT_PKG = path.join(OUT_DIR, "package.json");
-  const input = fsx.readJsonSync(path.join(CURR_DIR, "..", "package.json"));
+  const input = fsx.readJsonSync(path.join(ROOT, "..", "package.json"));
   const out = fsx.readJsonSync(OUT_PKG);
 
   const deps = R.merge(out.dependencies, input.dependencies);

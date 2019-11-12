@@ -1,5 +1,5 @@
 .tmp
-coverage
+../../coverage
 dist
 public
 types
