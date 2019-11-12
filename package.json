@@ -35,6 +35,9 @@
   "engines": {
     "node": ">=12"
   },
+  "bin": {
+    "reactizer": "./bin/reactizer.js"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
