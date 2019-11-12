@@ -1,6 +1,6 @@
 {
   "name": "reactizer",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "The ultimate React boilerplate!",
   "main": "dist/server/index.js",
   "scripts": {
