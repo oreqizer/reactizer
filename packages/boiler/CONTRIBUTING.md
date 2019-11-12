@@ -1,6 +1,6 @@
 # Contributing
 
-Follow **all** rules written in the documents linked from the [README](./README.md).
+Follow **all** rules written in the documents linked from the [README](README.md).
 
 Make sure this task runs without errors:
 * `yarn ci`

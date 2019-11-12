@@ -1,6 +1,7 @@
 {
-  "name": "reactizer",
-  "private": true,
+  "name": "@reactizer/bin",
+  "version": "0.11.2",
+  "description": "The ultimate React boilerplate's CLI!",
   "scripts": {},
   "workspaces": {
     "packages": [
@@ -30,5 +31,19 @@
         "sentence-case"
       ]
     }
-  }
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-plugin-relay": "^6.0.0",
+    "commitlint": "^8.2.0",
+    "husky": "^3.0.9"
+  },
+  "license": "MIT"
 }
