@@ -1,6 +1,7 @@
 {
   "name": "reactizer",
   "private": true,
+  "version": "0.11.2",
   "scripts": {
     "ci": "lerna run --parallel --no-bail ci",
     "prepublish": "lerna run prepublish",
