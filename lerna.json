@@ -1,0 +1,17 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.11.2",
+  "command": {
+    "run": {
+      "npmClient": "yarn"
+    },
+    "version": {
+      "allowBranch": "master"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

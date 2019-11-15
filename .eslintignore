@@ -1,6 +1,2 @@
-.tmp
-coverage
-dist
-public
-types
-*.graphql.ts
+node_modules
+docs
