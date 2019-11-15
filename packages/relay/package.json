@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/relay",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -189,5 +189,5 @@
     "webpack-dev-server": "^3.8.2",
     "workbox-webpack-plugin": "^4.3.1"
   },
-  "gitHead": "71961d0d7a8c8fbe48e874a0d8fafc6b552ac950"
+  "gitHead": "03b74267845c19664871e3adc8bde100bd2cf356"
 }
