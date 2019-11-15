@@ -2,12 +2,14 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.12.2",
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "command": {
-    "run": {
-      "npmClient": "yarn"
-    },
     "version": {
+      "allowBranch": "master"
+    },
+    "publish": {
       "allowBranch": "master"
     }
   },
