@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "airbnb/base",
+    "prettier"
+  ],
+  "plugins": [
+    "fp",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["commitlint.config.js"]
+    }]
+  }
+}

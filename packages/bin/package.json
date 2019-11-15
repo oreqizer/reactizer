@@ -1,12 +1,11 @@
 {
   "name": "@reactizer/bin",
   "version": "0.11.2",
-  "description": "The ultimate React boilerplate's CLI!",
-  "scripts": {},
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
+  "description": "Reactizer's CLI",
+  "scripts": {
+    "lint": "eslint './**/*.js'",
+    "ci": "yarn lint",
+    "prepublish": "yarn ci"
   },
   "engines": {
     "node": ">=12"
@@ -14,36 +13,15 @@
   "bin": {
     "reactizer": "./bin/reactizer.js"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn ci"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "subject-case": [
-        2,
-        "always",
-        "sentence-case"
-      ]
-    }
-  },
   "dependencies": {
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "yargs": "^14.2.0"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "babel-plugin-relay": "^6.0.0",
-    "commitlint": "^8.2.0",
-    "husky": "^3.0.9"
+  "peerDependencies": {
+    "@reactizer/relay": "*"
   },
   "license": "MIT"
 }

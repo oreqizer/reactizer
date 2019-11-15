@@ -20,12 +20,12 @@
     // Fixes overriding
     "types": ["react", "jest"],
     // Absolute imports
-    "baseUrl": "packages/reactizer/src"
+    "baseUrl": "src"
   },
   "include": [
-    "packages/reactizer/src",
-    "packages/reactizer/stories",
-    "packages/reactizer/types"
+    "src",
+    "stories",
+    "types"
   ],
   "exclude": [
     "**/*.graphql.js"
