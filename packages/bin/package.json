@@ -2,6 +2,9 @@
   "name": "@reactizer/bin",
   "version": "0.12.4",
   "description": "Reactizer's CLI",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint './**/*.js'",
     "ci": "yarn lint"
@@ -22,5 +25,6 @@
   "peerDependencies": {
     "@reactizer/relay": "*"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "71961d0d7a8c8fbe48e874a0d8fafc6b552ac950"
 }
