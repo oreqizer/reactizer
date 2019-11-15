@@ -1,0 +1,6 @@
+.tmp
+../../coverage
+dist
+public
+types
+*.graphql.ts

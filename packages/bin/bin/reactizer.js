@@ -4,18 +4,18 @@
 const fsx = require("fs-extra");
 const path = require("path");
 const R = require("ramda");
-const glob = require("glob");
 const chalk = require("chalk");
 const { argv } = require("yargs");
+
+const filesets = require("./filesets");
 
 const CWD = process.cwd();
 
 const ACTION = argv._[0];
 const DEBUG = argv.debug || false;
-const APP = argv.app || "relay";
+const APP = argv.app || "base";
 const MODULES = argv.modules ? path.join(CWD, argv.modules) : CWD;
 const OUT = argv.out ? path.join(CWD, argv.out) : CWD;
-
 const ROOT = path.resolve(MODULES, `node_modules/@reactizer/${APP}`);
 
 const ACTIONS = {
@@ -24,6 +24,12 @@ const ACTIONS = {
 };
 
 console.log(chalk.blueBright("REACTIZER"));
+
+const fileset = filesets[APP];
+if (!fileset) {
+  throw new Error(`No such app: ${APP}`);
+}
+
 if (!ACTIONS[ACTION]) {
   console.log("Available commands:");
   console.log("  init");
@@ -36,30 +42,6 @@ if (!ACTIONS[ACTION]) {
   console.log("  --out (default CWD, output path)");
   process.exit(1);
 }
-
-const FILES = [
-  // storybook
-  ...glob.sync(path.resolve(ROOT, "storybook/**/*.{*,.*}")),
-  // etc
-  ...glob.sync(path.resolve(ROOT, "etc/**/*.{*,.*}")),
-  // src
-  ...glob.sync(path.resolve(ROOT, "src/_server/**/*.*")),
-  // types
-  path.resolve(ROOT, "types/globals.d.ts"),
-  // root
-  path.resolve(ROOT, ".editorconfig"),
-  path.resolve(ROOT, ".eslintignore"),
-  path.resolve(ROOT, ".eslintrc"),
-  path.resolve(ROOT, ".gitlab-ci.yml"),
-  path.resolve(ROOT, ".prettierrc"),
-  path.resolve(ROOT, "babel.config.js"),
-  path.resolve(ROOT, "commitlint.config.js"),
-  path.resolve(ROOT, "Dockerfile"),
-  path.resolve(ROOT, "jest.config.js"),
-  path.resolve(ROOT, "nodemon.json"),
-  path.resolve(ROOT, "Procfile"),
-  path.resolve(ROOT, "tsconfig.json"),
-];
 
 const copyFiles = files =>
   files.forEach(input => {
@@ -116,11 +98,16 @@ function updatePackage() {
 
   fsx.writeJsonSync(
     OUT_PKG,
-    R.merge(out, {
-      scripts: R.merge(out.scripts, input.scripts),
+    {
+      ...out,
+      scripts: { ...out.scripts, ...input.scripts },
+      main: input.main,
+      engines: R.mergeDeepRight(input.engines, out.engines || {}),
+      commitlint: R.mergeDeepRight(input.commitlint, out.commitlint || {}),
+      husky: R.mergeDeepRight(input.husky, out.husky || {}),
       dependencies: depsSorted,
       devDependencies: devDepsSorted,
-    }),
+    },
     {
       spaces: 2,
     },
@@ -130,19 +117,13 @@ function updatePackage() {
 if (ACTION === ACTIONS.init) {
   console.log("Initializing...");
 
-  const root = glob
-    .sync(path.join(ROOT, "{*,.*}"))
-    // Don't overwrite 'package.json'
-    .filter(e => fsx.lstatSync(e).isFile() && !e.endsWith("package.json"));
-  const app = glob.sync(path.join(ROOT, "src/app/**/*.*"));
-
   updatePackage();
-  copyFiles([...FILES, ...root, ...app]);
+  copyFiles(fileset.init);
 }
 
 if (ACTION === ACTIONS.update) {
   console.log("Updating...");
 
   updatePackage();
-  copyFiles(FILES);
+  copyFiles(fileset.update);
 }

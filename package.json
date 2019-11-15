@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "ci": "lerna run --parallel --no-bail ci",
+    "lint:fix": "lerna run lint -- --fix",
     "prepublish": "yarn ci"
   },
   "workspaces": {
