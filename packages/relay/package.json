@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/relay",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
