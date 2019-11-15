@@ -4,8 +4,7 @@
   "description": "Reactizer's CLI",
   "scripts": {
     "lint": "eslint './**/*.js'",
-    "ci": "yarn lint",
-    "prepublish": "yarn ci"
+    "ci": "yarn lint"
   },
   "engines": {
     "node": ">=12"

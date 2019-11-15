@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "ci": "lerna run --parallel --no-bail ci",
-    "prepublish": "lerna run prepublish",
     "version": "lerna version --conventional-commits",
+    "prepublish": "yarn ci",
     "publish": "lerna publish"
   },
   "workspaces": {
