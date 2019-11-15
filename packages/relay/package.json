@@ -1,6 +1,6 @@
 {
-  "name": "@reactizer/boiler",
-  "version": "1.0.0",
+  "name": "@reactizer/relay",
+  "version": "0.11.2",
   "description": "The ultimate React boilerplate!",
   "main": "dist/_server/index.js",
   "scripts": {
