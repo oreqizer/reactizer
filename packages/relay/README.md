@@ -1,6 +1,6 @@
 # Reactizer
 
-The best **React** boilerplate!
+The best **React** and **Relay** boilerplate!
 
 ## Docs
 
