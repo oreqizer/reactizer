@@ -8,4 +8,5 @@ dist
 .env
 npm-debug.log
 stats.json
+lerna-debug.log
 yarn-error.log
