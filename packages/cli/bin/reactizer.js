@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
+/* eslint-disable no-console, fp/no-throw, fp/no-unused-expression */
 
 const fsx = require("fs-extra");
 const path = require("path");

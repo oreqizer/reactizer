@@ -1,5 +1,5 @@
 {
-  "name": "@reactizer/bin",
+  "name": "@reactizer/cli",
   "version": "0.13.1",
   "description": "Reactizer's CLI",
   "publishConfig": {

@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-param-reassign, fp/no-mutation, fp/no-unused-expression */
 import fsx from "fs-extra";
 import path from "path";
 import { Context } from "koa";
@@ -8,7 +8,7 @@ import markup from "_server/markup";
 
 const PAGES = path.join(__dirname, "../../static/pages");
 
-async function app(ctx: Context) {
+function app(ctx: Context) {
   // TODO determine theme/locale
   const themeId = "main";
   const localeId = "en-GB";

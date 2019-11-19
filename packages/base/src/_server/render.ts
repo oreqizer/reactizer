@@ -1,3 +1,4 @@
+/* eslint-disable fp/no-unused-expression, @typescript-eslint/ban-ts-ignore */
 import * as fsx from "fs-extra";
 import path from "path";
 import { StaticRouterContext } from "react-router";
@@ -32,7 +33,7 @@ const makeIntls = (themeId: string): Promise<void>[] =>
   // @ts-ignore - dunno what is its problem
   intlIds.reduce((intlAcc, intlId) => intlAcc.concat(makeRoutes(themeId, intlId)), []);
 
-async function render() {
+function render() {
   const oks = Promise.all(
     // @ts-ignore - dunno what is its problem
     themeIds.reduce((themeAcc, themeId) => themeAcc.concat(makeIntls(themeId)), []),

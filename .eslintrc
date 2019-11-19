@@ -1,13 +1,3 @@
 {
-  "extends": [
-    "airbnb/base",
-    "prettier"
-  ],
-  "plugins": [
-    "fp",
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  "extends": ["@reactizer"]
 }
