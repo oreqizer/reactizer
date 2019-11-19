@@ -1,3 +1,4 @@
+/* eslint-disable fp/no-mutation */
 const fsx = require("fs-extra");
 const path = require("path");
 const md5 = require("md5");

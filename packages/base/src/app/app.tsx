@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-underscore-dangle, fp/no-unused-expression */
 import * as React from "react";
 import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -34,7 +34,7 @@ loadableReady(() => {
 // Hot reload
 // ---
 
-/* eslint-disable no-undef */
+/* eslint-disable no-undef, @typescript-eslint/ban-ts-ignore */
 // @ts-ignore
 if (module.hot) {
   // @ts-ignore

@@ -27,7 +27,9 @@ module.exports = {
           test: /\/node_modules\//,
           name(module) {
             // top-level package name
-            const [, scope, pkg] = module.context.match(/\/node_modules\/(@.*?\/)?(.*?)(\/|$)/);
+            const {
+              groups: { scope, pkg },
+            } = module.context.match(/\/node_modules\/(?<scope>@.*?\/)?(?<pkg>.*?)(?:\/|$)/);
 
             // some servers don't like @ symbols
             return `npm.${scope ? `${scope.replace("@", "").replace("/", "")}__${pkg}` : pkg}`;

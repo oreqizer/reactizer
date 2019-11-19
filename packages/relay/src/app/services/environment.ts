@@ -26,7 +26,7 @@ const network = new RelayNetworkLayer([
   errorMiddleware({
     logger: (err: Error) => {
       if (__DEV__) {
-        // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console, fp/no-unused-expression
         console.error(err);
       }
     },
@@ -42,6 +42,7 @@ const network = new RelayNetworkLayer([
 
 const source = new RecordSource();
 const store = new Store(source);
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore: Outdated typings
 const environment = new Environment({ network, store });
 
