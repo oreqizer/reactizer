@@ -2,6 +2,9 @@
   "name": "@reactizer/eslint-config",
   "version": "0.14.0",
   "description": "The best ESlint config.",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "author": "oreqizer",
   "license": "MIT",
@@ -29,5 +32,6 @@
   },
   "peerDependencies": {
     "eslint": "^6.6.0"
-  }
+  },
+  "gitHead": "c0ef0ac176d6e0fd8170a6955c37f7b6b84580e1"
 }
