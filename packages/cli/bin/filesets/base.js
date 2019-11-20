@@ -10,7 +10,7 @@ const ROOT = path.resolve(MODULES, `node_modules/@reactizer/base`);
 
 const update = [
   // storybook
-  ...glob.sync(path.resolve(ROOT, "storybook/**/*.{*,.*}")),
+  ...glob.sync(path.resolve(ROOT, ".storybook/**/*.{*,.*}")),
   // etc
   ...glob.sync(path.resolve(ROOT, "etc/**/*.{*,.*}")),
   // src
