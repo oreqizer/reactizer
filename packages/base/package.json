@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/base",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -87,8 +87,8 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@loadable/babel-plugin": "^5.10.3",
     "@loadable/webpack-plugin": "^5.7.1",
-    "@reactizer/cli": "*",
-    "@reactizer/eslint-config": "*",
+    "@reactizer/cli": "^0.14.0",
+    "@reactizer/eslint-config": "^0.14.0",
     "@sentry/webpack-plugin": "^1.9.2",
     "@storybook/addon-actions": "5.2.6",
     "@storybook/addon-knobs": "^5.2.4",
