@@ -1,4 +1,4 @@
-# @reactizer/eslint
+# @reactizer/eslint-config
 
 The best ESlint config.
 
@@ -9,6 +9,6 @@ The best ESlint config.
 ```json
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["@reactizer/eslint-config"]
+  "extends": ["@reactizer"]
 }
 ```
