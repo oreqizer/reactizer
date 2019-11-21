@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.1](https://github.com/oreqizer/reactizer/compare/v0.16.0...v0.16.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **cli:** correct app ([71aaac8](https://github.com/oreqizer/reactizer/commit/71aaac81ad37b7abad1aa00539c35b0b7cc3dccb))
+
+
+
+
+
 # [0.16.0](https://github.com/oreqizer/reactizer/compare/v0.15.1...v0.16.0) (2019-11-21)
 
 
