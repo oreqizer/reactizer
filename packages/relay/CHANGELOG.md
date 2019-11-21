@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/oreqizer/reactizer/compare/v0.14.0...v0.15.0) (2019-11-21)
+
+
+### Bug Fixes
+
+* **meta:** eslintignores ([91056ac](https://github.com/oreqizer/reactizer/commit/91056ac21284d9249f228a7da5b5e9a2f2158b6b))
+
+
+### Features
+
+* **meta:** minor release cleanup ([157b2d6](https://github.com/oreqizer/reactizer/commit/157b2d66435d162f10dc232daaea46a95b43f1d2))
+* **meta:** remove react hot loader ([c7765be](https://github.com/oreqizer/reactizer/commit/c7765be9b81e19cb47a0db628ce3007884787331))
+* **relay:** turn off rules contradicting Relay flow ([cc99f5f](https://github.com/oreqizer/reactizer/commit/cc99f5f55facbeba315a5e3eb0cb8f08a0d620c2))
+
+
+
+
+
 # [0.14.0](https://github.com/oreqizer/reactizer/compare/v0.13.1...v0.14.0) (2019-11-20)
 
 
