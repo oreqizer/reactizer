@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/oreqizer/reactizer/compare/v0.15.0...v0.15.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **relay:** eslint ([bee45cd](https://github.com/oreqizer/reactizer/commit/bee45cd182d627062279c5b6cddccc36d340bde3))
+
+
+### Features
+
+* **meta:** independent versions ([9ab2aeb](https://github.com/oreqizer/reactizer/commit/9ab2aeb4f67c76c8e5405986ba58ead6da6a31f7))
+* **meta:** not independent versions ([f3559b4](https://github.com/oreqizer/reactizer/commit/f3559b49de50880b356689aa79b4e457fcbd09cc))
+
+
+
+
+
 # [0.15.0](https://github.com/oreqizer/reactizer/compare/v0.14.0...v0.15.0) (2019-11-21)
 
 
