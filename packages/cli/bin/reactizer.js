@@ -13,7 +13,7 @@ const CWD = process.cwd();
 
 const ACTION = argv._[0];
 const DEBUG = argv.debug || false;
-const APP = argv.app || "base";
+const APP = argv.app;
 const MODULES = argv.modules ? path.join(CWD, argv.modules) : CWD;
 const OUT = argv.out ? path.join(CWD, argv.out) : CWD;
 const ROOT = path.resolve(MODULES, `node_modules/@reactizer/${APP}`);
@@ -24,6 +24,9 @@ const ACTIONS = {
 };
 
 console.log(chalk.blueBright("REACTIZER"));
+if (!APP) {
+  throw new Error(`Please specify the app`);
+}
 
 const fileset = filesets[APP];
 if (!fileset) {
@@ -36,10 +39,10 @@ if (!ACTIONS[ACTION]) {
   console.log("  update");
   console.log("");
   console.log("Available flags:");
-  console.log("  --debug (provides debug logging");
-  console.log("  --app (default 'relay', which app to clone)");
+  console.log("  --app (which app to clone)");
   console.log("  --modules (default CWD, path that contains 'node_modules')");
   console.log("  --out (default CWD, output path)");
+  console.log("  --debug (provides debug logging");
   process.exit(1);
 }
 
