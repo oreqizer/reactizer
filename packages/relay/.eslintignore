@@ -1,6 +1,6 @@
-.tmp
-../../coverage
+coverage
 dist
 public
 types
 *.graphql.ts
+src/app/types.ts
