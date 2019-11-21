@@ -2,8 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const dotenv = require("dotenv-safe");
 const LoadablePlugin = require("@loadable/webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const { GenerateSW } = require("workbox-webpack-plugin");
 
 const env = dotenv.config({
   allowEmptyValues: true,
@@ -20,16 +18,6 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin(env.required),
-    new CompressionPlugin({
-      filename: "[path].br[query]",
-      algorithm: "brotliCompress",
-    }),
-    new GenerateSW({
-      importWorkboxFrom: "cdn",
-      clientsClaim: true,
-      skipWaiting: true,
-      runtimeCaching: [],
-    }),
     new LoadablePlugin({
       writeToDisk: { filename: "dist" },
     }),
@@ -42,9 +30,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.mjs$/,
+        test: /\.m?js$/,
         type: "javascript/auto",
         include: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

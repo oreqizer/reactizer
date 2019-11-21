@@ -1,5 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
+const { GenerateSW } = require("workbox-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const SentryPlugin = require("@sentry/webpack-plugin");
 
@@ -41,6 +43,19 @@ module.exports = {
   plugins: [
     ...common.plugins,
     new webpack.HashedModuleIdsPlugin(),
+    new GenerateSW({
+      importWorkboxFrom: "cdn",
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [],
+    }),
+    new CompressionPlugin({
+      filename: "[path].br[query]",
+      algorithm: "brotliCompress",
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: __DEV__ ? "static" : "disabled",
+    }),
     process.env.SENTRY_RELEASE &&
       new SentryPlugin({
         release: process.env.SENTRY_RELEASE,
@@ -48,8 +63,5 @@ module.exports = {
         debug: __DEV__,
         ext: ["ts", "tsx"],
       }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: __DEV__ ? "static" : "disabled",
-    }),
   ].filter(Boolean),
 };

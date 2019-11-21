@@ -15,7 +15,6 @@ module.exports = api => {
       "@babel/proposal-nullish-coalescing-operator",
       "@loadable",
       "id",
-      ["relay", { artifactDirectory: "src/__generated__" }],
       ["styled-components", { ssr: true }],
       [
         "module-resolver",
@@ -23,7 +22,7 @@ module.exports = api => {
           root: ["./src"],
           extensions: [".js", ".mjs", ".ts", ".tsx"],
         },
-      ]
+      ],
     ].filter(Boolean),
     env: {
       production: {

@@ -1,9 +1,4 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["@reactizer"],
-  "rules": {
-    "babel/camelcase": "off", // Relay
-
-    "@typescript-eslint/camelcase": "off" // Relay
-  }
+  "extends": ["@reactizer"]
 }
