@@ -6,7 +6,7 @@ const { argv } = require("yargs");
 const CWD = process.cwd();
 
 const MODULES = argv.modules ? path.join(CWD, argv.modules) : CWD;
-const ROOT = path.resolve(MODULES, `node_modules/@reactizer/base`);
+const ROOT = path.resolve(MODULES, `node_modules/@reactizer/${argv.app}`);
 
 const update = [
   // storybook
