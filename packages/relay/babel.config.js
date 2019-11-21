@@ -21,10 +21,9 @@ module.exports = api => {
         "module-resolver",
         {
           root: ["./src"],
-          extensions: [".js", ".ts", ".tsx"],
+          extensions: [".js", ".mjs", ".ts", ".tsx"],
         },
-      ],
-      isWebpack && "react-hot-loader/babel",
+      ]
     ].filter(Boolean),
     env: {
       production: {
