@@ -8,6 +8,7 @@ Packages:
 * `@reactizer/cli`
 * `@reactizer/eslint-config`
 * `@reactizer/relay`
+* `@reactizer/webpack`
 
 ## License
 
