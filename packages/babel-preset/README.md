@@ -1,14 +1,13 @@
-# @reactizer/eslint-config
+# @reactizer/babel-preset
 
-The best ESlint config.
+The best Babel preset.
 
 ## Setup
 
-`.eslintrc`
+`babel.config.js`
 
-```json
-{
-  "parser": "@typescript-eslint/parser",
-  "extends": ["@reactizer"]
-}
+```js
+module.exports = {
+  presets: ["@reactizer"],
+};
 ```
