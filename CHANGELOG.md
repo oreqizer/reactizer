@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/oreqizer/reactizer/compare/v0.16.1...v0.17.0) (2019-12-03)
+
+
+### Bug Fixes
+
+* **relay:** babel config ([1cf5ab5](https://github.com/oreqizer/reactizer/commit/1cf5ab509182b0a48315a38e9d1518075e6838e5))
+
+
+### Features
+
+* **meta:** faster Gitlab ([f242f2d](https://github.com/oreqizer/reactizer/commit/f242f2d3cb31f00a4709bed5199a9968489ebc42))
+* **meta:** init babel-preset ([574710a](https://github.com/oreqizer/reactizer/commit/574710ad134ffa631f978a888fbdfc38d0568dcc))
+
+
+
+
+
 ## [0.16.1](https://github.com/oreqizer/reactizer/compare/v0.16.0...v0.16.1) (2019-11-21)
 
 
