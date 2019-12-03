@@ -1,9 +1,11 @@
 # Reactizer
 
-Collection of the best **React** boilerplates!
+Collection of the best **React** tools and boilerplates!
 
 Packages:
-* `@reactizer/bin`
+* `@reactizer/base`
+* `@reactizer/cli`
+* `@reactizer/eslint-config`
 * `@reactizer/relay`
 
 ## License
