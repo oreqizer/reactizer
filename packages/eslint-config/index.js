@@ -15,7 +15,6 @@ module.exports = {
     "prettier",
     "react",
     "react-hooks",
-    "relay",
   ],
   parserOptions: {
     ecmaVersion: 2018,
