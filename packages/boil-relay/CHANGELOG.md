@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/oreqizer/reactizer/compare/v0.18.1...v0.19.0) (2019-12-08)
+
+
+### Features
+
+* **meta:** prefix boilerplates with 'boil' ([91466c9](https://github.com/oreqizer/reactizer/commit/91466c9cd7156d0c1df8d6a642ac38c5d98d614a))
+
+
+
+
+
 ## [0.18.1](https://github.com/oreqizer/reactizer/compare/v0.18.0...v0.18.1) (2019-12-08)
 
 **Note:** Version bump only for package @reactizer/relay
