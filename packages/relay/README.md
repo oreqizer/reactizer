@@ -1,4 +1,4 @@
-# Reactizer
+# @reactizer/relay
 
 The best **React** and **Relay** boilerplate!
 

@@ -1,6 +1,6 @@
-# @reactizer/base
+# @reactizer/urql
 
-The best **React** boilerplate!
+The best **React** and **Urql** boilerplate!
 
 ## Docs
 
