@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["@reactizer"],
+  "plugins": ["relay"],
   "rules": {
     // Relay (https://github.com/relayjs/eslint-plugin-relay)
     "relay/compat-uses-vars": "error",
