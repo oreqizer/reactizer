@@ -1,5 +1,5 @@
 {
-  "name": "@reactizer/base",
+  "name": "@reactizer/boil-base",
   "version": "0.18.1",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {

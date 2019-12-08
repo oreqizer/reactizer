@@ -1,5 +1,5 @@
 {
-  "name": "@reactizer/relay",
+  "name": "@reactizer/boil-relay",
   "version": "0.18.1",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
@@ -87,7 +87,7 @@
     "@graphql-codegen/typescript": "^1.8.1",
     "@loadable/babel-plugin": "^5.10.3",
     "@reactizer/babel-preset": "^0.18.0",
-    "@reactizer/base": "^0.18.1",
+    "@reactizer/boil-base": "^0.18.1",
     "@reactizer/cli": "^0.18.1",
     "@reactizer/eslint-config": "^0.18.1",
     "@reactizer/webpack": "^0.18.0",
