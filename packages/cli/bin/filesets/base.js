@@ -19,11 +19,8 @@ const update = [
   path.resolve(ROOT, "types/globals.d.ts"),
   // root
   path.resolve(ROOT, ".editorconfig"),
-  path.resolve(ROOT, ".eslintignore"),
-  path.resolve(ROOT, ".eslintrc"),
   path.resolve(ROOT, ".gitlab-ci.yml"),
   path.resolve(ROOT, ".prettierrc"),
-  path.resolve(ROOT, "babel.config.js"),
   path.resolve(ROOT, "commitlint.config.js"),
   path.resolve(ROOT, "Dockerfile"),
   path.resolve(ROOT, "jest.config.js"),

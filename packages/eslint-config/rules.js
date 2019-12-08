@@ -446,15 +446,6 @@ module.exports = {
   "jsx-a11y/scope": ERROR,
   "jsx-a11y/tabindex-no-positive": ERROR,
 
-  // Relay (https://github.com/relayjs/eslint-plugin-relay)
-  "relay/compat-uses-vars": OFF, // TODO why?
-  "relay/generated-flow-types": ERROR,
-  "relay/graphql-naming": ERROR,
-  "relay/graphql-syntax": ERROR,
-  "relay/hook-required-argument": ERROR,
-  "relay/no-future-added-value": ERROR,
-  "relay/unused-fields": ERROR,
-
   // import (https://github.com/benmosher/eslint-plugin-import)
   "import/default": OFF, // TODO why?
   "import/dynamic-import-chunkname": OFF, // TODO why?
