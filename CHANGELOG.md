@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/oreqizer/reactizer/compare/v0.19.0...v0.19.1) (2019-12-08)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove relay plugin ([2323890](https://github.com/oreqizer/reactizer/commit/2323890c5b6792e1741d9b0ca9f39c2a01853356))
+
+
+
+
+
 # [0.19.0](https://github.com/oreqizer/reactizer/compare/v0.18.1...v0.19.0) (2019-12-08)
 
 
