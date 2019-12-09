@@ -5,15 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.21.0](https://github.com/oreqizer/reactizer/compare/v0.20.0...v0.21.0) (2019-12-09)
 
-**Note:** Version bump only for package @reactizer/intl
-
-
-
-
-
-# [0.20.0](https://github.com/oreqizer/reactizer/compare/v0.19.2...v0.20.0) (2019-12-09)
-
 
 ### Features
 
-* **intl:** init ([ec2f900](https://github.com/oreqizer/reactizer/commit/ec2f9002f351aa49b03a13e3d6684de0d077bf9d))
+* **theme:** init ([13d636d](https://github.com/oreqizer/reactizer/commit/13d636de051f367328334000bebbf45ae321a72a))
