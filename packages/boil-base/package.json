@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-base",
-  "version": "0.21.0",
+  "version": "0.21.1",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
