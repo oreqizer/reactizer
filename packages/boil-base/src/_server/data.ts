@@ -1,8 +1,7 @@
 import path from "path";
 import fsx from "fs-extra";
 import { Locale } from "@reactizer/intl";
-
-import { makeTheme, Theme } from "app/styles/theme";
+import { makeTheme, Theme } from "@reactizer/theme";
 
 const LOCALES = path.join(__dirname, "../static/locales");
 const LOCALE_MAP = path.join(__dirname, "../static/generated/locales/map.json");

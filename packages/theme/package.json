@@ -1,0 +1,45 @@
+{
+  "name": "@reactizer/theme",
+  "version": "0.20.0",
+  "description": "Reactizer's theme.",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf lib && yarn typegen && yarn babel",
+    "typegen": "yarn tsc && rimraf lib/**/*.{js,jsx}",
+    "babel": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
+    "test": "jest --passWithNoTests",
+    "types": "tsc --noEmit",
+    "lint": "eslint './**/*.js'",
+    "ci": "yarn lint"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "rhythm-fns": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "styled-components": "^5.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@reactizer/eslint-config": "^0.20.0",
+    "@types/styled-components": "^4.4.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2"
+  },
+  "license": "MIT",
+  "gitHead": "c0ef0ac176d6e0fd8170a6955c37f7b6b84580e1"
+}

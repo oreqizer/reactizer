@@ -6,10 +6,10 @@ import { Helmet } from "react-helmet";
 import { useTheme } from "styled-components";
 import { Normalize } from "styled-normalize";
 import { useIntl } from "@reactizer/intl";
+import { Theme } from "@reactizer/theme";
 
 import { Index } from "app/Routes";
 import routes from "app/consts/routes";
-import { Theme } from "app/styles/theme";
 
 const Root = () => {
   const intl = useIntl();

@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import * as fns from "app/styles/theme";
+import * as fns from "..";
 
 export type Props = {
   height?: number;

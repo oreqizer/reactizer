@@ -4,9 +4,9 @@ import { ServerStyleSheet, ThemeProvider } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
 import { IntlProvider, Locale } from "@reactizer/intl";
+import { Theme } from "@reactizer/theme";
 
 import Root from "app/Root";
-import { Theme } from "app/styles/theme";
 import { extractor } from "_server/config";
 import { themes, locales } from "_server/data";
 import Html from "_server/markup/Html";

@@ -6,6 +6,8 @@ Packages:
 * `@reactizer/babel-preset`
 * `@reactizer/cli`
 * `@reactizer/eslint-config`
+* `@reactizer/intl`
+* `@reactizer/theme`
 * `@reactizer/webpack`
 
 Boilerplates:

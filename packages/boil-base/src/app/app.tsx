@@ -6,9 +6,9 @@ import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
 import { ThemeProvider } from "styled-components";
 import { IntlProvider, Locale } from "@reactizer/intl";
+import { Palette, makeTheme } from "@reactizer/theme";
 
 import Root from "app/Root";
-import { Palette, makeTheme } from "app/styles/theme";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,

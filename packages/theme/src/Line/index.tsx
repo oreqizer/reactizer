@@ -1,7 +1,8 @@
 import styled, { StyledComponent } from "styled-components";
 
-import theme, { Theme, ThemeProps } from "app/styles/theme";
-import textMixin, { Props as TextProps } from "app/styles/mixins/text";
+import textMixin, { Props as TextProps } from "../mixins/text";
+
+import theme, { Theme, ThemeProps } from "..";
 
 type Props = TextProps &
   ThemeProps & {

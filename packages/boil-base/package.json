@@ -48,6 +48,7 @@
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
     "@reactizer/intl": "^0.20.0",
+    "@reactizer/theme": "^0.20.0",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
     "dotenv-safe": "^8.2.0",

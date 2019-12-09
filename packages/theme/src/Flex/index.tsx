@@ -1,7 +1,6 @@
-// @flow strict
 import styled, { StyledComponent } from "styled-components";
 
-import { Theme, getBoxMargin } from "app/styles/theme";
+import { Theme, getBoxMargin } from "..";
 
 type X =
   | "flex-start"
@@ -15,6 +14,7 @@ type X =
 
 type Y = "stretch" | "center" | "flex-start" | "flex-end" | "baseline" | "initial" | "inherit" | "";
 
+// TODO make this simpler
 export type Props = {
   className?: string;
   x?: X;
