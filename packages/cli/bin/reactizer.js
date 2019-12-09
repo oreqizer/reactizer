@@ -16,7 +16,7 @@ const DEBUG = argv.debug || false;
 const APP = argv.app;
 const MODULES = argv.modules ? path.join(CWD, argv.modules) : CWD;
 const OUT = argv.out ? path.join(CWD, argv.out) : CWD;
-const ROOT = path.resolve(MODULES, `node_modules/@reactizer/${APP}`);
+const ROOT = path.resolve(MODULES, `node_modules/@reactizer/boil-${APP}`);
 
 const ACTIONS = {
   init: "init",

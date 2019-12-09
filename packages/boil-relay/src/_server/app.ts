@@ -4,14 +4,14 @@ import path from "path";
 import { Context } from "koa";
 import { StaticRouterContext } from "react-router";
 
+import { getLocale, getTheme } from "setup";
 import markup from "_server/markup";
 
 const PAGES = path.join(__dirname, "../../static/pages");
 
 function app(ctx: Context) {
-  // TODO determine theme/locale
-  const themeId = "main";
-  const localeId = "en-GB";
+  const themeId = getTheme(ctx);
+  const localeId = getLocale(ctx);
 
   const filepath = path.join(PAGES, themeId, localeId, ctx.path, "index.html");
   if (fsx.existsSync(filepath)) {

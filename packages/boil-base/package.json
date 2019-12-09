@@ -20,7 +20,7 @@
     "webpack:stats": "env NODE_ENV=production yarn webpack -- --json > stats.json",
     "keys": "node etc/bin/keys",
     "statics": "copyfiles 'public/**/*' -u 1 dist/static && node etc/bin/statics",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:coverage": "yarn test --coverage",
     "types": "tsc",
     "ci": "run-p test:coverage lint types madge",
@@ -60,7 +60,6 @@
     "koa-logger": "^3.2.1",
     "koa-sslify": "^4.0.3",
     "koa-static": "^5.0.0",
-    "node-polyglot": "^2.4.0",
     "ramda": "^0.26.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -133,5 +132,5 @@
     "webpack-cli": "^3.3.9",
     "webpack-merge": "^4.2.2"
   },
-  "gitHead": "c0ef0ac176d6e0fd8170a6955c37f7b6b84580e1"
+  "gitHead": "720f94b4babd1aab38d32b350da75a5b7d4f9741"
 }

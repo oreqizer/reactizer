@@ -25,7 +25,7 @@
     "generate": "graphql-codegen",
     "keys": "node etc/bin/keys",
     "statics": "copyfiles 'public/**/*' -u 1 dist/static && node etc/bin/statics",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:coverage": "yarn test --coverage",
     "types": "tsc",
     "ci": "run-p test:coverage lint types madge",
@@ -52,6 +52,8 @@
   "dependencies": {
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
+    "@reactizer/intl": "^0.21.0",
+    "@reactizer/theme": "^0.21.0",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
     "dotenv-safe": "^8.2.0",
@@ -63,7 +65,6 @@
     "koa-logger": "^3.2.1",
     "koa-sslify": "^4.0.3",
     "koa-static": "^5.0.0",
-    "node-polyglot": "^2.4.0",
     "ramda": "^0.26.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -75,7 +76,7 @@
     "regenerator-runtime": "^0.13.3",
     "relay-runtime": "^7.1.0",
     "rhythm-fns": "^1.0.0",
-    "styled-components": "^4.4.0",
+    "styled-components": "^5.0.0-rc.2",
     "styled-normalize": "^8.0.6"
   },
   "devDependencies": {

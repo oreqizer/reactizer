@@ -11,6 +11,8 @@ Packages:
 * `@reactizer/webpack`
 
 Boilerplates:
+
+_TODO_ migrate to `linaria`
 * `@reactizer/boil-base`
 * `@reactizer/boil-relay`
 * `@reactizer/boil-urql`

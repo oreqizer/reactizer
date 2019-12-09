@@ -2,6 +2,8 @@
 
 _TODO_
 
+Rewrite into https://github.com/callstack/linaria
+
 ## API
 
 _TODO_
