@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/intl",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Reactizer's intl.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
-    "@reactizer/eslint-config": "^0.19.0",
+    "@reactizer/eslint-config": "^0.20.0",
     "@types/node-polyglot": "^0.4.34",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2"
