@@ -1,7 +1,7 @@
 import path from "path";
 import fsx from "fs-extra";
+import { Locale } from "@reactizer/intl";
 
-import { IntlRaw } from "app/records/Intl";
 import { makeTheme, Theme } from "app/styles/theme";
 
 const LOCALES = path.join(__dirname, "../static/locales");
@@ -22,8 +22,8 @@ const loadIntls = () =>
       {},
     );
 
-export const intls: { [key: string]: IntlRaw } = loadIntls();
-export const intlMap: { [key: string]: string } = fsx.readJSONSync(LOCALE_MAP);
+export const locales: { [key: string]: Locale } = loadIntls();
+export const localeMap: { [key: string]: string } = fsx.readJSONSync(LOCALE_MAP);
 
 const loadThemes = () =>
   fsx

@@ -1,8 +1,6 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
-
-import { Consumer } from "app/services/intl/context";
-import { Values } from "app/records/Intl";
+import { IntlConsumer, Values } from "@reactizer/intl";
 
 type Props = {
   t?: string;
@@ -12,7 +10,7 @@ type Props = {
 
 const Translate = React.forwardRef(
   ({ t = "", values = {}, html = false }: Props, ref: React.Ref<HTMLSpanElement>) => (
-    <Consumer>
+    <IntlConsumer>
       {intl =>
         html ? (
           <span ref={ref} dangerouslySetInnerHTML={{ __html: intl.t(t, values) }} />
@@ -20,7 +18,7 @@ const Translate = React.forwardRef(
           intl.t(t, values)
         )
       }
-    </Consumer>
+    </IntlConsumer>
   ),
 );
 

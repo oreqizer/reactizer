@@ -49,8 +49,10 @@
     "@loadable/server": "^5.10.3",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
+    "@urql/exchange-graphcache": "^1.2.2",
     "dotenv-safe": "^8.2.0",
     "fs-extra": "^8.1.0",
+    "graphql-tag": "^2.10.1",
     "history": "^4.10.1",
     "koa": "^2.10.0",
     "koa-compress": "^3.0.0",
@@ -68,7 +70,8 @@
     "regenerator-runtime": "^0.13.3",
     "rhythm-fns": "^1.0.0",
     "styled-components": "^4.4.0",
-    "styled-normalize": "^8.0.6"
+    "styled-normalize": "^8.0.6",
+    "urql": "^1.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",

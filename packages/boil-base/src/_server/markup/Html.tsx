@@ -2,7 +2,7 @@
 import * as React from "react";
 import { HelmetData } from "react-helmet";
 
-import { themeMap, intlMap } from "_server/data";
+import { themeMap, localeMap } from "_server/data";
 
 type Props = {
   root: string;
@@ -26,7 +26,7 @@ const Html = ({ root, helmet, styles, preloadable, loadable, themeId, localeId }
       <link href={process.env.API_URL} rel="preconnect" />
 
       <link rel="preload" href={`/generated/themes/${themeMap[themeId]}`} as="script" />
-      <link rel="preload" href={`/generated/locales/${intlMap[localeId]}`} as="script" />
+      <link rel="preload" href={`/generated/locales/${localeMap[localeId]}`} as="script" />
       {preloadable}
 
       {styles}
@@ -35,7 +35,7 @@ const Html = ({ root, helmet, styles, preloadable, loadable, themeId, localeId }
       <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
 
       <script src={`/generated/themes/${themeMap[themeId]}`} />
-      <script src={`/generated/locales/${intlMap[localeId]}`} />
+      <script src={`/generated/locales/${localeMap[localeId]}`} />
       {loadable}
     </body>
   </html>

@@ -47,6 +47,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
+    "@reactizer/intl": "^0.19.0",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
     "dotenv-safe": "^8.2.0",
@@ -67,7 +68,7 @@
     "react-router-dom": "^5.1.2",
     "regenerator-runtime": "^0.13.3",
     "rhythm-fns": "^1.0.0",
-    "styled-components": "^4.4.0",
+    "styled-components": "^5.0.0-rc.2",
     "styled-normalize": "^8.0.6"
   },
   "devDependencies": {

@@ -5,12 +5,12 @@ import { StaticRouterContext } from "react-router";
 
 import markup from "./markup";
 import { routes } from "./config";
-import { themes, intls } from "./data";
+import { themes, locales } from "./data";
 
 const OUT = path.join(__dirname, "../static/pages");
 
 const themeIds = Object.keys(themes);
-const intlIds = Object.keys(intls);
+const intlIds = Object.keys(locales);
 
 const makeStream = (themeId: string, localeId: string, url: string): Promise<void> => {
   const fileDir = path.join(OUT, themeId, localeId, url);

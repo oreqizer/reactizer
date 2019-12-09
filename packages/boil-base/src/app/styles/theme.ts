@@ -119,7 +119,7 @@ export type Palette = {
   colorProductDarker: string;
 };
 
-export const makeTheme = (palette: Palette): Theme => ({
+export const makeTheme = (palette: Palette | Theme): Theme => ({
   ...THEME,
   ...palette,
 });

@@ -4,10 +4,11 @@ import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
+import { ThemeProvider } from "styled-components";
+import { IntlProvider, Locale } from "@reactizer/intl";
 
 import Root from "app/Root";
 import { Palette, makeTheme } from "app/styles/theme";
-import { IntlRaw } from "app/records/Intl";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -18,14 +19,18 @@ Sentry.init({
 
 const app = document.getElementById("react");
 const theme: Palette = window.__THEME__;
-const intlRaw: IntlRaw = window.__INTL__;
+const locale: Locale = window.__INTL__;
 
 loadableReady(() => {
   if (app) {
     hydrate(
-      <BrowserRouter basename={process.env.BASENAME}>
-        <Root theme={makeTheme(theme)} intlRaw={intlRaw} />
-      </BrowserRouter>,
+      <ThemeProvider theme={makeTheme(theme)}>
+        <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+          <BrowserRouter basename={process.env.BASENAME}>
+            <Root />
+          </BrowserRouter>
+        </IntlProvider>
+      </ThemeProvider>,
       app,
     );
   }
