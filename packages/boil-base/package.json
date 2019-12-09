@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-base",
-  "version": "0.21.2",
+  "version": "0.21.3",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -48,7 +48,7 @@
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
     "@reactizer/intl": "^0.21.0",
-    "@reactizer/theme": "^0.21.2",
+    "@reactizer/theme": "^0.21.3",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
     "dotenv-safe": "^8.2.0",
@@ -78,7 +78,7 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@loadable/babel-plugin": "^5.10.3",
     "@reactizer/babel-preset": "^0.21.0",
-    "@reactizer/cli": "^0.21.2",
+    "@reactizer/cli": "^0.21.3",
     "@reactizer/eslint-config": "^0.21.0",
     "@reactizer/webpack": "^0.21.0",
     "@storybook/addon-actions": "5.2.6",
