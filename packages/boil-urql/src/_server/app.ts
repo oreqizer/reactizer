@@ -22,7 +22,7 @@ function app(ctx: Context) {
   }
 
   const context: StaticRouterContext = {};
-  const html = markup({ url: ctx.url, context, themeId, localeId });
+  const html = markup({ ctx, context, themeId, localeId });
   if (!html && context.url) {
     ctx.redirect(context.url);
     return;

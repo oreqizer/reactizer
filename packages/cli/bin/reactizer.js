@@ -5,6 +5,7 @@ const fsx = require("fs-extra");
 const path = require("path");
 const R = require("ramda");
 const chalk = require("chalk");
+const glob = require("glob");
 const { argv } = require("yargs");
 
 const filesets = require("./filesets");
@@ -16,6 +17,7 @@ const DEBUG = argv.debug || false;
 const APP = argv.app;
 const MODULES = argv.modules ? path.join(CWD, argv.modules) : CWD;
 const OUT = argv.out ? path.join(CWD, argv.out) : CWD;
+const IGNORE = path.resolve(CWD, ".reactizerignore");
 const ROOT = path.resolve(MODULES, `node_modules/@reactizer/boil-${APP}`);
 
 const ACTIONS = {
@@ -46,8 +48,34 @@ if (!ACTIONS[ACTION]) {
   process.exit(1);
 }
 
-const copyFiles = files =>
+const toIgnore = () => {
+  if (!fsx.existsSync(IGNORE)) {
+    return {};
+  }
+
+  return String(fsx.readFileSync(IGNORE))
+    .split("\n")
+    .filter(Boolean)
+    .filter(line => line.startsWith("#")) // comments
+    .map(file => glob.sync(path.join(ROOT, file)))
+    .reduce((acc, next) => acc.concat(next))
+    .reduce(
+      (acc, next) => ({
+        ...acc,
+        [next]: true,
+      }),
+      {},
+    );
+};
+
+const copyFiles = files => {
+  const ignore = toIgnore();
+
   files.forEach(input => {
+    if (ignore[input]) {
+      return;
+    }
+
     const file = input.replace(ROOT, "");
     const out = path.join(OUT, file);
     if (input === out) {
@@ -75,6 +103,7 @@ const copyFiles = files =>
       });
     }
   });
+};
 
 function updatePackage() {
   const OUT_PKG = path.join(OUT, "package.json");

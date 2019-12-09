@@ -37,12 +37,12 @@ function markup({ url, context, themeId, localeId }: Input) {
     ),
   );
 
-  const helmet = Helmet.renderStatic();
-
   // Redirect
   if (context.url) {
     return null;
   }
+
+  const helmet = Helmet.renderStatic();
 
   return ReactDOM.renderToStaticMarkup(
     <Html
