@@ -3,7 +3,6 @@
   "version": "0.20.0",
   "description": "Reactizer's intl.",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "publishConfig": {
     "access": "public"
   },

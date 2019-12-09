@@ -1,15 +1,16 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
-import { IntlConsumer, Values } from "@reactizer/intl";
+
+import { IntlConsumer, Values } from "..";
 
 type Props = {
-  t?: string;
+  t: string;
   values?: Values;
   html?: boolean;
 };
 
 const Translate = React.forwardRef(
-  ({ t = "", values = {}, html = false }: Props, ref: React.Ref<HTMLSpanElement>) => (
+  ({ t, values = {}, html = false }: Props, ref: React.Ref<HTMLSpanElement>) => (
     <IntlConsumer>
       {intl =>
         html ? (

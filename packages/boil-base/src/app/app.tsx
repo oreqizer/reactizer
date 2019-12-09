@@ -18,13 +18,13 @@ Sentry.init({
 });
 
 const app = document.getElementById("react");
-const theme: Palette = window.__THEME__;
+const palette: Palette = window.__THEME__;
 const locale: Locale = window.__INTL__;
 
 loadableReady(() => {
   if (app) {
     hydrate(
-      <ThemeProvider theme={makeTheme(theme)}>
+      <ThemeProvider theme={makeTheme(palette)}>
         <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
           <BrowserRouter basename={process.env.BASENAME}>
             <Root />
