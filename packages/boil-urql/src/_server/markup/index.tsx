@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
-import { ServerStyleSheet, ThemeProvider } from "styled-components";
+import { ServerStyleSheet } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
 import { IntlProvider, Locale } from "@reactizer/intl";
-import { Theme } from "@reactizer/theme";
+import { ThemeProvider, Theme } from "@reactizer/theme";
 
 import Root from "app/Root";
 import { extractor } from "_server/config";

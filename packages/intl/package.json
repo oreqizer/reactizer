@@ -7,13 +7,14 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf lib && yarn typegen && yarn babel",
+    "bundle": "rimraf lib && yarn typegen && yarn babel",
     "typegen": "yarn tsc && rimraf lib/**/*.{js,jsx}",
     "babel": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
     "test": "jest --passWithNoTests",
     "types": "tsc --noEmit",
     "lint": "eslint './**/*.js'",
-    "ci": "yarn lint"
+    "ci": "yarn lint",
+    "prepublish": "yarn ci && yarn bundle"
   },
   "files": [
     "lib",

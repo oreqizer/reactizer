@@ -1,3 +1,4 @@
+import { ThemeProvider, ThemeConsumer } from "styled-components";
 import * as rhythm from "rhythm-fns";
 
 export const FONT_SIZE = 16;
@@ -12,7 +13,7 @@ export const getLineHeight = (fontSize: number) =>
 export const getLineMargin = (margin: number, border: number) =>
   rhythm.getLineMargin(FONT_SIZE, LINE_SCALE, margin, border);
 
-const THEME = {
+const theme = {
   // COLORS
   // ---
   // Product
@@ -104,7 +105,7 @@ const THEME = {
   zTooltip: 1000,
 };
 
-export type Theme = typeof THEME;
+export type Theme = typeof theme;
 
 export type Palette = {
   colorProductLight: string;
@@ -119,8 +120,8 @@ export type Palette = {
   colorProductDarker: string;
 };
 
-export const makeTheme = (palette: Palette | Theme): Theme => ({
-  ...THEME,
+export const makeTheme = (palette: Palette): Theme => ({
+  ...theme,
   ...palette,
 });
 
@@ -128,4 +129,14 @@ export type ThemeProps = {
   theme: Theme;
 };
 
-export default THEME;
+export default theme;
+
+// const context: React.Context<Theme> = React.createContext(theme);
+//
+// const { Provider: ThemeProvider, Consumer: ThemeConsumer } = context;
+//
+// const useTheme = () => React.useContext(context);
+//
+// export { ThemeProvider, ThemeConsumer, useTheme };
+
+export { ThemeProvider, ThemeConsumer };

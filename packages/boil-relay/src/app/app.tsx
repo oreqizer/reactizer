@@ -4,9 +4,8 @@ import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
-import { ThemeProvider } from "styled-components";
 import { IntlProvider, Locale } from "@reactizer/intl";
-import { Palette, makeTheme } from "@reactizer/theme";
+import { ThemeProvider, Palette, makeTheme } from "@reactizer/theme";
 
 import Root from "app/Root";
 

@@ -2,8 +2,6 @@
 
 _TODO_
 
-Rewrite into https://github.com/callstack/linaria
-
 ## API
 
 _TODO_
@@ -13,10 +11,6 @@ _TODO_
 _TODO_
 
 ### Mixins
-
-_TODO_
-
-### Components
 
 _TODO_
 

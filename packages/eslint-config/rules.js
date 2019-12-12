@@ -481,13 +481,7 @@ module.exports = {
   "import/no-extraneous-dependencies": [
     ERROR,
     {
-      devDependencies: [
-        "webpack.config.js",
-        "etc/**",
-        "**/*.test.*",
-        "**/*.spec.*",
-        "**/*.stories.*",
-      ],
+      devDependencies: ["webpack.config.js", "etc/**", "stories/**", "**/*.spec.*"],
     },
   ],
   "import/no-internal-modules": OFF, // TODO why?

@@ -23,7 +23,8 @@
     "@babel/preset-typescript": "^7.6.0",
     "babel-plugin-id": "^1.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
-    "babel-plugin-ramda": "^2.0.0"
+    "babel-plugin-ramda": "^2.0.0",
+    "babel-plugin-styled-components": "^1.10.6"
   },
   "peerDependencies": {
     "@babel/core": "^7.6.4"

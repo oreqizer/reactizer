@@ -48,6 +48,6 @@ const IntlProvider = ({ locale, onChange, children }: Props) => {
   return <Provider value={intl}>{children}</Provider>;
 };
 
-export { IntlConsumer, IntlProvider };
+const useIntl = () => React.useContext(context);
 
-export const useIntl = () => React.useContext(context);
+export { IntlProvider, IntlConsumer, useIntl };

@@ -37,3 +37,11 @@ module.exports = merge(
 * entrypoint `src/app/index.js`
 * source files in the `src` folder
 * build output in the `dist/static` folder
+
+## TODO
+
+- [ ] consider merging `--env production` and `NODE_ENV=production`
+
+## License
+
+MIT
