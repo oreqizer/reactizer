@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/oreqizer/reactizer/compare/v0.21.4...v0.22.0) (2019-12-12)
+
+
+### Features
+
+* **urql:** set up Urql and graphql-tag ([dda629e](https://github.com/oreqizer/reactizer/commit/dda629ec76ba85e02c741d0560d0c666c02620b7))
+
+
+
+
+
 ## [0.21.4](https://github.com/oreqizer/reactizer/compare/v0.21.3...v0.21.4) (2019-12-12)
 
 **Note:** Version bump only for package reactizer
