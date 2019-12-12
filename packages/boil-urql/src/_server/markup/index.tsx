@@ -11,7 +11,7 @@ import { ThemeProvider, Theme } from "@reactizer/theme";
 import Root from "app/Root";
 import { extractor } from "_server/config";
 import { themes, locales } from "_server/data";
-import urql, { ssrCache } from "_server/markup/urql";
+import client, { ssrCache } from "_server/markup/client";
 import Html from "_server/markup/Html";
 
 type Input = {
@@ -26,7 +26,7 @@ async function markup({ url, context, themeId, localeId }: Input) {
   const locale: Locale = locales[localeId];
 
   const app = (
-    <UrqlProvider value={urql}>
+    <UrqlProvider value={client}>
       <ThemeProvider theme={theme}>
         <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
           <StaticRouter context={context} location={url} basename={process.env.BASENAME}>

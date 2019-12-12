@@ -117,6 +117,7 @@
     "@types/styled-components": "^4.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
+    "babel-plugin-graphql-tag": "^2.5.0",
     "commitlint": "^8.2.0",
     "copyfiles": "^2.1.1",
     "enzyme": "^3.10.0",

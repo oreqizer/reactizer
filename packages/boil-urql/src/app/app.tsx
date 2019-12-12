@@ -8,7 +8,7 @@ import { Provider as UrqlProvider } from "urql";
 import { IntlProvider, Locale } from "@reactizer/intl";
 import { ThemeProvider, Palette, makeTheme } from "@reactizer/theme";
 
-import urql from "app/services/urql";
+import client from "app/services/client";
 import Root from "app/Root";
 
 Sentry.init({
@@ -25,7 +25,7 @@ const locale: Locale = window.__INTL__;
 loadableReady(() => {
   if (app) {
     hydrate(
-      <UrqlProvider value={urql}>
+      <UrqlProvider value={client}>
         <ThemeProvider theme={makeTheme(palette)}>
           <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
             <BrowserRouter basename={process.env.BASENAME}>
