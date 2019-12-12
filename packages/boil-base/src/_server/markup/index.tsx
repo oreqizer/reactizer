@@ -39,21 +39,23 @@ function markup({ url, context, themeId, localeId }: Input) {
 
   // Redirect
   if (context.url) {
-    return null;
+    return Promise.resolve(null);
   }
 
   const helmet = Helmet.renderStatic();
 
-  return ReactDOM.renderToStaticMarkup(
-    <Html
-      root={root}
-      helmet={helmet}
-      styles={sheet.getStyleElement()}
-      preloadable={extractor.getLinkElements()}
-      loadable={extractor.getScriptElements()}
-      themeId={themeId}
-      localeId={localeId}
-    />,
+  return Promise.resolve(
+    ReactDOM.renderToStaticMarkup(
+      <Html
+        root={root}
+        helmet={helmet}
+        styles={sheet.getStyleElement()}
+        preloadable={extractor.getLinkElements()}
+        loadable={extractor.getScriptElements()}
+        themeId={themeId}
+        localeId={localeId}
+      />,
+    ),
   );
 }
 

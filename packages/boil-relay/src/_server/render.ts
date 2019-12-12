@@ -12,12 +12,12 @@ const OUT = path.join(__dirname, "../static/pages");
 const themeIds = Object.keys(themes);
 const intlIds = Object.keys(locales);
 
-const makeStream = (themeId: string, localeId: string, url: string): Promise<void> => {
+const makeStream = async (themeId: string, localeId: string, url: string): Promise<void> => {
   const fileDir = path.join(OUT, themeId, localeId, url);
   fsx.ensureDirSync(fileDir);
 
   const context: StaticRouterContext = {};
-  const html = markup({ url, context, themeId, localeId });
+  const html = await markup({ url, context, themeId, localeId });
   if (!html) {
     return Promise.reject(new Error(`Invalid pre-render URL: ${context.url}`));
   }

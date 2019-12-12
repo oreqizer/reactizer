@@ -8,13 +8,14 @@ type Props = {
   root: string;
   helmet: HelmetData;
   styles: React.ReactNode;
+  data: string;
   preloadable: React.ReactNode;
   loadable: React.ReactNode;
   themeId: string;
   localeId: string;
 };
 
-const Html = ({ root, helmet, styles, preloadable, loadable, themeId, localeId }: Props) => (
+const Html = ({ root, helmet, styles, data, preloadable, loadable, themeId, localeId }: Props) => (
   <html {...helmet.htmlAttributes.toComponent()} lang={localeId}>
     <head>
       {helmet.title.toComponent()}
@@ -33,6 +34,8 @@ const Html = ({ root, helmet, styles, preloadable, loadable, themeId, localeId }
     </head>
     <body {...helmet.bodyAttributes.toComponent()}>
       <div id="react" dangerouslySetInnerHTML={{ __html: root }} />
+
+      <script dangerouslySetInnerHTML={{ __html: `window.__URQL__ = ${data};` }} />
 
       <script src={`/generated/themes/${themeMap[themeId]}`} />
       <script src={`/generated/locales/${localeMap[localeId]}`} />

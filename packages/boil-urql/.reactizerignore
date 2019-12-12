@@ -1,2 +1,3 @@
 # URQL's SSR setup
+src/_server/markup/Html.tsx
 src/_server/markup/index.tsx

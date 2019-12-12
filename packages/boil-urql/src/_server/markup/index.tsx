@@ -3,12 +3,15 @@ import * as ReactDOM from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
+import { Provider as UrqlProvider } from "urql";
+import ssrPrepass from "react-ssr-prepass";
 import { IntlProvider, Locale } from "@reactizer/intl";
 import { ThemeProvider, Theme } from "@reactizer/theme";
 
 import Root from "app/Root";
 import { extractor } from "_server/config";
 import { themes, locales } from "_server/data";
+import urql, { ssrCache } from "_server/markup/urql";
 import Html from "_server/markup/Html";
 
 type Input = {
@@ -18,24 +21,28 @@ type Input = {
   localeId: string;
 };
 
-function markup({ url, context, themeId, localeId }: Input) {
+async function markup({ url, context, themeId, localeId }: Input) {
   const theme: Theme = themes[themeId];
   const locale: Locale = locales[localeId];
 
-  const sheet = new ServerStyleSheet();
-  const root = ReactDOM.renderToString(
-    extractor.collectChunks(
-      sheet.collectStyles(
-        <ThemeProvider theme={theme}>
-          <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-            <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
-              <Root />
-            </StaticRouter>
-          </IntlProvider>
-        </ThemeProvider>,
-      ),
-    ),
+  const app = (
+    <UrqlProvider value={urql}>
+      <ThemeProvider theme={theme}>
+        <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+          <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+            <Root />
+          </StaticRouter>
+        </IntlProvider>
+      </ThemeProvider>
+    </UrqlProvider>
   );
+
+  await ssrPrepass(app);
+
+  const data = ssrCache.extractData();
+
+  const sheet = new ServerStyleSheet();
+  const root = ReactDOM.renderToString(extractor.collectChunks(sheet.collectStyles(app)));
 
   // Redirect
   if (context.url) {
@@ -49,6 +56,7 @@ function markup({ url, context, themeId, localeId }: Input) {
       root={root}
       helmet={helmet}
       styles={sheet.getStyleElement()}
+      data={JSON.stringify(data)}
       preloadable={extractor.getLinkElements()}
       loadable={extractor.getScriptElements()}
       themeId={themeId}

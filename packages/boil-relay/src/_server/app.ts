@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, fp/no-mutation, fp/no-unused-expression */
+/* eslint-disable no-param-reassign, require-atomic-updates, fp/no-mutation, fp/no-unused-expression */
 import fsx from "fs-extra";
 import path from "path";
 import { Context } from "koa";
@@ -9,7 +9,7 @@ import markup from "_server/markup";
 
 const PAGES = path.join(__dirname, "../../static/pages");
 
-function app(ctx: Context) {
+async function app(ctx: Context) {
   const themeId = getTheme(ctx);
   const localeId = getLocale(ctx);
 
@@ -22,7 +22,7 @@ function app(ctx: Context) {
   }
 
   const context: StaticRouterContext = {};
-  const html = markup({ url: ctx.url, context, themeId, localeId });
+  const html = await markup({ url: ctx.url, context, themeId, localeId });
   if (!html && context.url) {
     ctx.redirect(context.url);
     return;

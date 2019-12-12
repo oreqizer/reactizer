@@ -15,3 +15,10 @@ export const getTheme = (ctx: Context): string => {
 
   return themeId;
 };
+
+// TODOs for multi-app:
+// Gets the app name from context when dynamic SSRing (static render renders all apps)
+// export const getApp = (ctx: Context): string => ...
+
+// Returns the root of the given app
+// export const getRoot = (app: string) => ...

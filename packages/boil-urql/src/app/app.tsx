@@ -4,9 +4,11 @@ import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
+import { Provider as UrqlProvider } from "urql";
 import { IntlProvider, Locale } from "@reactizer/intl";
 import { ThemeProvider, Palette, makeTheme } from "@reactizer/theme";
 
+import urql from "app/services/urql";
 import Root from "app/Root";
 
 Sentry.init({
@@ -23,13 +25,15 @@ const locale: Locale = window.__INTL__;
 loadableReady(() => {
   if (app) {
     hydrate(
-      <ThemeProvider theme={makeTheme(palette)}>
-        <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-          <BrowserRouter basename={process.env.BASENAME}>
-            <Root />
-          </BrowserRouter>
-        </IntlProvider>
-      </ThemeProvider>,
+      <UrqlProvider value={urql}>
+        <ThemeProvider theme={makeTheme(palette)}>
+          <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+            <BrowserRouter basename={process.env.BASENAME}>
+              <Root />
+            </BrowserRouter>
+          </IntlProvider>
+        </ThemeProvider>
+      </UrqlProvider>,
       app,
     );
   }
