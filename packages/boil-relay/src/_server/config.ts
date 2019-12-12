@@ -16,10 +16,22 @@ export const PORT = process.env.PORT || "3000";
 
 // Build thingies
 // ---
-export const extractor = new ChunkExtractor({
-  statsFile: path.resolve(__dirname, "../loadable-stats.json"),
-  entrypoints: ["app"],
-});
+const getExtractor = () => {
+  const file = path.resolve(__dirname, "../loadable-stats.json");
+  if (!PRODUCTION && !fsx.existsSync(file)) {
+    // eslint-disable-next-line no-console
+    console.log("Waiting for 'webpack-dev-server'");
+
+    process.exit(0);
+  }
+
+  return new ChunkExtractor({
+    statsFile: file,
+    entrypoints: ["app"],
+  });
+};
+
+export const extractor = getExtractor();
 
 export const routes: string[] = ["/"].concat(
   fsx

@@ -24,8 +24,8 @@ module.exports = merge(
 {
   "scripts": {
     "webpack": "webpack --env production",
-    "webpack:dev": "webpack-dev-server --env development --inline --hot --progress --colors",
-    "webpack:stats": "env NODE_ENV=production yarn webpack -- --json > stats.json",
+    "webpack:dev": "webpack-dev-server --colors",
+    "webpack:stats": "env NODE_ENV=production yarn webpack --json > stats.json"
   }
 }
 ```

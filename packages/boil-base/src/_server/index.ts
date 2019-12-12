@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Koa from "koa";
 import logger from "koa-logger";
 import helmet from "koa-helmet";
