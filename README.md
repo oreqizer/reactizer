@@ -12,7 +12,7 @@ Packages:
 
 Boilerplates:
 
-_TODO_ migrate to `linaria`
+_TODO_ move `keys` and `statics` to CLI
 * `@reactizer/boil-base`
 * `@reactizer/boil-relay`
 * `@reactizer/boil-urql`

@@ -1,0 +1,118 @@
+directive @hasRole(role: Role!) on FIELD_DEFINITION
+
+"""
+Direct the client to resolve this field locally, either from the cache or local resolvers.
+"""
+directive @client(
+  """
+  When true, the client will never use the cache for this value. See
+  https://www.apollographql.com/docs/react/essentials/local-state/#forcing-resolvers-with-clientalways-true
+  """
+  always: Boolean
+) on FIELD | FRAGMENT_DEFINITION | INLINE_FRAGMENT
+
+"""
+Export this locally resolved field as a variable to be used in the remainder of this query. See
+https://www.apollographql.com/docs/react/essentials/local-state/#using-client-fields-as-variables
+"""
+directive @export(
+  """The variable name to export this field as."""
+  as: String!
+) on FIELD
+
+"""
+Specify a custom store key for this result. See
+https://www.apollographql.com/docs/react/advanced/caching/#the-connection-directive
+"""
+directive @connection(
+  """Specify the store key."""
+  key: String!
+
+  """
+  An array of query argument names to include in the generated custom store key.
+  """
+  filter: [String!]
+) on FIELD
+
+type Account implements Node {
+  id: ID!
+  authId: String!
+  name: String!
+  surname: String!
+  email: String!
+  isAdmin: Boolean!
+  createdAt: Time!
+  updatedAt: Time!
+}
+
+type AccountConnection {
+  pageInfo: PageInfo!
+  edges: [AccountEdge]
+}
+
+type AccountEdge {
+  node: Account
+  cursor: String!
+}
+
+input AddAccountInput {
+  name: String!
+  surname: String!
+  email: String!
+  clientMutationId: String
+}
+
+type AddAccountPayload {
+  account: Account
+  clientMutationId: String
+}
+
+input DeleteAccountInput {
+  clientMutationId: String
+}
+
+type DeleteAccountPayload {
+  deletedId: ID!
+  clientMutationId: String
+}
+
+input EditAccountInput {
+  name: String!
+  surname: String!
+  clientMutationId: String
+}
+
+type EditAccountPayload {
+  account: Account
+  clientMutationId: String
+}
+
+type Mutation {
+  addAccount(input: AddAccountInput!): AddAccountPayload
+  editAccount(input: EditAccountInput!): EditAccountPayload
+  deleteAccount(input: DeleteAccountInput!): DeleteAccountPayload
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  node(id: ID!): Node
+  account: Account
+  accounts(after: String, first: Int, before: String, last: Int): AccountConnection
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+scalar Time
