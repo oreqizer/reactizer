@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/oreqizer/reactizer/compare/v0.22.0...v0.23.0) (2019-12-14)
+
+
+### Features
+
+* **urql:** add schema download ([b80ec44](https://github.com/oreqizer/reactizer/commit/b80ec449e6998e4c8ab2cd8e6577c0853e85e1b4))
+
+
+
+
+
 # [0.22.0](https://github.com/oreqizer/reactizer/compare/v0.21.4...v0.22.0) (2019-12-12)
 
 

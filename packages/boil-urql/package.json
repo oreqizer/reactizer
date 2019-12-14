@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-urql",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "The ultimate React and Urql boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -48,8 +48,8 @@
   "dependencies": {
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
-    "@reactizer/intl": "^0.22.0",
-    "@reactizer/theme": "^0.22.0",
+    "@reactizer/intl": "^0.23.0",
+    "@reactizer/theme": "^0.23.0",
     "@sentry/browser": "^5.9.0",
     "@sentry/node": "^5.9.0",
     "@urql/exchange-graphcache": "^1.2.2",
@@ -85,11 +85,11 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@loadable/babel-plugin": "^5.10.3",
-    "@reactizer/babel-preset": "^0.22.0",
-    "@reactizer/boil-base": "^0.22.0",
-    "@reactizer/cli": "^0.22.0",
-    "@reactizer/eslint-config": "^0.22.0",
-    "@reactizer/webpack": "^0.22.0",
+    "@reactizer/babel-preset": "^0.23.0",
+    "@reactizer/boil-base": "^0.23.0",
+    "@reactizer/cli": "^0.23.0",
+    "@reactizer/eslint-config": "^0.23.0",
+    "@reactizer/webpack": "^0.23.0",
     "@storybook/addon-actions": "5.2.6",
     "@storybook/addon-knobs": "^5.2.4",
     "@storybook/addon-links": "5.2.6",
