@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-base",
-  "version": "0.24.1",
+  "version": "0.24.2",
   "description": "The ultimate React boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -80,7 +80,7 @@
     "@reactizer/babel-preset": "^0.24.1",
     "@reactizer/cli": "^0.24.1",
     "@reactizer/eslint-config": "^0.24.1",
-    "@reactizer/webpack": "^0.24.1",
+    "@reactizer/webpack": "^0.24.2",
     "@storybook/addon-actions": "5.2.6",
     "@storybook/addon-knobs": "^5.2.4",
     "@storybook/addon-links": "5.2.6",

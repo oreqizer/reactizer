@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.2](https://github.com/oreqizer/reactizer/compare/v0.24.1...v0.24.2) (2019-12-15)
+
+
+### Bug Fixes
+
+* **webpack:** don't open ([165bf6d](https://github.com/oreqizer/reactizer/commit/165bf6dc79a793bac5651f7d44486fffbed36142))
+
+
+
+
+
 ## [0.24.1](https://github.com/oreqizer/reactizer/compare/v0.24.0...v0.24.1) (2019-12-15)
 
 **Note:** Version bump only for package @reactizer/webpack
