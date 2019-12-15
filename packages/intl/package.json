@@ -20,12 +20,10 @@
     "types": "tsc --noEmit"
   },
   "files": [
+    "es",
     "lib",
     "README.md"
   ],
-  "engines": {
-    "node": ">=12"
-  },
   "dependencies": {
     "node-polyglot": "^2.4.0"
   },
@@ -36,5 +34,5 @@
     "@types/node-polyglot": "^0.4.34"
   },
   "license": "MIT",
-  "gitHead": "e1aef0ca035beaf994a7c446ee220a414df24792"
+  "gitHead": "e112cf5290897641088833ed937f766f7085d1b5"
 }

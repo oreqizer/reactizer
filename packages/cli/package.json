@@ -5,13 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "lint": "eslint './**/*.js'",
-    "ci": "yarn lint"
-  },
-  "engines": {
-    "node": ">=12"
-  },
+  "scripts": {},
   "bin": {
     "reactizer": "./bin/reactizer.js"
   },
