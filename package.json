@@ -11,7 +11,7 @@
     "ci": "run-p ci:*",
     "ci:lerna": "lerna run ci --parallel",
     "ci:global": "run-p test lint types",
-    "prepublish": "yarn ci"
+    "prepublish": "run-p ci build"
   },
   "workspaces": {
     "packages": [
