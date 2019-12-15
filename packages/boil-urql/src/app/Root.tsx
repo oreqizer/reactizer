@@ -2,8 +2,7 @@
 import * as React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// @ts-ignore: outdated types
-import { useTheme } from "styled-components";
+import { ThemeContext } from "styled-components";
 import { Normalize } from "styled-normalize";
 import { useIntl } from "@reactizer/intl";
 import { Theme } from "@reactizer/theme";
@@ -13,7 +12,7 @@ import routes from "app/consts/routes";
 
 const Root = () => {
   const intl = useIntl();
-  const theme: Theme = useTheme();
+  const theme: Theme = React.useContext(ThemeContext);
 
   return (
     <>

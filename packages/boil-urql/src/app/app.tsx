@@ -2,11 +2,12 @@
 import * as React from "react";
 import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
 import { Provider as UrqlProvider } from "urql";
 import { IntlProvider, Locale } from "@reactizer/intl";
-import { ThemeProvider, Palette, makeTheme } from "@reactizer/theme";
+import { Palette, makeTheme } from "@reactizer/theme";
 
 import client from "app/services/client";
 import Root from "app/Root";

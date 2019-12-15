@@ -1,17 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
-import { ServerStyleSheet } from "styled-components";
+import { ssrExchange, Provider as UrqlProvider } from "urql";
+import ssrPrepass from "react-ssr-prepass";
+import { ThemeProvider, ServerStyleSheet } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
-import { Provider as UrqlProvider } from "urql";
-import ssrPrepass from "react-ssr-prepass";
 import { IntlProvider, Locale } from "@reactizer/intl";
-import { ThemeProvider, Theme } from "@reactizer/theme";
+import { Theme } from "@reactizer/theme";
 
 import Root from "app/Root";
 import { extractor } from "_server/config";
 import { themes, locales } from "_server/data";
-import client, { ssrCache } from "_server/markup/client";
+import getClient from "_server/markup/getClient";
 import Html from "_server/markup/Html";
 
 type Input = {
@@ -24,6 +24,9 @@ type Input = {
 async function markup({ url, context, themeId, localeId }: Input) {
   const theme: Theme = themes[themeId];
   const locale: Locale = locales[localeId];
+
+  const ssrCache = ssrExchange();
+  const client = getClient(ssrCache);
 
   const app = (
     <UrqlProvider value={client}>

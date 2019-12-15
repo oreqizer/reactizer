@@ -1,4 +1,3 @@
-import { ThemeProvider, ThemeConsumer } from "styled-components";
 import * as rhythm from "rhythm-fns";
 
 export const FONT_SIZE = 16;
@@ -138,5 +137,3 @@ export default theme;
 // const useTheme = () => React.useContext(context);
 //
 // export { ThemeProvider, ThemeConsumer, useTheme };
-
-export { ThemeProvider, ThemeConsumer };

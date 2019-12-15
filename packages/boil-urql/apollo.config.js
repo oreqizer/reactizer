@@ -8,6 +8,8 @@ const env = dotenv.config({
 
 module.exports = {
   client: {
+    includes: ["./src/**/*.{ts,tsx}"],
+    output: "./src",
     service: {
       name: "Reactizer",
       url: env.required.API_URL,
