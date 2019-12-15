@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/oreqizer/reactizer/compare/v0.23.0...v0.24.0) (2019-12-15)
+
+
+### Features
+
+* **boil-urql:** add a bunch of apollo codegen ([660a99a](https://github.com/oreqizer/reactizer/commit/660a99a26cf7031d37e4d107c63a7a7674b20d01))
+
+
+
+
+
 # [0.23.0](https://github.com/oreqizer/reactizer/compare/v0.22.0...v0.23.0) (2019-12-14)
 
 **Note:** Version bump only for package @reactizer/theme

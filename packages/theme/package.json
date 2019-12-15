@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/theme",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Reactizer's theme.",
   "main": "lib/index.js",
   "publishConfig": {
@@ -36,7 +36,7 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
-    "@reactizer/eslint-config": "^0.23.0",
+    "@reactizer/eslint-config": "^0.24.0",
     "@types/styled-components": "^4.4.0",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2"

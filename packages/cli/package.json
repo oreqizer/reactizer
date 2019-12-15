@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/cli",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Reactizer's CLI",
   "publishConfig": {
     "access": "public"
