@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/oreqizer/reactizer/compare/v0.24.0...v0.24.1) (2019-12-15)
+
+
+### Bug Fixes
+
+* **meta:** ts config ([bbc90f5](https://github.com/oreqizer/reactizer/commit/bbc90f555ea1b0efdda7be232ac8ad2fd16fa696))
+
+
+
+
+
 # [0.24.0](https://github.com/oreqizer/reactizer/compare/v0.23.0...v0.24.0) (2019-12-15)
 
 
