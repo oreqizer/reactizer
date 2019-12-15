@@ -3,18 +3,21 @@
   "version": "0.24.1",
   "description": "Reactizer's theme.",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "bundle": "rimraf lib && yarn typegen && yarn babel",
-    "typegen": "yarn tsc && rimraf lib/**/*.{js,jsx}",
-    "babel": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
-    "test": "jest --passWithNoTests",
-    "types": "tsc --noEmit",
-    "lint": "eslint './**/*.js'",
-    "ci": "yarn lint",
-    "prepublish": "yarn ci && yarn bundle"
+    "prebuild": "rimraf lib",
+    "build": "yarn typegen && yarn babel",
+    "typegen": "run-p typegen:* && rimraf '{es,lib}/**/*.{js,jsx}'",
+    "typegen:es": "tsc --outDir es",
+    "typegen:lib": "tsc --outDir lib",
+    "babel": "run-p babel:*",
+    "babel:cjs": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
+    "babel:es": "cross-env NODE_ENV=modules babel src -d es --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
+    "types": "tsc --noEmit"
   },
   "files": [
     "lib",
@@ -30,17 +33,7 @@
     "react": "^16.12.0",
     "styled-components": "^5.0.0-rc.2"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-react": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
-    "@reactizer/eslint-config": "^0.24.1",
-    "@types/styled-components": "^4.4.0",
-    "@typescript-eslint/parser": "^2.10.0",
-    "eslint": "^6.7.2"
-  },
+  "devDependencies": {},
   "license": "MIT",
   "gitHead": "6cfb7d64fccded2805872d963a4905ac304cd990"
 }

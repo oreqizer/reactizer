@@ -18,6 +18,5 @@
     "esModuleInterop": true,
     // Fixes overriding
     "types": ["react", "jest"]
-  },
-  "include": ["src"]
+  }
 }

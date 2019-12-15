@@ -2,7 +2,9 @@
 .cache
 .idea
 coverage
-node_modules
+**/node_modules
+es
+lib
 dist
 .DS_Store
 .env

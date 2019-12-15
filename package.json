@@ -2,8 +2,15 @@
   "name": "reactizer",
   "private": true,
   "scripts": {
-    "bundle": "lerna run bundle",
-    "ci": "lerna run --parallel --no-bail ci",
+    "build": "lerna run build --parallel",
+    "test": "jest --passWithNoTests",
+    "lint": "run-p lint:*",
+    "lint:lerna": "lerna run types --parallel",
+    "lint:global": "eslint './**/*.{js,ts,tsx}'",
+    "types": "lerna run types --parallel",
+    "ci": "run-p ci:*",
+    "ci:lerna": "lerna run ci --parallel",
+    "ci:global": "run-p test lint types",
     "prepublish": "yarn ci"
   },
   "workspaces": {
@@ -26,8 +33,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@reactizer/babel-preset-lib": "*",
     "@reactizer/eslint-config": "*",
+    "@typescript-eslint/parser": "^2.11.0",
+    "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
-    "lerna": "^3.18.4"
+    "jest": "^24.9.0",
+    "lerna": "^3.18.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3"
   }
 }

@@ -4,7 +4,7 @@ module.exports = api => {
   const isWebpack = api.caller(caller => caller && caller.name === "babel-loader");
 
   const env = isWebpack
-    ? ["@babel/env", { modules: false, targets: { browsers: "last 2 versions" } }]
+    ? ["@babel/env", { modules: false, targets: { browsers: "> 0.25%, not dead" } }]
     : ["@babel/env", { targets: { node: "current" } }];
 
   return {

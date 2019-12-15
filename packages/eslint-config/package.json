@@ -8,9 +8,7 @@
   "main": "index.js",
   "author": "oreqizer",
   "license": "MIT",
-  "scripts": {
-    "ci": "eslint '**/*.js'"
-  },
+  "scripts": {},
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
