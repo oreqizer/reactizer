@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/session",
-  "version": "0.24.4",
+  "version": "0.24.5",
   "description": "Reactizer's session utilities.",
   "main": "lib/index.js",
   "module": "es/index.js",

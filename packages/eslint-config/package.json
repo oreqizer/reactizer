@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/eslint-config",
-  "version": "0.24.4",
+  "version": "0.24.5",
   "description": "The best ESlint config.",
   "publishConfig": {
     "access": "public"
