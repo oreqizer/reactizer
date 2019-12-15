@@ -17,7 +17,7 @@ module.exports = api => {
       "@babel/proposal-nullish-coalescing-operator",
       "@loadable",
       "id",
-      ["styled-components", { ssr: true }],
+      "styled-components",
       [
         "module-resolver",
         {

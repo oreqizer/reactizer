@@ -38,6 +38,7 @@
     "@reactizer/babel-preset-lib": "*",
     "@reactizer/eslint-config": "*",
     "@typescript-eslint/parser": "^2.11.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
