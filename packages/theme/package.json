@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/theme",
-  "version": "0.24.3",
+  "version": "0.24.4",
   "description": "Reactizer's theme.",
   "main": "lib/index.js",
   "module": "es/index.js",

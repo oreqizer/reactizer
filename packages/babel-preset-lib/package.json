@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/babel-preset-lib",
-  "version": "0.24.3",
+  "version": "0.24.4",
   "description": "The best Babel preset for libs.",
   "publishConfig": {
     "access": "public"
