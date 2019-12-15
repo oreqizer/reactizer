@@ -15,7 +15,6 @@ module.exports = {
     // host: "0.0.0.0", // if you want to expose it on your LAN
     inline: true,
     hot: true,
-    open: true,
     progress: true,
     quiet: true,
   },
