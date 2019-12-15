@@ -1,4 +1,4 @@
 import loadable from "@loadable/component";
 
 // eslint-disable-next-line import/prefer-default-export
-export const Index = loadable(() => import("./pages/Index"));
+export const Index = loadable(() => import("app/pages/Index"));

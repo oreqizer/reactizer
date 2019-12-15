@@ -7,7 +7,7 @@ import { IndexQuery } from "__generated__/IndexQuery";
 const query = gql`
   query IndexQuery {
     account {
-      id
+      name
     }
   }
 `;
@@ -23,7 +23,7 @@ const Index = () => {
     return <div>Oops</div>;
   }
 
-  return <h1>Yo {res.data?.account?.id}</h1>;
+  return <h1>Yo {res.data?.account?.name || "Anon"}</h1>;
 };
 
 export default Index;

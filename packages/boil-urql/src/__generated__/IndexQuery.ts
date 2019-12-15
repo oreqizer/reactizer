@@ -8,7 +8,7 @@
 
 export interface IndexQuery_account {
   __typename: "Account";
-  id: string;
+  name: string;
 }
 
 export interface IndexQuery {
