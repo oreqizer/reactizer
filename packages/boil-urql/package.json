@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-urql",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "description": "The ultimate React and Urql boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -89,8 +89,8 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@loadable/babel-plugin": "^5.10.3",
     "@reactizer/babel-preset": "*",
-    "@reactizer/boil-base": "*",
-    "@reactizer/cli": "*",
+    "@reactizer/boil-base": "^0.27.0",
+    "@reactizer/cli": "^0.27.0",
     "@reactizer/eslint-config": "*",
     "@reactizer/webpack": "*",
     "@storybook/addon-actions": "5.2.6",

@@ -3,6 +3,135 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.27.0 (2019-12-16)
+
+
+### Bug Fixes
+
+* **meta:** don't publish env ([09e0fa6](https://github.com/oreqizer/reactizer/commit/09e0fa61bb8b111277cb2542e0a0a0215da2895b))
+* **meta:** star versions ([5dc3aa8](https://github.com/oreqizer/reactizer/commit/5dc3aa87d14d12cfc6bd5385becd7fd47eb001bd))
+
+
+
+# 0.26.0 (2019-12-16)
+
+
+### Features
+
+* **boil-urql:** firebase ([9d80de1](https://github.com/oreqizer/reactizer/commit/9d80de1d6d16bc2a03ca9edfd59763ea41999a98))
+
+
+
+# 0.25.0 (2019-12-15)
+
+
+
+## 0.24.5 (2019-12-15)
+
+
+
+## 0.24.4 (2019-12-15)
+
+
+
+## 0.24.3 (2019-12-15)
+
+
+### Bug Fixes
+
+* **boil-base:** absolute path ([a49e6da](https://github.com/oreqizer/reactizer/commit/a49e6da163dda2071e7f6816c27cf61de3f67c6a))
+
+
+
+## 0.24.2 (2019-12-15)
+
+
+
+## 0.24.1 (2019-12-15)
+
+
+### Bug Fixes
+
+* **meta:** ts config ([bbc90f5](https://github.com/oreqizer/reactizer/commit/bbc90f555ea1b0efdda7be232ac8ad2fd16fa696))
+
+
+
+# 0.24.0 (2019-12-15)
+
+
+### Features
+
+* **boil-urql:** ssr and stuff ([b879326](https://github.com/oreqizer/reactizer/commit/b87932631d40ec6ed5205a151af0cade39d01db4))
+
+
+
+# 0.23.0 (2019-12-14)
+
+
+
+# 0.22.0 (2019-12-12)
+
+
+
+## 0.21.4 (2019-12-12)
+
+
+
+## 0.21.3 (2019-12-09)
+
+
+
+## 0.21.2 (2019-12-09)
+
+
+
+## 0.21.1 (2019-12-09)
+
+
+### Bug Fixes
+
+* **boil-base:** remove stories ([430ce61](https://github.com/oreqizer/reactizer/commit/430ce61d72cccbae6cef290db76656001e3c5d77))
+
+
+
+# 0.21.0 (2019-12-09)
+
+
+### Features
+
+* **theme:** init ([13d636d](https://github.com/oreqizer/reactizer/commit/13d636de051f367328334000bebbf45ae321a72a))
+
+
+
+# 0.20.0 (2019-12-09)
+
+
+### Features
+
+* **intl:** init ([ec2f900](https://github.com/oreqizer/reactizer/commit/ec2f9002f351aa49b03a13e3d6684de0d077bf9d))
+
+
+
+## 0.19.2 (2019-12-08)
+
+
+### Bug Fixes
+
+* **boil-relay:** add relay plugin to eslint ([8ac5871](https://github.com/oreqizer/reactizer/commit/8ac58714626ab1cd57cd11b6daaa54e84ba6910a))
+
+
+
+# 0.19.0 (2019-12-08)
+
+
+### Features
+
+* **meta:** prefix boilerplates with 'boil' ([91466c9](https://github.com/oreqizer/reactizer/commit/91466c9cd7156d0c1df8d6a642ac38c5d98d614a))
+
+
+
+
+
 # [0.26.0](https://github.com/oreqizer/reactizer/compare/v0.25.0...v0.26.0) (2019-12-16)
 
 
