@@ -2,11 +2,12 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.26.0",
+  "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
     "version": {
+      "message": "chore(meta): publish",
       "allowBranch": "master",
       "conventionalCommits": true
     },
