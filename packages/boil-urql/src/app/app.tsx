@@ -9,6 +9,7 @@ import { Provider as UrqlProvider } from "urql";
 import { IntlProvider, Locale } from "@reactizer/intl";
 import { Palette, makeTheme } from "@reactizer/theme";
 
+import { AuthProvider } from "app/services/auth/context";
 import client from "app/services/client";
 import Root from "app/Root";
 
@@ -26,15 +27,17 @@ const locale: Locale = window.__INTL__;
 loadableReady(() => {
   if (app) {
     hydrate(
-      <UrqlProvider value={client}>
-        <ThemeProvider theme={makeTheme(palette)}>
-          <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-            <BrowserRouter basename={process.env.BASENAME}>
-              <Root />
-            </BrowserRouter>
-          </IntlProvider>
-        </ThemeProvider>
-      </UrqlProvider>,
+      <AuthProvider>
+        <UrqlProvider value={client}>
+          <ThemeProvider theme={makeTheme(palette)}>
+            <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+              <BrowserRouter basename={process.env.BASENAME}>
+                <Root />
+              </BrowserRouter>
+            </IntlProvider>
+          </ThemeProvider>
+        </UrqlProvider>
+      </AuthProvider>,
       app,
     );
   }
