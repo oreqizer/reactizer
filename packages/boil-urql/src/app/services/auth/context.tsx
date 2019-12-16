@@ -6,7 +6,6 @@ import * as token from "app/services/auth/token";
 
 enum State {
   INITIALIZING = "initializing",
-  LOADING = "loading",
   READY = "ready",
 }
 
