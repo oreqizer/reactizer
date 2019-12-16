@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/intl",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "description": "Reactizer's intl.",
   "main": "lib/index.js",
   "module": "es/index.js",
