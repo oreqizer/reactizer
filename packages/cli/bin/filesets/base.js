@@ -36,7 +36,7 @@ const init = [
   // root
   ...glob
     .sync(path.join(ROOT, "{*,.*}"))
-    // Don't overwrite 'package.json' and .reactizerignore
+    // Don't overwrite package.json, .env, and .reactizerignore
     .filter(
       e =>
         fsx.lstatSync(e).isFile() && !e.endsWith("package.json") && !e.endsWith(".reactizerignore"),
