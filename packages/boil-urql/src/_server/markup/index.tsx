@@ -5,14 +5,14 @@ import ssrPrepass from "react-ssr-prepass";
 import { ThemeProvider, ServerStyleSheet } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
-import { IntlProvider, Locale } from "@reactizer/intl";
-import { Theme } from "@reactizer/theme";
+import { IntlProvider } from "@reactizer/intl";
 
 import Root from "app/Root";
 import { extractor } from "_server/config";
 import { themes, locales } from "_server/data";
 import getClient from "_server/markup/getClient";
 import Html from "_server/markup/Html";
+import { getLocale, getTheme } from "setup";
 
 type Input = {
   url: string;
@@ -22,8 +22,8 @@ type Input = {
 };
 
 async function markup({ url, context, themeId, localeId }: Input) {
-  const theme: Theme = themes[themeId];
-  const locale: Locale = locales[localeId];
+  const theme = getTheme({ id: themeId, data: themes });
+  const locale = getLocale({ id: localeId, data: locales });
 
   const ssrCache = ssrExchange();
   const client = getClient(ssrCache);
