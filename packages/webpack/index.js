@@ -22,7 +22,7 @@ const common = {
     app: path.resolve(process.cwd(), "src/app/index.ts"),
   },
   resolve: {
-    extensions: [".js", ".mjs", ".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".mjs", ".js"],
   },
   plugins: [
     new webpack.EnvironmentPlugin(env.required),
