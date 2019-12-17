@@ -17,7 +17,7 @@
     "babel:dev": "yarn babel --watch --source-maps inline",
     "webpack": "webpack --env production",
     "webpack:dev": "webpack-dev-server --colors",
-    "webpack:stats": "env NODE_ENV=production yarn webpack --json > stats.json",
+    "webpack:stats": "env NODE_ENV=production webpack --env production --json > stats.json",
     "keys": "node etc/bin/keys",
     "statics": "copyfiles 'public/**/*' -u 1 dist/static && node etc/bin/statics",
     "test": "jest --passWithNoTests",
