@@ -1,3 +1,5 @@
+import path from "path";
+import fsx from "fs-extra";
 import { Context } from "koa";
 import { Palette, Theme, makeTheme } from "@reactizer/theme";
 import { Locale } from "@reactizer/intl";
@@ -30,10 +32,18 @@ export const getThemeId = (ctx: Context): string => {
 };
 
 // TODO implement
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 export const getTheme = ({ id, data }: Input): Theme => {
   return makeTheme(data[id] as Palette);
 };
+
+// TODO implement
+export const getRoutes = (): string[] =>
+  ["/"].concat(
+    fsx
+      .readdirSync(path.resolve(__dirname, "app/pages"))
+      .filter(folder => folder !== "Index")
+      .map(folder => `/${folder.toLowerCase()}`),
+  );
 
 // TODOs for multi-app:
 // Gets the app name from context when dynamic SSRing (static render renders all apps)

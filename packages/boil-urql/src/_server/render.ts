@@ -3,9 +3,9 @@ import * as fsx from "fs-extra";
 import path from "path";
 import { StaticRouterContext } from "react-router";
 
-import markup from "./markup";
-import { routes } from "./config";
-import { themes, locales } from "./data";
+import markup from "_server/markup";
+import { themes, locales } from "_server/data";
+import { getRoutes } from "setup";
 
 const OUT = path.join(__dirname, "../static/pages");
 
@@ -25,9 +25,15 @@ const makeStream = async (themeId: string, localeId: string, url: string): Promi
   return fsx.writeFile(path.join(fileDir, "index.html"), `<!DOCTYPE html>${html}`);
 };
 
-const makeRoutes = (themeId: string, intlId: string): Promise<void>[] =>
-  // @ts-ignore - dunno what is its problem
-  routes.reduce((routeAcc, route) => routeAcc.concat(makeStream(themeId, intlId, route)), []);
+const makeRoutes = (themeId: string, intlId: string): Promise<void>[] => {
+  const routes = getRoutes();
+
+  return routes.reduce(
+    // @ts-ignore - dunno what is its problem
+    (routeAcc, route) => routeAcc.concat(makeStream(themeId, intlId, route)),
+    [],
+  );
+};
 
 const makeIntls = (themeId: string): Promise<void>[] =>
   // @ts-ignore - dunno what is its problem

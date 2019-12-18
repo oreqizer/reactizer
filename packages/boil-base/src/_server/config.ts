@@ -32,10 +32,3 @@ const getExtractor = () => {
 };
 
 export const extractor = getExtractor();
-
-export const routes: string[] = ["/"].concat(
-  fsx
-    .readdirSync(path.resolve(__dirname, "../app/pages"))
-    .filter(folder => folder !== "Index")
-    .map(folder => `/${folder.toLowerCase()}`),
-);
