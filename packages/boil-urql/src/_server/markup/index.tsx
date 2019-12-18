@@ -1,15 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
-import { ssrExchange, Provider as UrqlProvider } from "urql";
+import { Provider as UrqlProvider, ssrExchange } from "urql";
 import ssrPrepass from "react-ssr-prepass";
-import { ThemeProvider, ServerStyleSheet } from "styled-components";
+import { ServerStyleSheet, ThemeProvider } from "styled-components";
 import { StaticRouter, StaticRouterContext } from "react-router";
 import { Helmet } from "react-helmet";
 import { IntlProvider } from "@reactizer/intl";
 
 import Root from "app/Root";
+import RootSync from "app/RootSync";
 import { extractor } from "_server/config";
-import { themes, locales } from "_server/data";
+import { locales, themes } from "_server/data";
 import getClient from "_server/markup/getClient";
 import Html from "_server/markup/Html";
 import { getLocale, getTheme } from "setup";
@@ -28,24 +29,32 @@ async function markup({ url, context, themeId, localeId }: Input) {
   const ssrCache = ssrExchange();
   const client = getClient(ssrCache);
 
-  const app = (
+  await ssrPrepass(
     <UrqlProvider value={client}>
-      <ThemeProvider theme={theme}>
-        <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-          <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
-            <Root />
-          </StaticRouter>
-        </IntlProvider>
-      </ThemeProvider>
-    </UrqlProvider>
+      <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+        <RootSync />
+      </StaticRouter>
+    </UrqlProvider>,
   );
-
-  await ssrPrepass(app);
 
   const data = ssrCache.extractData();
 
   const sheet = new ServerStyleSheet();
-  const root = ReactDOM.renderToString(extractor.collectChunks(sheet.collectStyles(app)));
+  const root = ReactDOM.renderToString(
+    extractor.collectChunks(
+      sheet.collectStyles(
+        <UrqlProvider value={client}>
+          <ThemeProvider theme={theme}>
+            <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+              <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+                <Root />
+              </StaticRouter>
+            </IntlProvider>
+          </ThemeProvider>
+        </UrqlProvider>,
+      ),
+    ),
+  );
 
   // Redirect
   if (context.url) {

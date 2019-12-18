@@ -8,7 +8,7 @@ import { Normalize } from "styled-normalize";
 import { useIntl } from "@reactizer/intl";
 import { Theme } from "@reactizer/theme";
 
-import { Index } from "app/RoutesSync";
+import { Index } from "app/Routes";
 import routes from "app/consts/routes";
 
 const Root = () => {
