@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-urql@0.27.2...@reactizer/boil-urql@0.28.0) (2020-01-09)
+
+
+### Bug Fixes
+
+* **boil-urql:** ugly SSR solution for now ([2164f20](https://github.com/oreqizer/reactizer/commit/2164f20b01d8a982c9b35747fd79ba8426e1f48c))
+
+
+### Features
+
+* **boil-urql:** add wouter, remove RR ([471f40a](https://github.com/oreqizer/reactizer/commit/471f40a59ee4bb147c90cc5566e67516912db3dd))
+* **meta:** add customisable routes ([da44436](https://github.com/oreqizer/reactizer/commit/da44436d7bb4e01fb9f2be41fb172f924e08c0a6))
+
+
+
+
+
 ## [0.27.2](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-urql@0.27.1...@reactizer/boil-urql@0.27.2) (2019-12-17)
 
 **Note:** Version bump only for package @reactizer/boil-urql

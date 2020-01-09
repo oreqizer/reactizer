@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.27.2...@reactizer/boil-base@0.28.0) (2020-01-09)
+
+
+### Features
+
+* **boil-base:** add wouter, remove RR ([445a298](https://github.com/oreqizer/reactizer/commit/445a298d8da63f7db1863222048eef1dc2f290c6))
+* **meta:** add customisable routes ([da44436](https://github.com/oreqizer/reactizer/commit/da44436d7bb4e01fb9f2be41fb172f924e08c0a6))
+
+
+
+
+
 ## [0.27.2](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.27.1...@reactizer/boil-base@0.27.2) (2019-12-17)
 
 **Note:** Version bump only for package @reactizer/boil-base

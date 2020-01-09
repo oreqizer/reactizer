@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.27.0...@reactizer/webpack@0.28.0) (2020-01-09)
+
+
+### Features
+
+* **webpack:** fix env ([44fa58b](https://github.com/oreqizer/reactizer/commit/44fa58bac8990f8985b144b9f9d93f9ca5ae01e0))
+
+
+
+
+
 # 0.27.0 (2019-12-17)
 
 
