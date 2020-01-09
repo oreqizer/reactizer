@@ -5,8 +5,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const SentryPlugin = require("@sentry/webpack-plugin");
 
-// eslint-disable-next-line no-underscore-dangle
-const __DEV__ = process.env.NODE_ENV !== "production";
+const { env, __DEV__ } = require("./env");
 
 module.exports = {
   output: {
@@ -51,11 +50,11 @@ module.exports = {
       algorithm: "brotliCompress",
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: process.env.DEBUG ? "static" : "disabled",
+      analyzerMode: env.DEBUG ? "static" : "disabled",
     }),
-    process.env.SENTRY_RELEASE &&
+    env.SENTRY_RELEASE &&
       new SentryPlugin({
-        release: process.env.SENTRY_RELEASE,
+        release: env.SENTRY_RELEASE,
         include: "src",
         debug: __DEV__,
         ext: ["ts", "tsx"],

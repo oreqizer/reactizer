@@ -1,20 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
-const dotenv = require("dotenv-safe");
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
+const { env, __DEV__ } = require("./parts/env");
 const prod = require("./parts/prod");
 const dev = require("./parts/dev");
-
-// eslint-disable-next-line no-underscore-dangle
-const __DEV__ = process.env.NODE_ENV !== "production";
-
-const env = dotenv.config({
-  allowEmptyValues: true,
-  path: ".env",
-  example: ".env.example",
-});
 
 const common = {
   entry: {
@@ -25,7 +16,7 @@ const common = {
     extensions: [".ts", ".tsx", ".mjs", ".js"],
   },
   plugins: [
-    new webpack.EnvironmentPlugin(env.required),
+    new webpack.EnvironmentPlugin(env),
     new LoadablePlugin({
       writeToDisk: { filename: "dist" },
     }),
