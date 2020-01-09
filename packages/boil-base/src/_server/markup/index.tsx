@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
 import { ThemeProvider, ServerStyleSheet } from "styled-components";
-import { StaticRouter, StaticRouterContext } from "react-router";
+import { Router } from "wouter";
+import useStaticLocation from "wouter/static-location";
 import { Helmet } from "react-helmet";
 import { IntlProvider } from "@reactizer/intl";
 
@@ -13,12 +15,11 @@ import { getLocale, getTheme } from "setup";
 
 type Input = {
   url: string;
-  context: StaticRouterContext;
   themeId: string;
   localeId: string;
 };
 
-function markup({ url, context, themeId, localeId }: Input) {
+function markup({ url, themeId, localeId }: Input) {
   const theme = getTheme({ id: themeId, data: themes });
   const locale = getLocale({ id: localeId, data: locales });
 
@@ -28,19 +29,14 @@ function markup({ url, context, themeId, localeId }: Input) {
       sheet.collectStyles(
         <ThemeProvider theme={theme}>
           <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-            <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+            <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
               <Root />
-            </StaticRouter>
+            </Router>
           </IntlProvider>
         </ThemeProvider>,
       ),
     ),
   );
-
-  // Redirect
-  if (context.url) {
-    return Promise.resolve(null);
-  }
 
   const helmet = Helmet.renderStatic();
 

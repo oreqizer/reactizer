@@ -2,7 +2,7 @@
 import * as React from "react";
 import { hydrate } from "react-dom";
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "wouter";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
 import { IntlProvider, Locale } from "@reactizer/intl";
@@ -26,9 +26,9 @@ loadableReady(() => {
     hydrate(
       <ThemeProvider theme={makeTheme(palette)}>
         <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-          <BrowserRouter basename={process.env.BASENAME}>
+          <Router base={process.env.BASENAME}>
             <Root />
-          </BrowserRouter>
+          </Router>
         </IntlProvider>
       </ThemeProvider>,
       app,

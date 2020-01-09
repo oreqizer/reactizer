@@ -2,7 +2,6 @@
 import fsx from "fs-extra";
 import path from "path";
 import { Context } from "koa";
-import { StaticRouterContext } from "react-router";
 
 import { getLocaleId, getThemeId } from "setup";
 import markup from "_server/markup";
@@ -21,12 +20,7 @@ async function app(ctx: Context) {
     return;
   }
 
-  const context: StaticRouterContext = {};
-  const html = await markup({ url: ctx.url, context, themeId, localeId });
-  if (!html && context.url) {
-    ctx.redirect(context.url);
-    return;
-  }
+  const html = await markup({ url: ctx.url, themeId, localeId });
 
   ctx.status = 200;
   ctx.type = "text/html; charset=utf-8";

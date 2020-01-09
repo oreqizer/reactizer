@@ -1,7 +1,6 @@
 /* eslint-disable fp/no-unused-expression, @typescript-eslint/ban-ts-ignore */
 import * as fsx from "fs-extra";
 import path from "path";
-import { StaticRouterContext } from "react-router";
 
 import markup from "_server/markup";
 import { themes, locales } from "_server/data";
@@ -16,11 +15,7 @@ const makeStream = async (themeId: string, localeId: string, url: string): Promi
   const fileDir = path.join(OUT, themeId, localeId, url);
   fsx.ensureDirSync(fileDir);
 
-  const context: StaticRouterContext = {};
-  const html = await markup({ url, context, themeId, localeId });
-  if (!html) {
-    return Promise.reject(new Error(`Invalid pre-render URL: ${context.url}`));
-  }
+  const html = await markup({ url, themeId, localeId });
 
   return fsx.writeFile(path.join(fileDir, "index.html"), `<!DOCTYPE html>${html}`);
 };
