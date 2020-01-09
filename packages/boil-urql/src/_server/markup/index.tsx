@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
 import { Provider as UrqlProvider, ssrExchange } from "urql";
 import ssrPrepass from "react-ssr-prepass";
 import { ServerStyleSheet, ThemeProvider } from "styled-components";
-import { StaticRouter, StaticRouterContext } from "react-router";
+import { Router } from "wouter";
+import useStaticLocation from "wouter/static-location";
 import { Helmet } from "react-helmet";
 import { IntlProvider } from "@reactizer/intl";
 
@@ -17,12 +19,11 @@ import { getLocale, getTheme } from "setup";
 
 type Input = {
   url: string;
-  context: StaticRouterContext;
   themeId: string;
   localeId: string;
 };
 
-async function markup({ url, context, themeId, localeId }: Input) {
+async function markup({ url, themeId, localeId }: Input) {
   const theme = getTheme({ id: themeId, data: themes });
   const locale = getLocale({ id: localeId, data: locales });
 
@@ -31,9 +32,9 @@ async function markup({ url, context, themeId, localeId }: Input) {
 
   await ssrPrepass(
     <UrqlProvider value={client}>
-      <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+      <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
         <RootSync />
-      </StaticRouter>
+      </Router>
     </UrqlProvider>,
   );
 
@@ -46,20 +47,15 @@ async function markup({ url, context, themeId, localeId }: Input) {
         <UrqlProvider value={client}>
           <ThemeProvider theme={theme}>
             <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-              <StaticRouter context={context} location={url} basename={process.env.BASENAME}>
+              <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
                 <Root />
-              </StaticRouter>
+              </Router>
             </IntlProvider>
           </ThemeProvider>
         </UrqlProvider>,
       ),
     ),
   );
-
-  // Redirect
-  if (context.url) {
-    return null;
-  }
 
   const helmet = Helmet.renderStatic();
 

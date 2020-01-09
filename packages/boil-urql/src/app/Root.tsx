@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import * as React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "wouter";
 import { Helmet } from "react-helmet";
 // @ts-ignore: outdated types
 import { useTheme } from "styled-components";
@@ -47,7 +47,7 @@ const Root = () => {
       <Normalize />
 
       <Switch>
-        <Route path={routes.INDEX} exact render={() => <Index />} />
+        <Route path={routes.INDEX}>{() => <Index />}</Route>
 
         <Redirect to={routes.INDEX} />
       </Switch>

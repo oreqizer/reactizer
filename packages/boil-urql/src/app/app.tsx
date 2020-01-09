@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle, fp/no-unused-expression */
 import * as React from "react";
 import { hydrate } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { Router } from "wouter";
 import { loadableReady } from "@loadable/component";
 import * as Sentry from "@sentry/browser";
 import { Provider as UrqlProvider } from "urql";
@@ -31,9 +31,9 @@ loadableReady(() => {
         <UrqlProvider value={client}>
           <ThemeProvider theme={makeTheme(palette)}>
             <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-              <BrowserRouter basename={process.env.BASENAME}>
+              <Router base={process.env.BASENAME}>
                 <Root />
-              </BrowserRouter>
+              </Router>
             </IntlProvider>
           </ThemeProvider>
         </UrqlProvider>
