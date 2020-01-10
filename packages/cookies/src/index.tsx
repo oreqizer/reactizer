@@ -66,11 +66,9 @@ const CookiesProvider = ({ children }: Props) => {
       setAgreed(true);
     }
 
-    const raw = cookies.load(COOKIE_SETTINGS);
-    if (raw) {
-      const val = JSON.parse(raw);
-
-      setSettings(val);
+    const val = cookies.load(COOKIE_SETTINGS);
+    if (val) {
+      setSettings(JSON.parse(val));
     }
   }, []);
 
