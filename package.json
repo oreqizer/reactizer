@@ -37,7 +37,6 @@
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
-    "@reactizer/babel-preset-lib": "*",
     "@reactizer/eslint-config": "*",
     "@typescript-eslint/parser": "^2.11.0",
     "babel-plugin-styled-components": "^1.10.6",
