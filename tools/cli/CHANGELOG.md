@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cli@0.27.0...@reactizer/cli@0.28.0) (2020-01-10)
+
+
+### Features
+
+* **meta:** improved structure and build ([f56a442](https://github.com/oreqizer/reactizer/commit/f56a4428bc8cefc72de43655589d11a23be49793))
+
+
+
+
+
 # 0.27.0 (2019-12-16)
 
 

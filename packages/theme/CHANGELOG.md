@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.27.0 (2020-01-10)
+
+
+### Features
+
+* **meta:** improved structure and build ([f56a442](https://github.com/oreqizer/reactizer/commit/f56a4428bc8cefc72de43655589d11a23be49793))
+
+
+
+# 0.26.0 (2019-12-16)
+
+
+
+# 0.25.0 (2019-12-15)
+
+
+### Features
+
+* **theme:** add babel plugin styled components ([f75a3eb](https://github.com/oreqizer/reactizer/commit/f75a3eb9fdd006714a6af04bb640f26956b07ccc))
+
+
+
+## 0.24.5 (2019-12-15)
+
+
+
+## 0.24.4 (2019-12-15)
+
+
+
+## 0.24.3 (2019-12-15)
+
+
+
+## 0.24.1 (2019-12-15)
+
+
+
+# 0.24.0 (2019-12-15)
+
+
+### Features
+
+* **boil-urql:** add a bunch of apollo codegen ([660a99a](https://github.com/oreqizer/reactizer/commit/660a99a26cf7031d37e4d107c63a7a7674b20d01))
+
+
+
+# 0.23.0 (2019-12-14)
+
+
+
+# 0.22.0 (2019-12-12)
+
+
+
+## 0.21.4 (2019-12-12)
+
+
+
+## 0.21.3 (2019-12-09)
+
+
+
+## 0.21.2 (2019-12-09)
+
+
+
+# 0.21.0 (2019-12-09)
+
+
+### Features
+
+* **theme:** init ([13d636d](https://github.com/oreqizer/reactizer/commit/13d636de051f367328334000bebbf45ae321a72a))
+
+
+
+
+
 # [0.26.0](https://github.com/oreqizer/reactizer/compare/v0.25.0...v0.26.0) (2019-12-16)
 
 **Note:** Version bump only for package @reactizer/theme
