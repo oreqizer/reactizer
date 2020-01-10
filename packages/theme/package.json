@@ -3,24 +3,13 @@
   "version": "0.26.0",
   "description": "Reactizer's theme.",
   "main": "lib/index.js",
-  "module": "es/index.js",
+  "module": "lib/index.mjs",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "yarn typegen && yarn babel",
-    "typegen": "run-p typegen:* && rimraf '{es,lib}/**/*.{js,jsx}'",
-    "typegen:es": "tsc --outDir es",
-    "typegen:lib": "tsc --outDir lib",
-    "babel": "run-p babel:*",
-    "babel:cjs": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
-    "babel:es": "cross-env NODE_ENV=modules babel src -d es --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
-    "types": "tsc --noEmit"
-  },
+  "scripts": {},
   "files": [
-    "es",
     "lib",
     "README.md"
   ],

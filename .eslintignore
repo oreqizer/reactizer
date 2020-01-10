@@ -1,10 +1,6 @@
 docs
 node_modules
 
-# boilerplates have their own ESlint CLI
-packages/boil-*
-
 # build
 packages/*/index.d.ts
-packages/*/es
 packages/*/lib

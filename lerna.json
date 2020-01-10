@@ -1,6 +1,8 @@
 {
   "packages": [
-    "packages/*"
+    "boilerplates/*",
+    "packages/*",
+    "tools/*"
   ],
   "version": "independent",
   "npmClient": "yarn",
