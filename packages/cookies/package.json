@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/cookies",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "description": "Reactizer's cookies.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -19,7 +19,6 @@
   "peerDependencies": {
     "react": "^16.12.0"
   },
-  "devDependencies": {},
   "license": "MIT",
   "gitHead": "e112cf5290897641088833ed937f766f7085d1b5"
 }
