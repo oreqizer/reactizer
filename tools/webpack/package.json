@@ -10,13 +10,13 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@loadable/webpack-plugin": "^5.7.1",
+    "@loadable/webpack-plugin": "^5.12.0",
     "@sentry/webpack-plugin": "^1.9.2",
     "babel-loader": "8.0.6",
-    "compression-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.3.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "css-loader": "^3.4.2",
     "dotenv-safe": "^8.2.0",
-    "style-loader": "^1.0.1",
+    "style-loader": "^1.1.2",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-merge": "^4.2.2",
     "workbox-webpack-plugin": "^4.3.1"

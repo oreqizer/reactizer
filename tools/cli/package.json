@@ -14,7 +14,7 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "ramda": "^0.26.1",
-    "yargs": "^14.2.0"
+    "yargs": "^15.1.0"
   },
   "license": "MIT",
   "gitHead": "6cfb7d64fccded2805872d963a4905ac304cd990"
