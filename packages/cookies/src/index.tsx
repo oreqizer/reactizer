@@ -31,8 +31,8 @@ export const cookiesDefault: Cookies = {
     analytics: false,
     marketing: false,
   },
-  onAgree: () => {},
-  onChange: () => {},
+  onAgree: () => null,
+  onChange: () => null,
 };
 
 const context: React.Context<Cookies> = React.createContext(cookiesDefault);
