@@ -1,6 +1,8 @@
-const common = require("../etc/webpack.common");
+const cfg = require("../webpack.config");
+
+const config = cfg();
 
 module.exports = {
-  resolve: common.resolve,
-  module: common.module,
+  resolve: config.resolve,
+  module: config.module,
 };

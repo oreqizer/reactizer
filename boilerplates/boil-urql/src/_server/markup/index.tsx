@@ -10,7 +10,6 @@ import { Helmet } from "react-helmet";
 import { IntlProvider } from "@reactizer/intl";
 
 import Root from "app/Root";
-import RootSync from "app/RootSync";
 import { extractor } from "_server/config";
 import { locales, themes } from "_server/data";
 import getClient from "_server/markup/getClient";
@@ -30,32 +29,24 @@ async function markup({ url, themeId, localeId }: Input) {
   const ssrCache = ssrExchange();
   const client = getClient(ssrCache);
 
-  await ssrPrepass(
+  const app = (
     <UrqlProvider value={client}>
-      <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
-        <RootSync />
-      </Router>
-    </UrqlProvider>,
+      <ThemeProvider theme={theme}>
+        <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
+          <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
+            <Root />
+          </Router>
+        </IntlProvider>
+      </ThemeProvider>
+    </UrqlProvider>
   );
+
+  await ssrPrepass(extractor.collectChunks(app));
 
   const data = ssrCache.extractData();
 
   const sheet = new ServerStyleSheet();
-  const root = ReactDOM.renderToString(
-    extractor.collectChunks(
-      sheet.collectStyles(
-        <UrqlProvider value={client}>
-          <ThemeProvider theme={theme}>
-            <IntlProvider locale={locale} onChange={() => Promise.resolve(locale)}>
-              <Router hook={useStaticLocation(url)} base={process.env.BASENAME}>
-                <Root />
-              </Router>
-            </IntlProvider>
-          </ThemeProvider>
-        </UrqlProvider>,
-      ),
-    ),
-  );
+  const root = ReactDOM.renderToString(extractor.collectChunks(sheet.collectStyles(app)));
 
   const helmet = Helmet.renderStatic();
 
