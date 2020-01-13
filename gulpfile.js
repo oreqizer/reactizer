@@ -11,11 +11,12 @@ const libs = gulp.src(["packages/*/src/**/*.{ts,tsx}"], { base: __dirname });
 const targets = { browsers: "> 0.25%, not dead" };
 
 const plugins = [
-  "@babel/transform-runtime",
-  "@babel/proposal-class-properties",
-  "@babel/proposal-optional-chaining",
-  "@babel/proposal-nullish-coalescing-operator",
-  "@babel/transform-react-constant-elements",
+  // TODO add to deps
+  "@babel/plugin-transform-runtime",
+  "@babel/plugin-proposal-class-properties",
+  "@babel/plugin-proposal-optional-chaining",
+  "@babel/plugin-proposal-nullish-coalescing-operator",
+  "@babel/plugin-transform-react-constant-elements",
   "styled-components",
 ];
 
