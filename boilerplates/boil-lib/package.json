@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/boil-lib",
-  "version": "0.29.0",
+  "version": "0.30.0",
   "description": "The best React library boilerplate!",
   "publishConfig": {
     "access": "public"
@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "^7.8.0",
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
-    "@reactizer/eslint-config": "^0.27.0",
+    "@reactizer/eslint-config": "^0.27.1",
     "@types/react": "^16.9.17",
     "@typescript-eslint/parser": "^2.15.0",
     "babel-plugin-module-resolver": "^4.0.0",

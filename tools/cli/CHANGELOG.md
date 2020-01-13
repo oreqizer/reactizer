@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cli@0.28.0...@reactizer/cli@0.29.0) (2020-01-13)
+
+
+### Features
+
+* **meta:** add boil-lib ([d987cba](https://github.com/oreqizer/reactizer/commit/d987cba86674296ff5a31528db8ad1e6b9de3b0a))
+
+
+
+
+
 # [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cli@0.27.0...@reactizer/cli@0.28.0) (2020-01-10)
 
 

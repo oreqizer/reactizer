@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.29.0...@reactizer/boil-base@0.29.1) (2020-01-13)
+
+
+### Bug Fixes
+
+* **meta:** cleanup and ssr in urql ([02fbb0f](https://github.com/oreqizer/reactizer/commit/02fbb0fddf4278864ec66284df042ce45d8e6935))
+* **meta:** env var optionals ([2b116ff](https://github.com/oreqizer/reactizer/commit/2b116ffb29a07152899014f9841591ffb5ae8a21))
+
+
+
+
+
 # [0.29.0](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.28.0...@reactizer/boil-base@0.29.0) (2020-01-10)
 
 
