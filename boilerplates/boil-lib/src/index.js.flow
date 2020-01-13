@@ -1,0 +1,14 @@
+import * as React from "react";
+
+type Context = {|
+  name: string,
+  value: string,
+|};
+
+declare var context: React.Context<Context | null>;
+
+const { Provider: CtxProvider, Consumer: CtxConsumer } = context;
+
+declare function useCtx(): Context | null;
+
+export { CtxProvider, CtxConsumer, useCtx };

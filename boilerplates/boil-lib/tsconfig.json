@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    // Target latest version of ECMAScript.
+    "target": "esnext",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Keep JSX intact
+    "jsx": "preserve",
+    // Generate .d.ts files
+    "declaration": true,
+    // ...into the lib/ directory
+    "outDir": "lib",
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // Fixes overriding
+    "types": ["react", "jest"]
+  },
+  "include": ["src"]
+}
