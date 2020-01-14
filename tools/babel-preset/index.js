@@ -16,6 +16,7 @@ module.exports = api => {
       "@babel/proposal-optional-chaining",
       "@babel/proposal-nullish-coalescing-operator",
       "@loadable",
+      "dev-expression",
       "id",
       "styled-components",
       [
