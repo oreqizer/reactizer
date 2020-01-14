@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.27.1...@reactizer/eslint-config@0.28.0) (2020-01-14)
+
+
+### Features
+
+* **eslint-config:** dev expression ([e52b605](https://github.com/oreqizer/reactizer/commit/e52b60581cb0bfb6cb666e793586406de9699681))
+
+
+
+
+
 ## [0.27.1](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.27.0...@reactizer/eslint-config@0.27.1) (2020-01-13)
 
 **Note:** Version bump only for package @reactizer/eslint-config
