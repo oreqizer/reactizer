@@ -28,6 +28,7 @@ module.exports = {
   },
   globals: {
     __: true, // __("Translation");
+    __DEV__: true, // transformed to 'process.env.NODE_ENV !== "production"'
     process: true, // process.env.NODE_ENV
   },
   settings: {
