@@ -41,7 +41,6 @@ module.exports = merge(
 
 ## TODO
 
-- [ ] consider merging `--env production` and `NODE_ENV=production`
 - [ ] add `MiniCssExtractPlugin` - `@loadable` handles it
 
 ## License

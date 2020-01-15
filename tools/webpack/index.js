@@ -3,11 +3,11 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
-const { env, __DEV__ } = require("./parts/env");
+const env = require("./parts/env");
 const prod = require("./parts/prod");
 const dev = require("./parts/dev");
 
-const common = {
+const common = mode => ({
   entry: {
     // Opinionated
     app: path.resolve(process.cwd(), "src/app/index.ts"),
@@ -40,19 +40,19 @@ const common = {
           {
             loader: "css-loader",
             options: {
-              sourceMap: __DEV__,
+              sourceMap: mode !== "production",
             },
           },
         ],
       },
     ],
   },
-};
+});
 
 module.exports = mode => {
   if (mode === "production") {
-    return merge(common, prod, { mode });
+    return merge(common(mode), prod, { mode });
   }
 
-  return merge(common, dev, { mode });
+  return merge(common(mode), dev, { mode });
 };

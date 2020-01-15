@@ -5,7 +5,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const SentryPlugin = require("@sentry/webpack-plugin");
 
-const { env, __DEV__ } = require("./env");
+const env = require("./env");
 
 module.exports = {
   output: {
@@ -56,7 +56,6 @@ module.exports = {
       new SentryPlugin({
         release: env.SENTRY_RELEASE,
         include: "src",
-        debug: __DEV__,
         ext: ["ts", "tsx"],
       }),
   ].filter(Boolean),

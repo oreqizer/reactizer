@@ -6,6 +6,4 @@ const env = dotenv.config({
   example: ".env.example",
 });
 
-const __DEV__ = process.env.NODE_ENV !== "production";
-
-module.exports = { env: env.required, __DEV__ };
+module.exports = env.required;
