@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-urql@0.30.0...@reactizer/boil-urql@0.30.1) (2020-01-21)
+
+**Note:** Version bump only for package @reactizer/boil-urql
+
+
+
+
+
 # [0.30.0](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-urql@0.29.3...@reactizer/boil-urql@0.30.0) (2020-01-21)
 
 
