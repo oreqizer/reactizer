@@ -50,7 +50,7 @@ module.exports = {
       algorithm: "brotliCompress",
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: env.DEBUG ? "static" : "disabled",
+      analyzerMode: process.env.DEBUG ? "static" : "disabled",
     }),
     env.SENTRY_RELEASE &&
       new SentryPlugin({
