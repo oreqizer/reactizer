@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/intl@0.27.1...@reactizer/intl@0.28.0) (2020-01-21)
+
+
+### Features
+
+* **intl:** export Translate component from root ([5b04411](https://github.com/oreqizer/reactizer/commit/5b044111fe961c8120036b7d9f1aafb0a31292fc))
+
+
+
+
+
 ## [0.27.1](https://github.com/oreqizer/reactizer/compare/@reactizer/intl@0.27.0...@reactizer/intl@0.27.1) (2020-01-13)
 
 **Note:** Version bump only for package @reactizer/intl
