@@ -6,4 +6,4 @@ const env = dotenv.config({
   example: ".env.example",
 });
 
-module.exports = env.required;
+module.exports = env.parsed;
