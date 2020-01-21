@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.5...@reactizer/webpack@0.30.0) (2020-01-21)
+
+
+### Features
+
+* **webpack:** also generate gzip ([1d974c4](https://github.com/oreqizer/reactizer/commit/1d974c43ba4c18111390c4a147bc08821b5c5fa3))
+
+
+
+
+
 ## [0.29.5](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.4...@reactizer/webpack@0.29.5) (2020-01-21)
 
 
