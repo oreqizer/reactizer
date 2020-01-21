@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.3](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.2...@reactizer/webpack@0.29.3) (2020-01-21)
+
+
+### Bug Fixes
+
+* **webpack:** parse all envs ([7a62f8d](https://github.com/oreqizer/reactizer/commit/7a62f8d82c79518454687966182e5a6bd83bfa5e))
+
+
+
+
+
 ## [0.29.2](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.1...@reactizer/webpack@0.29.2) (2020-01-21)
 
 **Note:** Version bump only for package @reactizer/webpack
