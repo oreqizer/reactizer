@@ -2,7 +2,7 @@ import * as React from "react";
 import Polyglot from "node-polyglot";
 
 export type Values = { [key: string]: string | number };
-export type Translate = (key: string, values?: Values) => string;
+export type TranslateType = (key: string, values?: Values) => string;
 
 export type Locale = {
   id: string;
@@ -11,7 +11,7 @@ export type Locale = {
 
 export type Intl = Locale & {
   onChange: (id: string) => Promise<void>;
-  t: Translate;
+  t: TranslateType;
 };
 
 export const intlDefault: Intl = {
@@ -49,5 +49,7 @@ const IntlProvider = ({ locale, onChange, children }: Props) => {
 };
 
 const useIntl = () => React.useContext(context);
+
+export { default as Translate } from "./Translate";
 
 export { IntlProvider, IntlConsumer, useIntl };
