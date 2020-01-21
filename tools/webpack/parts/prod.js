@@ -46,6 +46,10 @@ module.exports = {
       runtimeCaching: [],
     }),
     new CompressionPlugin({
+      filename: "[path].gz[query]",
+      algorithm: "gzip",
+    }),
+    new CompressionPlugin({
       filename: "[path].br[query]",
       algorithm: "brotliCompress",
     }),
