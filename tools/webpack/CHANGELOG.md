@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.5](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.4...@reactizer/webpack@0.29.5) (2020-01-21)
+
+
+### Bug Fixes
+
+* **webpack:** debug ([028e420](https://github.com/oreqizer/reactizer/commit/028e4208e9e411b21faff5383c66b5796fcd9db3))
+
+
+
+
+
 ## [0.29.4](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.29.3...@reactizer/webpack@0.29.4) (2020-01-21)
 
 
