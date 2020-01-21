@@ -6,7 +6,8 @@ import * as token from "app/services/auth/token";
 
 enum State {
   INITIALIZING = "initializing",
-  READY = "ready",
+  ANONYMOUS = "anonymous",
+  USER = "user",
 }
 
 export type Context = {
@@ -35,14 +36,17 @@ const AuthProvider = ({ children }: Props) => {
       try {
         if (user) {
           token.save(await user.getIdToken());
+
+          setState(user.isAnonymous ? State.ANONYMOUS : State.USER);
         } else {
           token.remove();
+
+          setState(State.INITIALIZING);
+
           await fb.createAnon();
         }
       } catch (e) {
         Sentry.captureException(e);
-      } finally {
-        setState(State.READY);
       }
     });
   }, [fb]);
