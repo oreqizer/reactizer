@@ -20,7 +20,7 @@ module.exports = {
     splitChunks: {
       chunks: "all",
       maxInitialRequests: Infinity,
-      minSize: 25000, // 25kb
+      minSize: 128000, // 128kb raw
       cacheGroups: {
         vendor: {
           test: /\/node_modules\//,
