@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.8](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.29.7...@reactizer/boil-base@0.29.8) (2020-01-22)
+
+**Note:** Version bump only for package @reactizer/boil-base
+
+
+
+
+
 ## [0.29.7](https://github.com/oreqizer/reactizer/compare/@reactizer/boil-base@0.29.6...@reactizer/boil-base@0.29.7) (2020-01-21)
 
 **Note:** Version bump only for package @reactizer/boil-base
