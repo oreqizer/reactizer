@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.31.0...@reactizer/webpack@0.32.0) (2020-02-08)
+
+
+### Features
+
+* **webpack:** smaller separate packages ([5bdae20](https://github.com/oreqizer/reactizer/commit/5bdae20d3c145d22e68ca1cd63d95d14ce3a1c79))
+
+
+
+
+
 # [0.31.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.30.0...@reactizer/webpack@0.31.0) (2020-01-22)
 
 
