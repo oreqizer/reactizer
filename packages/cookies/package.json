@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/cookies",
-  "version": "0.28.1",
+  "version": "0.29.0",
   "description": "Reactizer's cookies.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
