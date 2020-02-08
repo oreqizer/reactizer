@@ -25,7 +25,7 @@ export type Cookies = {
 };
 
 export const cookiesDefault: Cookies = {
-  agreed: false,
+  agreed: true,
   settings: {
     preferences: false,
     analytics: false,
@@ -44,7 +44,7 @@ type Props = {
 };
 
 const CookiesProvider = ({ children }: Props) => {
-  const [agreed, setAgreed] = React.useState<boolean>(false);
+  const [agreed, setAgreed] = React.useState<boolean>(true);
   const [settings, setSettings] = React.useState<Settings>(cookiesDefault.settings);
 
   const handleAgree = React.useCallback(() => {
@@ -62,9 +62,7 @@ const CookiesProvider = ({ children }: Props) => {
   }, []);
 
   React.useEffect(() => {
-    if (cookies.load(COOKIE_AGREED)) {
-      setAgreed(true);
-    }
+    setAgreed(Boolean(cookies.load(COOKIE_AGREED)));
 
     const val = cookies.load(COOKIE_SETTINGS);
     if (val) {
