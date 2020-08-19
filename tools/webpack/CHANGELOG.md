@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.0...@reactizer/webpack@0.34.1) (2020-08-19)
+
+
+### Bug Fixes
+
+* **webpack:** import merge ([c251b01](https://github.com/oreqizer/reactizer/commit/c251b01f2434dc5683868182dfe7899566ca7bc1))
+
+
+
+
+
 # [0.34.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.33.0...@reactizer/webpack@0.34.0) (2020-08-19)
 
 
