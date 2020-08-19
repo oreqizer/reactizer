@@ -30,7 +30,7 @@ const buildLib = () =>
       }),
     )
     .pipe(
-      rename(file => ({
+      rename((file) => ({
         ...file,
         dirname: file.dirname.replace("/src", "/lib"),
       })),
@@ -51,7 +51,7 @@ const buildEs = () =>
       }),
     )
     .pipe(
-      rename(file => ({
+      rename((file) => ({
         ...file,
         dirname: file.dirname.replace("/src", "/lib"),
         extname: ".mjs",
@@ -67,7 +67,7 @@ const types = () =>
     .pipe(tsProject())
     .pipe(filter(["**/*.d.ts"]))
     .pipe(
-      rename(file => ({
+      rename((file) => ({
         ...file,
         dirname: file.dirname.replace("/src", "/lib"),
       })),

@@ -10,19 +10,19 @@ module.exports = {
   "no-compare-neg-zero": ERROR,
   "no-cond-assign": ERROR,
   "no-console": ERROR,
-  "no-constant-condition": [WARN, { checkLoops: false }], // TODO why no error?
+  "no-constant-condition": [ERROR, { checkLoops: false }],
   "no-control-regex": ERROR,
   "no-debugger": ERROR,
   "no-dupe-args": ERROR,
   "no-dupe-keys": ERROR,
   "no-duplicate-case": ERROR,
-  "no-empty": [WARN, { allowEmptyCatch: true }], // TODO why no error?
+  "no-empty": [ERROR, { allowEmptyCatch: true }],
   "no-empty-character-class": ERROR,
   "no-ex-assign": ERROR,
   "no-extra-boolean-cast": ERROR,
   "no-func-assign": ERROR,
   "no-import-assign": ERROR,
-  "no-inner-declarations": OFF, // TODO why?
+  "no-inner-declarations": ERROR,
   "no-invalid-regexp": ERROR,
   "no-irregular-whitespace": ERROR,
   "no-misleading-character-class": ERROR,
@@ -59,7 +59,7 @@ module.exports = {
   "no-case-declarations": WARN, // TODO why no error?
   "no-div-regex": WARN, // TODO why no error?
   "no-else-return": ERROR,
-  "no-empty-function": OFF, // TODO why?
+  "no-empty-function": OFF, // Makes sense for default contexts
   "no-empty-pattern": ERROR,
   "no-eq-null": OFF, // TODO why?
   "no-eval": ERROR,
@@ -127,8 +127,8 @@ module.exports = {
   "no-undef-init": ERROR,
   "no-undef": ERROR,
   "no-undefined": OFF, // TODO why?
-  "no-unused-vars": [ERROR, { args: "after-used", ignoreRestSiblings: true }],
-  "no-use-before-define": OFF, // TODO why?
+  "no-unused-vars": ERROR,
+  "no-use-before-define": ERROR,
 
   // Node.js and CommonJS (http://eslint.org/docs/rules/#nodejs-and-commonjs)
   "callback-return": OFF, // TODO why?
@@ -164,16 +164,16 @@ module.exports = {
   "max-statements-per-line": OFF, // TODO why?
   "multiline-comment-style": OFF, // TODO why?
   "new-cap": [
-    WARN, // TODO why no error?
+    ERROR,
     {
       newIsCap: true,
       capIsNew: false,
     },
   ],
-  "no-array-constructor": WARN, // TODO why no error?
+  "no-array-constructor": ERROR,
   "no-bitwise": ERROR,
-  "no-continue": OFF, // TODO why?
-  "no-inline-comments": OFF, // TODO why?
+  "no-continue": ERROR,
+  "no-inline-comments": OFF, // They make sense
   "no-lonely-if": ERROR,
   "no-multi-assign": OFF, // TODO why?
   "no-negated-condition": OFF, // TODO why?
@@ -184,7 +184,7 @@ module.exports = {
   "no-ternary": OFF, // TODO why?
   "no-underscore-dangle": OFF, // TODO why?
   "no-unneeded-ternary": WARN, // TODO why no error?
-  "one-var": [WARN, { initialized: "never" }], // TODO why no error?
+  "one-var": [ERROR, { initialized: "never" }],
   "operator-assignment": WARN, // TODO why no error?
   "padding-line-between-statements": OFF, // TODO why?
   "prefer-object-spread": OFF, // TODO why?
@@ -399,9 +399,9 @@ module.exports = {
       },
     },
   ],
-  "react/sort-prop-types": OFF, // TODO why?
-  "react/state-in-constructor": OFF, // TODO why?
-  "react/static-property-placement": OFF, // TODO why?
+  "react/sort-prop-types": ERROR,
+  "react/state-in-constructor": ERROR,
+  "react/static-property-placement": ERROR,
   "react/style-prop-object": ERROR,
   "react/void-dom-elements-no-children": ERROR,
 
@@ -412,35 +412,35 @@ module.exports = {
   // React Accessibility (https://github.com/evcohen/eslint-plugin-jsx-a11y)
   "jsx-a11y/accessible-emoji": ERROR,
   "jsx-a11y/alt-text": ERROR,
-  "jsx-a11y/anchor-has-content": OFF, // TODO why?
+  "jsx-a11y/anchor-has-content": ERROR,
   "jsx-a11y/anchor-is-valid": ERROR,
-  "jsx-a11y/aria-activedescendant-has-tabindex": OFF, // TODO why?
+  "jsx-a11y/aria-activedescendant-has-tabindex": ERROR,
   "jsx-a11y/aria-props": ERROR,
   "jsx-a11y/aria-proptypes": ERROR,
   "jsx-a11y/aria-role": ERROR,
   "jsx-a11y/aria-unsupported-elements": ERROR,
-  "jsx-a11y/click-events-have-key-events": OFF, // TODO why?
-  "jsx-a11y/control-has-associated-label": OFF, // TODO why?
-  "jsx-a11y/heading-has-content": OFF, // TODO why?
+  "jsx-a11y/click-events-have-key-events": ERROR,
+  "jsx-a11y/control-has-associated-label": ERROR,
+  "jsx-a11y/heading-has-content": ERROR,
   "jsx-a11y/html-has-lang": ERROR,
   "jsx-a11y/iframe-has-title": ERROR,
-  "jsx-a11y/img-redundant-alt": OFF, // TODO why?
+  "jsx-a11y/img-redundant-alt": ERROR,
   "jsx-a11y/interactive-supports-focus": ERROR,
-  "jsx-a11y/label-has-associated-control": OFF, // TODO why?
-  "jsx-a11y/label-has-for": OFF, // TODO why?
+  "jsx-a11y/label-has-associated-control": ERROR,
+  "jsx-a11y/label-has-for": ERROR,
   "jsx-a11y/lang": ERROR,
-  "jsx-a11y/media-has-caption": OFF, // TODO why?
-  "jsx-a11y/mouse-events-have-key-events": OFF, // TODO why?
+  "jsx-a11y/media-has-caption": ERROR,
+  "jsx-a11y/mouse-events-have-key-events": ERROR,
   "jsx-a11y/no-access-key": ERROR,
   "jsx-a11y/no-autofocus": [ERROR, { ignoreNonDOM: true }],
   "jsx-a11y/no-distracting-elements": [ERROR, { elements: ["marquee", "blink"] }],
-  "jsx-a11y/no-interactive-element-to-noninteractive-role": OFF, // TODO why?
-  "jsx-a11y/no-noninteractive-element-interactions": OFF, // TODO why?
-  "jsx-a11y/no-noninteractive-element-to-interactive-role": OFF, // TODO why?
-  "jsx-a11y/no-noninteractive-tabindex": OFF, // TODO why?
-  "jsx-a11y/no-onchange": OFF, // TODO why?
+  "jsx-a11y/no-interactive-element-to-noninteractive-role": ERROR,
+  "jsx-a11y/no-noninteractive-element-interactions": ERROR,
+  "jsx-a11y/no-noninteractive-element-to-interactive-role": ERROR,
+  "jsx-a11y/no-noninteractive-tabindex": ERROR,
+  "jsx-a11y/no-onchange": ERROR,
   "jsx-a11y/no-redundant-roles": ERROR,
-  "jsx-a11y/no-static-element-interactions": OFF, // TODO why?
+  "jsx-a11y/no-static-element-interactions": ERROR,
   "jsx-a11y/role-has-required-aria-props": ERROR,
   "jsx-a11y/role-supports-aria-props": ERROR,
   "jsx-a11y/scope": ERROR,
@@ -592,22 +592,16 @@ module.exports = {
   "@typescript-eslint/adjacent-overload-signatures": ERROR,
   "@typescript-eslint/array-type": ERROR,
   "@typescript-eslint/await-thenable": OFF, // Requires type info
-  "@typescript-eslint/ban-ts-ignore": WARN, // OK in rare cases
   "@typescript-eslint/ban-types": ERROR,
-  "@typescript-eslint/camelcase": ERROR,
-  "@typescript-eslint/class-name-casing": ERROR,
   "@typescript-eslint/consistent-type-assertions": ERROR,
   "@typescript-eslint/explicit-function-return-type": OFF, // Unbearable in components
   "@typescript-eslint/func-call-spacing": ERROR,
-  "@typescript-eslint/generic-type-naming": ERROR,
   "@typescript-eslint/indent": OFF, // Prettier
-  "@typescript-eslint/interface-name-prefix": ERROR,
   "@typescript-eslint/member-delimiter-style": ERROR,
-  "@typescript-eslint/member-naming": ERROR,
   "@typescript-eslint/member-ordering": ERROR,
-  "@typescript-eslint/no-array-constructor": ERROR,
+  "@typescript-eslint/no-array-constructor": OFF, // Duplicate with native
   "@typescript-eslint/no-dynamic-delete": ERROR,
-  "@typescript-eslint/no-empty-function": ERROR,
+  "@typescript-eslint/no-empty-function": OFF, // Duplicate with native
   "@typescript-eslint/no-empty-interface": ERROR,
   "@typescript-eslint/no-explicit-any": WARN, // Some 'any' are OK
   "@typescript-eslint/no-extra-parens": OFF, // Prettier
@@ -628,11 +622,10 @@ module.exports = {
   "@typescript-eslint/no-unnecessary-qualifier": OFF, // Requires type info
   "@typescript-eslint/no-unnecessary-type-arguments": OFF, // Requires type info
   "@typescript-eslint/no-unnecessary-type-assertion": OFF, // Requires type info
-  "@typescript-eslint/no-untyped-public-signature": ERROR,
-  "@typescript-eslint/no-unused-expressions": ERROR,
-  "@typescript-eslint/no-unused-vars": ERROR,
-  "@typescript-eslint/no-use-before-define": ERROR,
-  "@typescript-eslint/no-useless-constructor": ERROR,
+  "@typescript-eslint/no-unused-expressions": OFF, // Duplicate with native
+  "@typescript-eslint/no-unused-vars": OFF, // Duplicate with native
+  "@typescript-eslint/no-use-before-define": OFF, // Duplicate with native
+  "@typescript-eslint/no-useless-constructor": OFF, // Duplicate with native
   "@typescript-eslint/no-var-requires": OFF, // Used in non-module code
   "@typescript-eslint/prefer-for-of": OFF, // No loops at all
   "@typescript-eslint/prefer-function-type": ERROR,

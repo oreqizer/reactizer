@@ -1,7 +1,7 @@
-module.exports = api => {
+module.exports = (api) => {
   api.assertVersion(7);
 
-  const isWebpack = api.caller(caller => caller && caller.name === "babel-loader");
+  const isWebpack = api.caller((caller) => caller && caller.name === "babel-loader");
 
   const env = isWebpack
     ? ["@babel/env", { modules: false, targets: { browsers: "> 0.25%, not dead" } }]

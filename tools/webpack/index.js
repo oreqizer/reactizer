@@ -1,22 +1,14 @@
-const path = require("path");
-const webpack = require("webpack");
 const merge = require("webpack-merge");
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
-const env = require("./parts/env");
 const prod = require("./parts/prod");
 const dev = require("./parts/dev");
 
-const common = mode => ({
-  entry: {
-    // Opinionated
-    app: path.resolve(process.cwd(), "src/app/index.ts"),
-  },
+const common = (mode) => ({
   resolve: {
     extensions: [".ts", ".tsx", ".mjs", ".js"],
   },
   plugins: [
-    new webpack.EnvironmentPlugin(env),
     new LoadablePlugin({
       writeToDisk: { filename: "dist" },
     }),
@@ -49,7 +41,7 @@ const common = mode => ({
   },
 });
 
-module.exports = mode => {
+module.exports = (mode) => {
   if (mode === "production") {
     return merge(common(mode), prod, { mode });
   }

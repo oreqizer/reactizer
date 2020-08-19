@@ -4,13 +4,6 @@ import { cookies } from "@reactizer/session";
 export const COOKIE_AGREED = "@reactizer/cookies::agreed";
 export const COOKIE_SETTINGS = "@reactizer/cookies::settings";
 
-export enum Level {
-  NECESSARY = "necessary",
-  PREFERENCES = "preferences",
-  ANALYTICS = "analytics",
-  MARKETING = "marketing",
-}
-
 export type Settings = {
   preferences: boolean;
   analytics: boolean;

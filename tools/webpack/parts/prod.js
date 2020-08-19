@@ -1,16 +1,10 @@
-const path = require("path");
 const webpack = require("webpack");
 const { GenerateSW } = require("workbox-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const SentryPlugin = require("@sentry/webpack-plugin");
-
-const env = require("./env");
 
 module.exports = {
   output: {
-    // Opinionated
-    path: path.resolve(process.cwd(), "dist/static"),
     filename: "[name].[contenthash:8].js",
     publicPath: "/",
   },
@@ -56,11 +50,5 @@ module.exports = {
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.DEBUG ? "static" : "disabled",
     }),
-    env.SENTRY_RELEASE &&
-      new SentryPlugin({
-        release: env.SENTRY_RELEASE,
-        include: "src",
-        ext: ["ts", "tsx"],
-      }),
   ].filter(Boolean),
 };
