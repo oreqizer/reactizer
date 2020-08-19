@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.2](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.1...@reactizer/webpack@0.34.2) (2020-08-19)
+
+
+### Bug Fixes
+
+* **webpack:** use NODE_ENV instead of DEBUG ([161c959](https://github.com/oreqizer/reactizer/commit/161c9590cfebbaae15ec91b8fba59bac9540e90b))
+
+
+
+
+
 ## [0.34.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.0...@reactizer/webpack@0.34.1) (2020-08-19)
 
 
