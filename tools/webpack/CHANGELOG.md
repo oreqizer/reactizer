@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.33.0...@reactizer/webpack@0.34.0) (2020-08-19)
+
+
+### Features
+
+* **webpack:** clean up deps ([c47bcf7](https://github.com/oreqizer/reactizer/commit/c47bcf712bb32fbc8a660d438858910218bbc298))
+
+
+
+
+
 # [0.33.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.32.0...@reactizer/webpack@0.33.0) (2020-08-19)
 
 
