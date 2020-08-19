@@ -12,8 +12,13 @@ const { merge } = require("webpack-merge");
 
 module.exports = merge(
   reactizer,
-  { 
-     // Your custom stuff
+  {
+    entry: {
+      // your entrypoints
+    },
+    output: {
+      path: "...",
+    },
   },
 );
 ```
