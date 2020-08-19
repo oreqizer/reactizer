@@ -8,7 +8,7 @@ The best Webpack config.
 
 ```js
 const reactizer = require("@reactizer/webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 
 module.exports = merge(
   reactizer,
@@ -33,15 +33,6 @@ module.exports = merge(
 **Assumes:**
 * `TypeScript`
 * `@loadable`
-* `.env` and `.env.example` files
-* entrypoint `src/app/index.js`
-* source files in the `src` folder
-* build output in the `dist/static` folder
-* `DEBUG` env var for bundle visualization
-
-## TODO
-
-- [ ] add `MiniCssExtractPlugin` - `@loadable` handles it
 
 ## License
 
