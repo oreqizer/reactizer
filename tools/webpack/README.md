@@ -33,7 +33,6 @@ module.exports = merge(
 **Assumes:**
 * `TypeScript`
 * `@loadable`
-* `DEBUG` env var for bundle visualization
 
 ## License
 

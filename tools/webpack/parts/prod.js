@@ -3,6 +3,8 @@ const { GenerateSW } = require("workbox-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
+const __DEV__ = process.env.NODE_ENV !== "production";
+
 module.exports = {
   output: {
     filename: "[name].[contenthash:8].js",
@@ -48,7 +50,7 @@ module.exports = {
       algorithm: "brotliCompress",
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: process.env.DEBUG ? "static" : "disabled",
+      analyzerMode: __DEV__ ? "static" : "disabled",
     }),
-  ].filter(Boolean),
+  ],
 };
