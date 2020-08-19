@@ -9,20 +9,18 @@
   "author": "oreqizer",
   "license": "MIT",
   "scripts": {},
-  "peerDependencies": {
-    "webpack": "^4.41.2"
-  },
   "dependencies": {
     "@loadable/webpack-plugin": "^5.13.0",
-    "@sentry/webpack-plugin": "^1.12.1",
     "babel-loader": "8.1.0",
     "compression-webpack-plugin": "^5.0.0",
     "css-loader": "^4.2.1",
-    "dotenv-safe": "^8.2.0",
     "style-loader": "^1.2.1",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-merge": "^5.1.2",
     "workbox-webpack-plugin": "^5.1.3"
+  },
+  "peerDependencies": {
+    "webpack": "^4.41.2"
   },
   "devDependencies": {
     "webpack": "^4.41.2"
