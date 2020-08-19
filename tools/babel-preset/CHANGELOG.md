@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/oreqizer/reactizer/compare/@reactizer/babel-preset@0.28.0...@reactizer/babel-preset@0.29.0) (2020-08-19)
+
+
+### Features
+
+* **meta:** big ass cleanup ([75a0487](https://github.com/oreqizer/reactizer/commit/75a0487ef0a281647912a893982ecd380b953b7b))
+
+
+
+
+
 # [0.28.0](https://github.com/oreqizer/reactizer/compare/@reactizer/babel-preset@0.27.1...@reactizer/babel-preset@0.28.0) (2020-01-14)
 
 
