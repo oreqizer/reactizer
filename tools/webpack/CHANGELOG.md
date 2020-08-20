@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.6](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.5...@reactizer/webpack@0.34.6) (2020-08-20)
+
+
+### Bug Fixes
+
+* **webpack:** remove redundant plugins ([7ff8036](https://github.com/oreqizer/reactizer/commit/7ff80362c5a7880dd5c0003d6ea50cda46e767c8))
+
+
+
+
+
 ## [0.34.5](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.4...@reactizer/webpack@0.34.5) (2020-08-20)
 
 
