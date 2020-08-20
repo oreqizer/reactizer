@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const { GenerateSW } = require("workbox-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
@@ -35,12 +34,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
-    new GenerateSW({
-      importWorkboxFrom: "cdn",
-      clientsClaim: true,
-      skipWaiting: true,
-      runtimeCaching: [],
-    }),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       algorithm: "gzip",
