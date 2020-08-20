@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.7](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.6...@reactizer/webpack@0.34.7) (2020-08-20)
+
+
+### Bug Fixes
+
+* **webpack:** remove redundant deps ([f7e4c4f](https://github.com/oreqizer/reactizer/commit/f7e4c4fa6e07b7501f8d8cab6a2c96f14fc5e217))
+
+
+
+
+
 ## [0.34.6](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.5...@reactizer/webpack@0.34.6) (2020-08-20)
 
 
