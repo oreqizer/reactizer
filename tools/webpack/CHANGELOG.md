@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.4](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.3...@reactizer/webpack@0.34.4) (2020-08-20)
+
+
+### Bug Fixes
+
+* **webpack:** extensions ([f0cd74d](https://github.com/oreqizer/reactizer/commit/f0cd74d60edb7b6c48ecb6879975b416ed8f6c5c))
+
+
+
+
+
 ## [0.34.3](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.2...@reactizer/webpack@0.34.3) (2020-08-19)
 
 **Note:** Version bump only for package @reactizer/webpack
