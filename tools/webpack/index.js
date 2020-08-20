@@ -6,7 +6,7 @@ const dev = require("./parts/dev");
 
 const common = (mode) => ({
   resolve: {
-    extensions: [".ts", ".tsx", ".esm.js", ".mjs", ".js"],
+    extensions: [".ts", ".tsx", ".mjs", ".js"],
   },
   plugins: [
     new LoadablePlugin({
