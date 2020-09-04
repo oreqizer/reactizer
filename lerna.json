@@ -1,8 +1,4 @@
 {
-  "packages": [
-    "packages/*",
-    "tools/*"
-  ],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -11,9 +7,6 @@
       "message": "chore(meta): publish",
       "allowBranch": "master",
       "conventionalCommits": true
-    },
-    "publish": {
-      "allowBranch": "master"
     }
   }
 }
