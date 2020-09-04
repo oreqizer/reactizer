@@ -18,10 +18,11 @@
     "@reactizer/session": "^0.28.0"
   },
   "devDependencies": {
+    "@types/react": "^16.9.49",
     "react": "^16.12.0"
   },
   "peerDependencies": {
-    "react": "^16.12.0"
+    "react": "*"
   },
   "license": "MIT",
   "gitHead": "e112cf5290897641088833ed937f766f7085d1b5"
