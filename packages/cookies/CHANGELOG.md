@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.30.0...@reactizer/cookies@0.30.1) (2020-09-04)
+
+
+### Bug Fixes
+
+* **cookies:** proper deps ([ef60d6c](https://github.com/oreqizer/reactizer/commit/ef60d6c2d63d46686901cccd9b3580e23dc45459))
+
+
+
+
+
 # [0.30.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.29.0...@reactizer/cookies@0.30.0) (2020-08-19)
 
 
