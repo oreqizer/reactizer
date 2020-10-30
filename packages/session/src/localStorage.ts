@@ -1,4 +1,4 @@
-const available = () => "localStorage" in window && window.localStorage;
+const available = () => "localStorage" in window && Boolean(window.localStorage);
 
 export const load = (key: string): string | null =>
   available() ? window.localStorage.getItem(key) : null;

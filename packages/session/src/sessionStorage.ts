@@ -1,4 +1,4 @@
-const available = () => "sessionStorage" in window && window.sessionStorage;
+const available = () => "sessionStorage" in window && Boolean(window.sessionStorage);
 
 export const load = (key: string): string | null =>
   available() ? window.sessionStorage.getItem(key) : null;

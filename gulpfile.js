@@ -1,4 +1,3 @@
-/* eslint-disable fp/no-mutation */
 const gulp = require("gulp");
 const babel = require("gulp-babel");
 const plumber = require("gulp-plumber");
@@ -17,7 +16,6 @@ const plugins = [
   "@babel/plugin-proposal-optional-chaining",
   "@babel/plugin-proposal-nullish-coalescing-operator",
   "@babel/plugin-transform-react-constant-elements",
-  "styled-components",
 ];
 
 const buildLib = () =>

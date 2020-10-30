@@ -1,9 +1,9 @@
 const rules = require("./rules");
 
 module.exports = {
-  extends: ["prettier", "prettier/@typescript-eslint", "prettier/babel", "prettier/react"],
+  parser: "@babel/eslint-parser",
+  extends: ["prettier", "prettier/babel", "prettier/react", "plugin:prettier/recommended"],
   plugins: [
-    "@typescript-eslint",
     "babel",
     "eslint-comments",
     "fp",
@@ -27,21 +27,17 @@ module.exports = {
     node: true,
   },
   globals: {
-    __: true, // __("Translation");
-    __DEV__: true, // transformed to 'process.env.NODE_ENV !== "production"'
-    process: true, // process.env.NODE_ENV
+    __DEV__: true, // Transformed to 'process.env.NODE_ENV !== "production"'
+    process: true, // Process.env.NODE_ENV
   },
   settings: {
     react: {
       version: "detect",
     },
     "import/resolver": {
-      "babel-module": {
-        root: ["./src"],
-        extensions: [".js", ".ts", ".tsx"],
-      },
+      "babel-module": {},
       node: {
-        extensions: [".js", ".ts", ".tsx"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
     },
   },

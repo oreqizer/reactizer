@@ -7,7 +7,7 @@ type Options = {
   secure?: boolean;
 };
 
-export const load = (key: string): string | null => cookie.get(key) || null;
+export const load = (key: string): string | null => cookie.get(key) ?? null;
 
 export const save = (key: string, value: string, opts?: Options) => {
   cookie.set(key, value, opts);
