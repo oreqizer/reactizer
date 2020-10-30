@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.30.1...@reactizer/cookies@0.31.0) (2020-10-30)
+
+
+### Features
+
+* **eslint-config:** total overhaul ([eb57718](https://github.com/oreqizer/reactizer/commit/eb5771873dc654f0ccaf31c394fdbfa18bc5a0d2))
+
+
+
+
+
 ## [0.30.1](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.30.0...@reactizer/cookies@0.30.1) (2020-09-04)
 
 

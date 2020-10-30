@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.7...@reactizer/webpack@0.35.0) (2020-10-30)
+
+
+### Features
+
+* **eslint-config:** total overhaul ([eb57718](https://github.com/oreqizer/reactizer/commit/eb5771873dc654f0ccaf31c394fdbfa18bc5a0d2))
+
+
+
+
+
 ## [0.34.7](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.34.6...@reactizer/webpack@0.34.7) (2020-08-20)
 
 

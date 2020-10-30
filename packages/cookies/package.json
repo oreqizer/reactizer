@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/cookies",
-  "version": "0.30.1",
+  "version": "0.31.0",
   "description": "Reactizer's cookies.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -15,7 +15,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@reactizer/session": "^0.28.0"
+    "@reactizer/session": "^0.29.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.55",
