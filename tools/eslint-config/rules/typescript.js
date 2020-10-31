@@ -15,6 +15,7 @@ module.exports = {
   "@typescript-eslint/consistent-type-definitions": [ERROR, "type"],
   "@typescript-eslint/consistent-type-imports": ERROR,
   "@typescript-eslint/explicit-function-return-type": OFF, // Too extra
+  "@typescript-eslint/explicit-module-boundary-types": OFF, // Too extra
   "@typescript-eslint/explicit-member-accessibility": OFF, // Too extra
   "@typescript-eslint/member-delimiter-style": OFF, // Prettier
   "@typescript-eslint/member-ordering": ERROR,

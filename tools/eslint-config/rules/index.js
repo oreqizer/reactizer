@@ -488,7 +488,7 @@ module.exports = {
       "newlines-between": "always",
     },
   ],
-  "import/prefer-default-export": ERROR,
+  "import/prefer-default-export": OFF, // Silly
   "import/no-self-import": ERROR,
   "import/no-unused-modules": ERROR,
   "import/unambiguous": OFF, // Too extra
