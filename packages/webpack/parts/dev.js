@@ -3,7 +3,7 @@ module.exports = {
     publicPath: "/",
     filename: "[name].js",
   },
-  devtool: "cheap-module-eval-source-map",
+  devtool: "cheap-module-source-map",
   devServer: {
     proxy: {
       "*": "http://localhost:3000",

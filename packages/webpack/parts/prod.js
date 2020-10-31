@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
@@ -10,6 +9,7 @@ module.exports = {
     publicPath: "/",
   },
   optimization: {
+    moduleIds: "hashed",
     // https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
     runtimeChunk: "single",
     splitChunks: {
@@ -17,7 +17,7 @@ module.exports = {
       maxInitialRequests: Infinity,
       minSize: 64000, // 64kb raw
       cacheGroups: {
-        vendor: {
+        defaultVendors: {
           test: /\/node_modules\//,
           name(module) {
             // top-level package name
@@ -33,7 +33,6 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.HashedModuleIdsPlugin(),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       algorithm: "gzip",
