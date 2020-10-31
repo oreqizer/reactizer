@@ -9,7 +9,8 @@
     "ci": "run-p ci:*",
     "ci:lerna": "lerna run ci --parallel",
     "ci:global": "run-p test lint",
-    "prepublish": "yarn ci && yarn build"
+    "preversion": "yarn ci",
+    "prepublishOnly": "yarn build"
   },
   "workspaces": {
     "packages": [
