@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.31.0...@reactizer/cookies@0.31.1) (2020-10-31)
+
+**Note:** Version bump only for package @reactizer/cookies
+
+
+
+
+
 # [0.31.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.30.1...@reactizer/cookies@0.31.0) (2020-10-30)
 
 
