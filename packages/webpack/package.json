@@ -1,0 +1,27 @@
+{
+  "name": "@reactizer/webpack",
+  "version": "0.35.0",
+  "description": "The best Webpack config.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "author": "oreqizer",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "babel-loader": "8.1.0",
+    "compression-webpack-plugin": "^6.0.4",
+    "css-loader": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-merge": "^5.2.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.3.1"
+  },
+  "gitHead": "72a4ac5c1b5c307ec284ddc7ee6380eb66f5de6d"
+}

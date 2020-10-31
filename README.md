@@ -10,8 +10,7 @@ Make nice fucking commits.
 
 ## TODO
 
-- Move pkgs from root to tools/build as @build, or fix the `upgrade-interactive` problem
-- Remove TSC from gulp
+- Change `gulp` to `@babel/cli` & `typescript` CLI
 
 ## License
 

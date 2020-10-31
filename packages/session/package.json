@@ -8,7 +8,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "babel": "babel src -d lib --root-mode upward --extensions '.ts,.tsx' --ignore '**/__tests__/*'",
+    "build:js": "yarn babel",
+    "build:mjs": "cross-env BABEL_ENV=modules yarn babel --out-file-extension .mjs",
+    "build": "run-p build:*",
+    "prebuild": "yarn types",
+    "types": "tsc",
+    "posttypes": "rimraf 'lib/**/*.{js,jsx}'"
+  },
   "files": [
     "lib",
     "index.d.ts",
