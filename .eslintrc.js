@@ -5,7 +5,7 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       extends: ["@reactizer/eslint-config/ts"],
       parserOptions: {
-        project: "./tsconfig.eslint.json",
+        project: "./tsconfig.json",
       },
     },
   ],
