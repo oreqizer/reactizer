@@ -1,7 +1,8 @@
 module.exports = (api) => {
-  api.assertVersion(7);
+  api.assertVersion("^7.6");
 
   const isWebpack = api.caller((caller) => caller && caller.name === "babel-loader");
+  const prod = api.env("production");
 
   const env = isWebpack
     ? ["@babel/env", { modules: false, targets: { browsers: "> 0.25%, not dead" } }]
@@ -15,10 +16,9 @@ module.exports = (api) => {
       "@babel/proposal-class-properties",
       "@babel/proposal-optional-chaining",
       "@babel/proposal-nullish-coalescing-operator",
+      prod && "@babel/transform-react-constant-elements",
       "@loadable",
       "dev-expression",
-      "id",
-      "styled-components",
       [
         "module-resolver",
         {
@@ -27,10 +27,5 @@ module.exports = (api) => {
         },
       ],
     ].filter(Boolean),
-    env: {
-      production: {
-        plugins: ["@babel/transform-react-constant-elements"],
-      },
-    },
   };
 };
