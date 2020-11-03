@@ -87,7 +87,7 @@ module.exports = {
   "no-implicit-coercion": ERROR,
   "no-implicit-globals": ERROR,
   "no-implied-eval": ERROR,
-  "no-invalid-this": ERROR,
+  "no-invalid-this": OFF, // See babel/no-invalid-this
   "no-iterator": ERROR,
   "no-labels": ERROR,
   "no-lone-blocks": ERROR,
@@ -126,7 +126,7 @@ module.exports = {
   "prefer-promise-reject-errors": ERROR,
   "prefer-regex-literals": ERROR,
   radix: ERROR,
-  "require-await": ERROR,
+  "require-await": OFF, // Promise-returning fns are 'async' just to prevent throws
   "require-unicode-regexp": OFF, // Nah
   "vars-on-top": ERROR,
   "wrap-iife": OFF, // Prettier
@@ -385,7 +385,13 @@ module.exports = {
   "react/jsx-handler-names": ERROR,
   "react/jsx-key": ERROR,
   "react/jsx-max-depth": OFF, // Too extra
-  "react/jsx-no-bind": ERROR,
+  "react/jsx-no-bind": [
+    ERROR,
+    {
+      ignoreDOMComponents: true,
+      ignoreRefs: true,
+    },
+  ],
   "react/jsx-no-comment-textnodes": ERROR,
   "react/jsx-no-duplicate-props": ERROR,
   "react/jsx-no-literals": OFF, // No need

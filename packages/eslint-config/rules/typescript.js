@@ -8,7 +8,7 @@ module.exports = {
   "@typescript-eslint/array-type": ERROR,
   "@typescript-eslint/await-thenable": ERROR,
   "@typescript-eslint/ban-ts-comment": [ERROR, { "ts-expect-error": "allow-with-description" }],
-  "@typescript-eslint/ban-types": OFF, // Not needed
+  "@typescript-eslint/ban-types": ERROR,
   "@typescript-eslint/class-literal-property-style": OFF, // Too extra
   "@typescript-eslint/consistent-indexed-object-style": ERROR,
   "@typescript-eslint/consistent-type-assertions": ERROR,
@@ -24,6 +24,7 @@ module.exports = {
   "@typescript-eslint/no-confusing-non-null-assertion": ERROR,
   "@typescript-eslint/no-dynamic-delete": ERROR,
   "@typescript-eslint/no-empty-interface": ERROR,
+  "@typescript-eslint/no-empty-function": OFF, // Has use cases
   "@typescript-eslint/no-explicit-any": WARN, // Some 'any' are OK
   "@typescript-eslint/no-extra-non-null-assertion": ERROR,
   "@typescript-eslint/no-extraneous-class": ERROR,
@@ -49,6 +50,7 @@ module.exports = {
   "@typescript-eslint/no-unsafe-assignment": OFF, // Too slow
   "@typescript-eslint/no-unsafe-member-access": OFF, // Too slow
   "@typescript-eslint/no-unsafe-return": OFF, // Too slow
+  "@typescript-eslint/no-unused-vars": ERROR,
   "@typescript-eslint/no-var-requires": ERROR,
   "@typescript-eslint/prefer-for-of": ERROR,
   "@typescript-eslint/prefer-function-type": ERROR,
@@ -76,5 +78,7 @@ module.exports = {
   "@typescript-eslint/unified-signatures": ERROR,
 
   // Conflicting rules from official docs
-  "no-use-before-define": OFF,
+  "no-use-before-define": OFF, // Documented problem
+  "no-unused-vars": OFF, // Dupe
+  "no-duplicate-imports": OFF, // type imports
 };
