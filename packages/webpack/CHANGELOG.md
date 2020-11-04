@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.2](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.36.1...@reactizer/webpack@0.36.2) (2020-11-04)
+
+
+### Bug Fixes
+
+* **webpack:** proper config ([92a2fca](https://github.com/oreqizer/reactizer/commit/92a2fca4849192d4b9a884bae4159782ca3ee328))
+
+
+
+
+
 ## [0.36.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.36.0...@reactizer/webpack@0.36.1) (2020-11-04)
 
 
