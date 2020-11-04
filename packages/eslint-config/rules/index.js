@@ -126,7 +126,7 @@ module.exports = {
   "prefer-promise-reject-errors": ERROR,
   "prefer-regex-literals": ERROR,
   radix: ERROR,
-  "require-await": OFF, // Promise-returning fns are 'async' just to prevent throws
+  "require-await": ERROR,
   "require-unicode-regexp": OFF, // Nah
   "vars-on-top": ERROR,
   "wrap-iife": OFF, // Prettier

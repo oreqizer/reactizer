@@ -65,7 +65,7 @@ module.exports = {
   "@typescript-eslint/prefer-regexp-exec": ERROR,
   "@typescript-eslint/prefer-string-starts-ends-with": ERROR,
   "@typescript-eslint/prefer-ts-expect-error": ERROR,
-  "@typescript-eslint/promise-function-async": ERROR,
+  "@typescript-eslint/promise-function-async": OFF, // Silly
   "@typescript-eslint/require-array-sort-compare": OFF, // No sorting!
   "@typescript-eslint/restrict-plus-operands": ERROR,
   "@typescript-eslint/restrict-template-expressions": ERROR,
