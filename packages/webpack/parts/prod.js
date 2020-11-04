@@ -9,7 +9,7 @@ module.exports = {
     publicPath: "/",
   },
   optimization: {
-    moduleIds: "hashed",
+    moduleIds: "deterministic",
     // https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
     runtimeChunk: "single",
     splitChunks: {

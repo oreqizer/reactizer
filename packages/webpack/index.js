@@ -5,7 +5,7 @@ const dev = require("./parts/dev");
 
 const common = (mode) => ({
   resolve: {
-    extensions: [".ts", ".tsx", ".mjs", ".js"],
+    extensions: [".ts", ".tsx", ".mjs", ".js", ".jsx", ".json"],
   },
   module: {
     rules: [
@@ -18,6 +18,9 @@ const common = (mode) => ({
         test: /\.m?js$/,
         type: "javascript/auto",
         include: /node_modules/,
+        resolve: {
+          fullySpecified: false,
+        },
       },
       {
         test: /\.css$/,
