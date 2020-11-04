@@ -26,7 +26,7 @@ const common = (mode) => ({
           {
             loader: "css-loader",
             options: {
-              sourceMap: mode !== "production",
+              sourceMap: mode.production,
             },
           },
         ],
