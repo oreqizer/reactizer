@@ -78,7 +78,9 @@ module.exports = {
   "@typescript-eslint/unified-signatures": ERROR,
 
   // Conflicting rules from official docs
-  "no-use-before-define": OFF, // Documented problem
-  "no-unused-vars": OFF, // Dupe
   "no-duplicate-imports": OFF, // type imports
+  "no-shadow": OFF, // Documented problem
+  "no-unused-vars": OFF, // Dupe
+  "no-use-before-define": OFF, // Documented problem
+  "require-await": OFF, // Promise-returning fns are 'async' just to prevent throws
 };
