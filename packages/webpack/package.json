@@ -1,6 +1,6 @@
 {
   "name": "@reactizer/webpack",
-  "version": "0.36.2",
+  "version": "0.36.3",
   "description": "The best Webpack config.",
   "publishConfig": {
     "access": "public"
