@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.1](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.32.0...@reactizer/eslint-config@0.32.1) (2020-11-04)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove silly rule ([6210b78](https://github.com/oreqizer/reactizer/commit/6210b78c9ddc720319a4a6f863c6d6fcb69e0591))
+
+
+
+
+
 # [0.32.0](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.31.0...@reactizer/eslint-config@0.32.0) (2020-11-04)
 
 
