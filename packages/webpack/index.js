@@ -36,7 +36,7 @@ const common = (mode) => ({
 });
 
 module.exports = (mode) => {
-  if (mode === "production") {
+  if (mode.production) {
     return merge(common(mode), prod, { mode });
   }
 
