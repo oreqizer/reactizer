@@ -82,5 +82,4 @@ module.exports = {
   "no-shadow": OFF, // Documented problem
   "no-unused-vars": OFF, // Dupe
   "no-use-before-define": OFF, // Documented problem
-  "require-await": OFF, // Promise-returning fns are 'async' just to prevent throws
 };
