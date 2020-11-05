@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/oreqizer/reactizer/compare/@reactizer/babel-preset@0.31.1...@reactizer/babel-preset@0.31.2) (2020-11-05)
+
+
+### Bug Fixes
+
+* **babel-preset:** cleanup ([7a07dda](https://github.com/oreqizer/reactizer/commit/7a07dda8a18a2ac99eea61080d6ec2e7754fc5fa))
+
+
+
+
+
 ## [0.31.1](https://github.com/oreqizer/reactizer/compare/@reactizer/babel-preset@0.31.0...@reactizer/babel-preset@0.31.1) (2020-11-03)
 
 **Note:** Version bump only for package @reactizer/babel-preset
