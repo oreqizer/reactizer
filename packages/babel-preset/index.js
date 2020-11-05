@@ -1,5 +1,5 @@
 module.exports = (api) => {
-  api.assertVersion("^7.6");
+  api.assertVersion("^7.12");
 
   const isWebpack = api.caller((caller) => caller && caller.name === "babel-loader");
   const prod = api.env("production");
@@ -17,7 +17,6 @@ module.exports = (api) => {
       "@babel/proposal-optional-chaining",
       "@babel/proposal-nullish-coalescing-operator",
       prod && "@babel/transform-react-constant-elements",
-      "@loadable",
       "dev-expression",
       [
         "module-resolver",
