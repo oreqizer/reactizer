@@ -3,7 +3,7 @@ const { merge } = require("webpack-merge");
 const prod = require("./parts/prod");
 const dev = require("./parts/dev");
 
-const common = (mode) => ({
+const common = (production) => ({
   resolve: {
     extensions: [".ts", ".tsx", ".mjs", ".js", ".jsx", ".json"],
   },
@@ -29,7 +29,7 @@ const common = (mode) => ({
           {
             loader: "css-loader",
             options: {
-              sourceMap: mode.production,
+              sourceMap: production,
             },
           },
         ],
@@ -38,10 +38,12 @@ const common = (mode) => ({
   },
 });
 
-module.exports = (mode) => {
-  if (mode.production) {
-    return merge(common(mode), prod, { mode: "production" });
+module.exports = (env, argv) => {
+  const production = argv.mode === "production";
+
+  if (production) {
+    return merge(common(production), prod, { mode: "production" });
   }
 
-  return merge(common(mode), dev, { mode: "development" });
+  return merge(common(production), dev, { mode: "development" });
 };
