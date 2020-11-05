@@ -42,8 +42,8 @@ module.exports = (env, argv) => {
   const production = argv.mode === "production";
 
   if (production) {
-    return merge(common(production), prod, { mode: "production" });
+    return merge(common(production), prod);
   }
 
-  return merge(common(production), dev, { mode: "development" });
+  return merge(common(production), dev);
 };
