@@ -37,7 +37,7 @@ module.exports = merge(
 
 **Assumes:**
 * `TypeScript`
-* `@loadable`
+* server at `:3000`
 
 ## License
 
