@@ -1,8 +1,6 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
-const __DEV__ = process.env.NODE_ENV !== "production";
-
 module.exports = {
   output: {
     filename: "[name].[contenthash:8].js",
