@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.36.7...@reactizer/webpack@0.37.0) (2020-11-05)
+
+
+### Features
+
+* **webpack:** add performance to prod ([a0f0c1a](https://github.com/oreqizer/reactizer/commit/a0f0c1a8d4822a03bf20d57a609e26545b1bad21))
+
+
+
+
+
 ## [0.36.7](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.36.6...@reactizer/webpack@0.36.7) (2020-11-05)
 
 
