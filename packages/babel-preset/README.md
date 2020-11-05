@@ -11,3 +11,10 @@ module.exports = {
   presets: ["@reactizer"],
 };
 ```
+
+Assumes
+* absolute paths relative to the `./src`
+
+## License
+
+MIT
