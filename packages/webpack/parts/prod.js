@@ -42,7 +42,8 @@ module.exports = {
       algorithm: "brotliCompress",
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: __DEV__ ? "static" : "disabled",
+      analyzerMode: "static",
+      openAnalyzer: false,
     }),
   ],
 };

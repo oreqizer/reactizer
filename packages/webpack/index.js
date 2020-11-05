@@ -40,8 +40,8 @@ const common = (mode) => ({
 
 module.exports = (mode) => {
   if (mode.production) {
-    return merge(common(mode), prod, { mode });
+    return merge(common(mode), prod, { mode: "production" });
   }
 
-  return merge(common(mode), dev, { mode });
+  return merge(common(mode), dev, { mode: "development" });
 };
