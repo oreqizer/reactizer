@@ -2,6 +2,10 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
+  performance: {
+    maxEntrypointSize: 1000000,
+    maxAssetSize: 200000,
+  },
   output: {
     filename: "[name].[contenthash:8].js",
     publicPath: "/",
