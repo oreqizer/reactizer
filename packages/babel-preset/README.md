@@ -12,7 +12,7 @@ module.exports = {
 };
 ```
 
-Assumes
+**Assumes:**
 * absolute paths relative to the `./src`
 
 ## License
