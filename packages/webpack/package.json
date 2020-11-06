@@ -14,7 +14,7 @@
     "compression-webpack-plugin": "^6.0.4",
     "css-loader": "^5.0.0",
     "style-loader": "^2.0.0",
-    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-bundle-analyzer": "^4.0.0",
     "webpack-merge": "^5.2.0"
   },
   "peerDependencies": {
