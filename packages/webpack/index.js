@@ -26,12 +26,7 @@ const common = (production) => ({
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: !production,
-            },
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
