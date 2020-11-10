@@ -1,4 +1,5 @@
 const { merge } = require("webpack-merge");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const prod = require("./parts/prod");
 const dev = require("./parts/dev");
@@ -25,10 +26,16 @@ const common = (production) => ({
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: !production,
+            },
+          },
           {
             loader: "css-loader",
             options: {
+              url: false,
               sourceMap: production,
             },
           },
@@ -36,6 +43,12 @@ const common = (production) => ({
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: production ? "[name].[contenthash:8].css" : "[name].css",
+      chunkFilename: production ? "[name].[contenthash:8].css" : "[name].css",
+    }),
+  ],
 });
 
 module.exports = (env, argv) => {
