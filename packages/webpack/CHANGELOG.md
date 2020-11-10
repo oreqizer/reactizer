@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.37.0...@reactizer/webpack@0.38.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **meta:** update dependency webpack-bundle-analyzer to v4 ([7ae1fc1](https://github.com/oreqizer/reactizer/commit/7ae1fc1c2f0792cdef046071721436577b36a960))
+
+
+### Features
+
+* **webpack:** add mini-css plugin ([60ae7ec](https://github.com/oreqizer/reactizer/commit/60ae7ecafca782d6ef8a1e9d0580d97340957554))
+
+
+
+
+
 # [0.37.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.36.7...@reactizer/webpack@0.37.0) (2020-11-05)
 
 
