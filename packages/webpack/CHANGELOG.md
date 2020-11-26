@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.38.1...@reactizer/webpack@0.39.0) (2020-11-26)
+
+
+### Bug Fixes
+
+* **meta:** update dependency babel-loader to v8.2.0 ([68ffa87](https://github.com/oreqizer/reactizer/commit/68ffa87167446eb5b316d9237d04da6d572c3fc3))
+* **meta:** update dependency babel-loader to v8.2.1 ([3b3a292](https://github.com/oreqizer/reactizer/commit/3b3a292b76e71f9c88ed2b8260cd626d2bacb75f))
+
+
+### Features
+
+* **webpack:** add server ([06ee496](https://github.com/oreqizer/reactizer/commit/06ee496670847f3f22b27ed44548894dd0877415))
+
+
+
+
+
 ## [0.38.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.38.0...@reactizer/webpack@0.38.1) (2020-11-10)
 
 **Note:** Version bump only for package @reactizer/webpack
