@@ -13,7 +13,7 @@ export type Settings = {
 export type Cookies = {
   agreed: boolean;
   settings: Settings;
-  onAgree: () => void;
+  onAgree: (agreed: boolean) => void;
   onChange: (settings: Settings) => void;
 };
 
@@ -40,13 +40,22 @@ const CookiesProvider = ({ children }: Props) => {
   const [agreed, setAgreed] = React.useState<boolean>(true);
   const [settings, setSettings] = React.useState<Settings>(cookiesDefault.settings);
 
-  const handleAgree = React.useCallback(() => {
-    const now = new Date();
+  const handleAgree = React.useCallback((agreed: boolean) => {
+    if (agreed) {
+      const now = new Date();
 
-    cookies.save(COOKIE_AGREED, "true", {
-      expires: now.setFullYear(now.getFullYear() + 1),
-    });
-    setAgreed(true);
+      cookies.save(COOKIE_AGREED, "true", {
+        expires: now.setFullYear(now.getFullYear() + 1),
+      });
+
+      setAgreed(true);
+    } else {
+      cookies.remove(COOKIE_AGREED);
+      cookies.remove(COOKIE_SETTINGS);
+
+      setAgreed(false);
+      setSettings(cookiesDefault.settings);
+    }
   }, []);
 
   const handleChange = React.useCallback((val: Settings) => {
