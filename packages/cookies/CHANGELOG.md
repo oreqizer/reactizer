@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.31.2...@reactizer/cookies@0.32.0) (2020-12-01)
+
+
+### Features
+
+* **cookies:** add disagree option ([1086784](https://github.com/oreqizer/reactizer/commit/1086784f35b27a2dca27edb1d71b91f653e9d4c0))
+
+
+
+
+
 ## [0.31.2](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.31.1...@reactizer/cookies@0.31.2) (2020-11-26)
 
 **Note:** Version bump only for package @reactizer/cookies
