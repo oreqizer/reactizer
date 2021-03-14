@@ -26,7 +26,7 @@
     "@reactizer/session": "^0.29.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
+    "@types/react": "^17.0.3",
     "react": "^17.0.1"
   },
   "peerDependencies": {
