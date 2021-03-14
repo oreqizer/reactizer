@@ -3,8 +3,8 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   performance: {
-    maxEntrypointSize: 1000000,
-    maxAssetSize: 200000,
+    maxEntrypointSize: 2500000,
+    maxAssetSize: 500000,
   },
   output: {
     filename: "[name].[contenthash:8].js",
