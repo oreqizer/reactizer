@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.39.1...@reactizer/webpack@0.40.0) (2021-03-14)
+
+
+### Features
+
+* **webpack:** update entrypoint sizes ([f312c8a](https://github.com/oreqizer/reactizer/commit/f312c8a951f4ff3179864ec8b6e2db0322fd777c))
+
+
+
+
+
 ## [0.39.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.39.0...@reactizer/webpack@0.39.1) (2020-12-01)
 
 
