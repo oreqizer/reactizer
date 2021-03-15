@@ -2,7 +2,7 @@ const rules = require("./rules");
 
 module.exports = {
   parser: "@babel/eslint-parser",
-  extends: ["plugin:prettier/recommended", "prettier/babel", "prettier/react"],
+  extends: ["plugin:prettier/recommended", "prettier/react"],
   plugins: [
     "babel",
     "eslint-comments",
