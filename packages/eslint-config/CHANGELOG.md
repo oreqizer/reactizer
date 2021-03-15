@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.4](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.32.3...@reactizer/eslint-config@0.32.4) (2021-03-15)
+
+
+### Bug Fixes
+
+* **eslint-config:** deprecated prettier/babel ([e5441e2](https://github.com/oreqizer/reactizer/commit/e5441e2cd89ae640f95baf76025ec49b50e9a255))
+
+
+
+
+
 ## [0.32.3](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.32.2...@reactizer/eslint-config@0.32.3) (2021-03-14)
 
 **Note:** Version bump only for package @reactizer/eslint-config
