@@ -538,9 +538,6 @@ module.exports = {
   "eslint-comments/no-unused-enable": ERROR,
   "eslint-comments/no-use": OFF, // Silly
 
-  // Prettier
-  "prettier/prettier": ERROR, // Config in prettier.config.js
-
   // FP (https://github.com/jfmengels/eslint-plugin-fp)
   "fp/no-arguments": ERROR,
   "fp/no-class": ERROR,

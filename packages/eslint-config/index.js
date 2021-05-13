@@ -2,7 +2,7 @@ const rules = require("./rules");
 
 module.exports = {
   parser: "@babel/eslint-parser",
-  extends: ["plugin:prettier/recommended"],
+  extends: ["prettier"],
   plugins: [
     "babel",
     "eslint-comments",
@@ -12,7 +12,6 @@ module.exports = {
     "jsx-a11y",
     "monorepo",
     "node",
-    "prettier",
     "react",
     "react-hooks",
   ],
