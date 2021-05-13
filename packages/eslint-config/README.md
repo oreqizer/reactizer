@@ -4,6 +4,10 @@ The best ESlint config.
 
 ## Setup
 
+`yarn add eslint @babel/core @reactizer/eslint-config`
+
+Also install `typescript` if using **TypeScript**.
+
 Make a `.eslintrc.js` file:
 
 ```js
@@ -32,6 +36,8 @@ Add to `package.json`:
 ```
 
 ## Prettier
+
+`yarn add prettier`
 
 Prettier rules to avoid conflicts are included, however, `prettier` itself is not.
 
