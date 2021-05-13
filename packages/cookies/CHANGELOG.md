@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.32.1...@reactizer/cookies@0.33.0) (2021-05-13)
+
+
+### Features
+
+* **dev:** upgrade deps ([4ce03d9](https://github.com/oreqizer/reactizer/commit/4ce03d96f7b3b43d84750b3ebef7605ea07240d8))
+
+
+
+
+
 ## [0.32.1](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.32.0...@reactizer/cookies@0.32.1) (2021-03-14)
 
 **Note:** Version bump only for package @reactizer/cookies
