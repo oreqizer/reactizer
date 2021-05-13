@@ -41,7 +41,7 @@ following scripts to `package.json`:
 ```json
 {
   "scripts": {
-    "prettier": "prettier \"**/*.{js,jsx,ts,tsx,md,yml}\" || echo \"oops 🙀 pls run 'yarn fmt'\"",
+    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,yml}\" || echo \"oops 🙀 pls run 'yarn fmt'\"",
     "fmt": "yarn prettier --write"
   }
 }
