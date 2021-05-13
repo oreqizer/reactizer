@@ -20,13 +20,15 @@ components/
 ```
 
 **Can have**
-* subcomponents
-* consts
-* records
-* services
+
+- subcomponents
+- consts
+- records
+- services
 
 **Cannot have**
-* scenes
+
+- scenes
 
 ## Consts
 
@@ -38,11 +40,12 @@ consts/
 ```
 
 **Cannot have**
-* components
-* subconsts
-* records
-* services
-* scenes
+
+- components
+- subconsts
+- records
+- services
+- scenes
 
 ## Records
 
@@ -54,20 +57,22 @@ records/
 ```
 
 **Example:**
+
 ```js
 export type Kek = {
-  bur: string;
+  bur: string,
 };
 
 export const wrapBur = (str: string, kek: Kek) => str + kek.bur + str;
 ```
 
 **Cannot have**
-* components
-* consts
-* subrecords
-* services
-* scenes
+
+- components
+- consts
+- subrecords
+- services
+- scenes
 
 ## Scenes
 
@@ -85,13 +90,15 @@ scenes/
 ```
 
 **Can have**
-* components
-* consts
-* records
-* services
+
+- components
+- consts
+- records
+- services
 
 **Cannot have**
-* subscenes
+
+- subscenes
 
 ### Styles
 
@@ -106,17 +113,18 @@ styles/
 ```
 
 **Cannot have**
-* components
-* consts
-* records
-* services
-* scenes
+
+- components
+- consts
+- records
+- services
+- scenes
 
 ### Services
 
 Code that performs computations or provides a certain functionality.
 
-Nest in a folder when it is a *global* service, no need for a nested folder when it belongs to a *component* or a *scene*.
+Nest in a folder when it is a _global_ service, no need for a nested folder when it belongs to a _component_ or a _scene_.
 
 ```
 services/
@@ -126,9 +134,11 @@ services/
 ```
 
 **Can have**
-* subservices
+
+- subservices
 
 **Cannot have**
-* components
-* records
-* scenes
+
+- components
+- records
+- scenes

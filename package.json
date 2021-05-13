@@ -6,7 +6,9 @@
     "build": "lerna run build",
     "test": "jest --passWithNoTests",
     "lint": "eslint 'packages/**/*.{js,ts,tsx}' '*.js'",
-    "ci": "run-p test lint",
+    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,yml}\" || echo \"oops 🙀 pls run 'yarn fmt'\"",
+    "fmt": "prettier --write \"**/*.{js,jsx,ts,tsx,md,yml}\"",
+    "ci": "run-p test lint prettier",
     "preversion": "yarn ci",
     "prepublishOnly": "yarn build"
   },
@@ -28,15 +30,11 @@
     "@typescript-eslint/parser": "^4.23.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.26.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-filter": "^7.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
   }

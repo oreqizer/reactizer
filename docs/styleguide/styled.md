@@ -10,7 +10,7 @@ A **primitive** is a styled **component** that consists only of a single styled 
 import styled from "styled-components";
 
 const Input = styled.input`
-    color: black;
+  color: black;
 `;
 
 export default Input;
@@ -26,11 +26,11 @@ import styled from "styled-components";
 import { themeDefault } from "client/records/Theme";
 
 const Input = styled.input`
-    background: ${props => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.primary};
 `;
 
 Input.defaultProps = {
-    theme: themeDefault,
+  theme: themeDefault,
 };
 
 export default Input;
@@ -48,23 +48,23 @@ Each global component should accept a `className` property for manipulating marg
 import styled from "styled-components";
 
 const Label = styled.input`
-    height: 40px;
+  height: 40px;
 `;
 
 const Input = styled.input`
-    color: black;
+  color: black;
 `;
 
 interface Props {
-    className?: string;
-    id: string;
-    value: string;
+  className?: string;
+  id: string;
+  value: string;
 }
 
 const InputText = ({ className, id, value, ...rest }: Props) => (
-    <Label className={className} htmlFor={id}>
-        <Input id={id} value={value} {...rest} />
-    </Label>
+  <Label className={className} htmlFor={id}>
+    <Input id={id} value={value} {...rest} />
+  </Label>
 );
 
 export default InputText;

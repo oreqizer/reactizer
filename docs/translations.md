@@ -9,7 +9,7 @@ Eats the `IntlRaw` type and provides you with the `Intl` type:
 ```js
 const Root = () => (
   <InitIntl intl={raw}>
-    {intl => (
+    {(intl) => (
       <IntlProvider value={intl}>
         <App />
       </IntlProvider>
@@ -24,9 +24,9 @@ A component that uses the `t` function internally. Has three props:
 
 ```js
 type Props = {
-  t: string; // the translation key
-  values: { [key: string]: string }; // placeholder values
-  html: boolean; // optional flag that allows adding inner HTML
+  t: string, // the translation key
+  values: { [key: string]: string }, // placeholder values
+  html: boolean, // optional flag that allows adding inner HTML
 };
 ```
 

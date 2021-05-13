@@ -56,10 +56,12 @@ following scripts to `package.json`:
 ## Development
 
 Benchmark:
-* `TIMING=1 eslint ...`
+
+- `TIMING=1 eslint ...`
 
 Checking `prettier` conflicts:
-* `eslint --print-config index.js | eslint-config-prettier-check`
+
+- `eslint --print-config index.js | eslint-config-prettier-check`
 
 ## License
 

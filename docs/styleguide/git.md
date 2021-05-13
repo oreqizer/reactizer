@@ -11,6 +11,7 @@ FF-only!
 Use the following schema: `<author>/<dash-cased-task>`
 
 **Example:**
+
 ```
 oreqizer/git-doc
 ```

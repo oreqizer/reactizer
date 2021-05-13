@@ -6,7 +6,7 @@ Collection of the best **React** tools and boilerplates!
 
 Make nice fucking commits.
 
-* `yarn lerna publish`
+- `yarn lerna publish`
 
 ## License
 

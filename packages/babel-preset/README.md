@@ -13,7 +13,8 @@ module.exports = {
 ```
 
 **Assumes:**
-* absolute paths relative to the `./src`
+
+- absolute paths relative to the `./src`
 
 ## License
 

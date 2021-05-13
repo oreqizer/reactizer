@@ -1,9 +1,10 @@
 # Rendering
 
 There are **three** types of rendering:
-* client-side
-* static server-side
-* runtime server-side
+
+- client-side
+- static server-side
+- runtime server-side
 
 ### Root
 
@@ -20,8 +21,9 @@ Happens in the client's browser. Needs to happen ASAP, thus the data required fo
 Initial _props_ and _context_ should be the same as on the server, thus it is essential that the server supplies all the necessary data for the client.
 
 The client takes two pieces of data from the `window` object:
-* `__THEME_` - theme info for the client
-* `__INTL__` - locale info and translations
+
+- `__THEME_` - theme info for the client
+- `__INTL__` - locale info and translations
 
 No other data except the URL should affect the client's initial render.
 
@@ -29,23 +31,25 @@ No other data except the URL should affect the client's initial render.
 
 Has two roles:
 
-* Render **markup** for the client to immediately display
-* Prepare basic **data** for the client, such as _translations_ and _theme_
+- Render **markup** for the client to immediately display
+- Prepare basic **data** for the client, such as _translations_ and _theme_
 
 Common render function for both _static_ and _dynamic_ server-side rendering is located in `src/server/markup/index.tsx`. The function is kept pure, spits out consistent markup for the same arguments.
 
 Request markup flow:
-* page rendered **statically** - markup is served to the client
-* page **not rendered**, or is **dynamic** - fallback to dynamic SSR
+
+- page rendered **statically** - markup is served to the client
+- page **not rendered**, or is **dynamic** - fallback to dynamic SSR
 
 ### Static
 
 Located in `src/server/render.ts`.
 
 Happens at **build time**. Saves an `index.html` file for every:
-* Locale
-* Theme
-* Page
+
+- Locale
+- Theme
+- Page
 
 The output structure is `dist/static/pages/<theme>/<locale>/<page>/index.html`.
 

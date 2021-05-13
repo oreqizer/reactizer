@@ -13,7 +13,7 @@ import { CookiesProvider } from "@reactizer/cookies";
 
 <CookiesProvider>
   <Root />
-</CookiesProvider>
+</CookiesProvider>;
 ```
 
 Then use the `useCookies` hook:
@@ -23,7 +23,7 @@ import { useCookies } from "@reactizer/cookies";
 
 const Component = () => {
   const cookies = useCookies();
-}
+};
 ```
 
 Types:

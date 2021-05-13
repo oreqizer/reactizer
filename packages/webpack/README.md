@@ -10,17 +10,14 @@ The best Webpack config.
 const reactizer = require("packages/webpack/index");
 const { merge } = require("webpack-merge");
 
-module.exports = merge(
-  reactizer,
-  {
-    entry: {
-      // your entrypoints
-    },
-    output: {
-      path: "...",
-    },
+module.exports = merge(reactizer, {
+  entry: {
+    // your entrypoints
   },
-);
+  output: {
+    path: "...",
+  },
+});
 ```
 
 `package.json`
@@ -36,8 +33,9 @@ module.exports = merge(
 ```
 
 **Assumes:**
-* `TypeScript`
-* server at `:3000`
+
+- `TypeScript`
+- server at `:3000`
 
 ## License
 
