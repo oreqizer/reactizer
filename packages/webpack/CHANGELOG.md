@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.40.0...@reactizer/webpack@0.40.1) (2021-05-13)
+
+
+### Bug Fixes
+
+* **meta:** update dependency webpack-node-externals to v3 ([810b03f](https://github.com/oreqizer/reactizer/commit/810b03f641f7772ac56fd31e4b668a0503319bc8))
+
+
+
+
+
 # [0.40.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.39.1...@reactizer/webpack@0.40.0) (2021-03-14)
 
 
