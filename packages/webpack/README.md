@@ -7,7 +7,7 @@ The best Webpack config.
 `webpack.config.js`
 
 ```js
-const reactizer = require("packages/webpack/index");
+const reactizer = require("@reactizer/webpack");
 const { merge } = require("webpack-merge");
 
 module.exports = merge(reactizer, {
