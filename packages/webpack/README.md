@@ -15,7 +15,7 @@ module.exports = merge(reactizer, {
     // your entrypoints
   },
   output: {
-    path: "...",
+    // your output
   },
 });
 ```
@@ -26,8 +26,8 @@ module.exports = merge(reactizer, {
 {
   "scripts": {
     "webpack": "webpack --env production",
-    "webpack:dev": "webpack-dev-server --colors",
-    "webpack:stats": "env NODE_ENV=production webpack --env production --json > stats.json"
+    "webpack:dev": "webpack serve --mode development",
+    "webpack:stats": "webpack --env production --json > stats.json"
   }
 }
 ```
