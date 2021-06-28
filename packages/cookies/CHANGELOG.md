@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.1](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.33.0...@reactizer/cookies@0.33.1) (2021-06-28)
+
+
+### Bug Fixes
+
+* **cookies:** cookie names and duration ([f7f0297](https://github.com/oreqizer/reactizer/commit/f7f0297bc7ef88e324a4a293dfcc4e6155e22f09))
+
+
+
+
+
 # [0.33.0](https://github.com/oreqizer/reactizer/compare/@reactizer/cookies@0.32.1...@reactizer/cookies@0.33.0) (2021-05-13)
 
 
