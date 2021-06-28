@@ -1,8 +1,8 @@
 import * as React from "react";
 import { cookies } from "@reactizer/session";
 
-export const COOKIE_AGREED = "@reactizer/cookies::agreed";
-export const COOKIE_SETTINGS = "@reactizer/cookies::settings";
+export const COOKIE_AGREED = "__rc_agreed";
+export const COOKIE_SETTINGS = "__rc_settings";
 
 export type Settings = {
   preferences: boolean;
@@ -59,7 +59,11 @@ const CookiesProvider = ({ children }: Props) => {
   }, []);
 
   const handleChange = React.useCallback((val: Settings) => {
-    cookies.save(COOKIE_SETTINGS, JSON.stringify(val));
+    const now = new Date();
+
+    cookies.save(COOKIE_SETTINGS, JSON.stringify(val), {
+      expires: now.setFullYear(now.getFullYear() + 1),
+    });
     setSettings(val);
   }, []);
 
