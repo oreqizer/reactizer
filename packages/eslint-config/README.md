@@ -30,7 +30,7 @@ Add to `package.json`:
 ```json
 {
   "scripts": {
-    "lint": "eslint . || echo \"oops 🙀 pls run 'yarn lint --fix' and fix issues\""
+    "lint": "eslint ."
   }
 }
 ```
@@ -47,7 +47,7 @@ following scripts to `package.json`:
 ```json
 {
   "scripts": {
-    "prettier": "prettier --check . || echo \"oops 🙀 pls run 'yarn fmt'\"",
+    "prettier": "prettier --check . || (echo \"oops 🙀 pls run 'yarn fmt'\" && exit 1)",
     "fmt": "prettier --write ."
   }
 }
