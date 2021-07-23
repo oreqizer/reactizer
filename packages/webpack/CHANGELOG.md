@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.41.1...@reactizer/webpack@0.42.0) (2021-07-23)
+
+
+### Bug Fixes
+
+* **meta:** update dependency mini-css-extract-plugin to v2 ([24bc8bc](https://github.com/oreqizer/reactizer/commit/24bc8bc7fbedbfa90b1e3def6f7aebf8aef0dbb1))
+
+
+### Features
+
+* **webpack:** remove node externals from server ([7a8e591](https://github.com/oreqizer/reactizer/commit/7a8e5916a97327c01b35852a9ccb3bfcb36bc6d4))
+
+
+
+
+
 ## [0.41.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.41.0...@reactizer/webpack@0.41.1) (2021-06-28)
 
 **Note:** Version bump only for package @reactizer/webpack
