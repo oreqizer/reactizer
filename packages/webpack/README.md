@@ -32,11 +32,6 @@ module.exports = merge(reactizer, {
 }
 ```
 
-**Assumes:**
-
-- `TypeScript`
-- server at `:3000`
-
 ## License
 
 MIT
