@@ -23,7 +23,7 @@
     "README.md"
   ],
   "dependencies": {
-    "js-cookie": "^2.2.1"
+    "js-cookie": "^3.0.0"
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6"
