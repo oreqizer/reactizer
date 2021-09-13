@@ -1,9 +1,9 @@
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const prod = require("./parts/prod");
-const dev = require("./parts/dev");
-const shared = require("./parts/shared");
+const prod = require("./parts/prod.cjs");
+const dev = require("./parts/dev.cjs");
+const shared = require("./parts/shared.cjs");
 
 const common = (production) =>
   merge(shared, {
