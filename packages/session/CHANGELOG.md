@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.2](https://github.com/oreqizer/reactizer/compare/@reactizer/session@0.29.1...@reactizer/session@0.29.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* **meta:** update dependency js-cookie to v3 ([c7e33cd](https://github.com/oreqizer/reactizer/commit/c7e33cd5daf397581f7a9df09e7eeed99fe31088))
+
+
+
+
+
 ## [0.29.1](https://github.com/oreqizer/reactizer/compare/@reactizer/session@0.29.0...@reactizer/session@0.29.1) (2020-10-31)
 
 **Note:** Version bump only for package @reactizer/session

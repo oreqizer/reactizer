@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.42.1](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.42.0...@reactizer/webpack@0.42.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* **meta:** update dependency compression-webpack-plugin to v8 ([6d4be94](https://github.com/oreqizer/reactizer/commit/6d4be9494f12b4671530da47883847172f05fe24))
+* **meta:** update dependency css-loader to v6 ([f8d0bfe](https://github.com/oreqizer/reactizer/commit/f8d0bfe00088bc184b29b4f5485764c517f2dbff))
+* **webpack:** remove deprecated settings ([ad89fc9](https://github.com/oreqizer/reactizer/commit/ad89fc9704418bc9999984b1ed1ca8b99ae37bf5))
+
+
+
+
+
 # [0.42.0](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.41.1...@reactizer/webpack@0.42.0) (2021-07-23)
 
 
