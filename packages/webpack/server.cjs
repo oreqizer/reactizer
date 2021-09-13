@@ -1,6 +1,6 @@
 const { merge } = require("webpack-merge");
 
-const shared = require("./parts/shared");
+const shared = require("./parts/shared.cjs");
 
 module.exports = () => {
   return merge(shared, {
