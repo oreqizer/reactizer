@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.42.3](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.42.2...@reactizer/webpack@0.42.3) (2021-09-13)
+
+
+### Bug Fixes
+
+* **webpack:** specify .cjs when requiring 2 ([c2908f6](https://github.com/oreqizer/reactizer/commit/c2908f6d83a9e49c9e01be63899a710e23934890))
+
+
+
+
+
 ## [0.42.2](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.42.1...@reactizer/webpack@0.42.2) (2021-09-13)
 
 
