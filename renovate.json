@@ -4,7 +4,7 @@
     ":preserveSemverRanges"
   ],
   "semanticCommits": true,
-  "semanticCommitScope": "meta",
+  "semanticCommitScope": "dev",
   "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
