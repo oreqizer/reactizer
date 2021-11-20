@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "compression-webpack-plugin": "^8.0.0",
     "css-loader": "^6.0.0",
     "mini-css-extract-plugin": "^2.0.0",
