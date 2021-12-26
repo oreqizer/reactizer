@@ -23,8 +23,8 @@
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.2",
-    "@commitlint/cli": "^15.0.0",
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@reactizer/babel-preset": "*",
     "@reactizer/eslint-config": "*",
     "@typescript-eslint/parser": "^4.23.0",
