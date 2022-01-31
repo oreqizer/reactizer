@@ -2,9 +2,6 @@ const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
 
-// FIXME:
-// also add Prettier-disabled rules and comment them out
-
 module.exports = {
   // Possible Errors (http://eslint.org/docs/rules/#possible-errors)
   "for-direction": ERROR,
@@ -226,7 +223,6 @@ module.exports = {
   // Jest (https://github.com/jest-community/eslint-plugin-jest)
   "jest/consistent-test-it": [ERROR, { fn: "test" }],
   "jest/expect-expect": OFF, // Too extra
-  "jest/lowercase-name": ERROR,
   "jest/no-alias-methods": ERROR,
   "jest/no-commented-out-tests": WARN, // Not that bad for an error
   "jest/no-conditional-expect": ERROR,
@@ -252,14 +248,11 @@ module.exports = {
   "jest/prefer-hooks-on-top": ERROR,
   "jest/prefer-spy-on": WARN, // Nice-to-have, but not critical
   "jest/prefer-strict-equal": ERROR,
-  "jest/prefer-to-be-null": ERROR,
-  "jest/prefer-to-be-undefined": ERROR,
   "jest/prefer-to-contain": ERROR,
   "jest/prefer-to-have-length": ERROR,
   "jest/prefer-todo": ERROR,
   "jest/require-to-throw-message": ERROR,
   "jest/require-top-level-describe": ERROR,
-  "jest/valid-describe": ERROR,
   "jest/valid-expect": ERROR,
   "jest/valid-expect-in-promise": ERROR,
   "jest/valid-title": ERROR,
