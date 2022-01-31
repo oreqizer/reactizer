@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.42.4](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.42.3...@reactizer/webpack@0.42.4) (2022-01-31)
+
+**Note:** Version bump only for package @reactizer/webpack
+
+
+
+
+
 ## [0.42.3](https://github.com/oreqizer/reactizer/compare/@reactizer/webpack@0.42.2...@reactizer/webpack@0.42.3) (2021-09-13)
 
 
