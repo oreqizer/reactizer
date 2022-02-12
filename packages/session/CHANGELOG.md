@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/oreqizer/reactizer/compare/@reactizer/session@0.29.3...@reactizer/session@0.30.0) (2022-02-12)
+
+
+### Features
+
+* **eslint-config:** refactor the thang ([50324a2](https://github.com/oreqizer/reactizer/commit/50324a292b5574453d65ba4793ad2fbf5d1427c1))
+
+
+### BREAKING CHANGES
+
+* **eslint-config:** move rules out of index, deps change
+
+
+
+
+
 ## [0.29.3](https://github.com/oreqizer/reactizer/compare/@reactizer/session@0.29.2...@reactizer/session@0.29.3) (2022-01-31)
 
 **Note:** Version bump only for package @reactizer/session
