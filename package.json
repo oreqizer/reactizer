@@ -6,9 +6,10 @@
     "build": "lerna run build",
     "test": "jest --passWithNoTests",
     "lint": "eslint 'packages/**/*.{js,ts,tsx}' '*.js'",
-    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,yml}\" || echo \"oops 🙀 pls run 'yarn fmt'\"",
-    "fmt": "prettier --write \"**/*.{js,jsx,ts,tsx,md,yml}\"",
-    "ci": "run-p test lint prettier",
+    "prettier": "prettier --check . || echo \"oops 🙀 pls run 'yarn fmt'\"",
+    "fmt": "prettier --write .",
+    "ci": "run-p --print-label test lint prettier ci:workspaces",
+    "ci:workspaces": "lerna run ci --parallel",
     "preversion": "yarn ci",
     "prepublishOnly": "yarn build"
   },

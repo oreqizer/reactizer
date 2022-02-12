@@ -4,22 +4,41 @@ The best ESlint config.
 
 ## Setup
 
-`yarn add eslint @babel/core @reactizer/eslint-config`
+`yarn add -D eslint @reactizer/eslint-config`
 
-Also install `typescript` if using **TypeScript**.
+For `@reactizer/eslint-config/ts`:
+
+- `yarn add -D typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser`
+
+For `@reactizer/eslint-config/jest`:
+
+- `yarn add -D eslint-plugin-jest`
+
+For `@reactizer/eslint-config/react`:
+
+- `yarn add -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y`
 
 Make a `.eslintrc.js` file:
 
 ```js
 module.exports = {
-  extends: ["@reactizer"],
+  extends: [
+    "@reactizer",
+    "@reactizer/eslint-config/react", // if using React
+  ],
   overrides: [
+    // If using TypeScript:
     {
       files: ["*.ts", "*.tsx"],
       extends: ["@reactizer/eslint-config/ts"],
       parserOptions: {
         project: "./tsconfig.json",
       },
+    },
+    // If using Jest:
+    {
+      files: ["*.spec.js", "*.spec.jsx"], // or .ts, .tsx
+      extends: ["@reactizer/eslint-config/jest"],
     },
   ],
 };
