@@ -4,7 +4,6 @@ const ERROR = 2;
 
 // TODO check Prettier rules if really Prettier
 module.exports = {
-  parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
   parserOptions: {
     project: "./tsconfig.json",
@@ -23,6 +22,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      parser: "@typescript-eslint/parser",
+    },
+  ],
   rules: {
     // TypeScript (https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
     "@typescript-eslint/adjacent-overload-signatures": ERROR,
