@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.3](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.35.2...@reactizer/eslint-config@0.35.3) (2022-02-13)
+
+
+### Bug Fixes
+
+* **eslint-config:** more proper TS config ([4924145](https://github.com/oreqizer/reactizer/commit/49241459cb59407ffc06f3e696ad83f12f15068c))
+
+
+
+
+
 ## [0.35.2](https://github.com/oreqizer/reactizer/compare/@reactizer/eslint-config@0.35.1...@reactizer/eslint-config@0.35.2) (2022-02-13)
 
 
