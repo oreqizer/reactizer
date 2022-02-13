@@ -8,7 +8,7 @@ The best ESlint config.
 
 For `@reactizer/eslint-config/ts`:
 
-- `yarn add -D typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser`
+- `yarn add -D typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript`
 
 For `@reactizer/eslint-config/jest`:
 
