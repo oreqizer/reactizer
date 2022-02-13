@@ -25,17 +25,10 @@ module.exports = {
   extends: [
     "@reactizer",
     "@reactizer/eslint-config/react", // if using React
+    "@reactizer/eslint-config/ts", // if using TypeScript
   ],
   overrides: [
-    // If using TypeScript:
-    {
-      files: ["*.ts", "*.tsx"],
-      extends: ["@reactizer/eslint-config/ts"],
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-    // If using Jest:
+    // If using Jest
     {
       files: ["*.spec.js", "*.spec.jsx"], // or .ts, .tsx
       extends: ["@reactizer/eslint-config/jest"],

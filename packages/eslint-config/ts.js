@@ -4,9 +4,14 @@ const ERROR = 2;
 
 // TODO check Prettier rules if really Prettier
 module.exports = {
-  parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
   settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
     "import/resolver": {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
