@@ -4,6 +4,7 @@ const ERROR = 2;
 
 // TODO check Prettier rules if really Prettier
 module.exports = {
+  parser: "@babel/eslint-parser",
   extends: ["prettier"],
   plugins: [
     "babel",

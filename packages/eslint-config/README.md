@@ -4,7 +4,7 @@ The best ESlint config.
 
 ## Setup
 
-`yarn add -D eslint @reactizer/eslint-config`
+`yarn add -D eslint @reactizer/eslint-config @babel/eslint-parser`
 
 For `@reactizer/eslint-config/ts`:
 

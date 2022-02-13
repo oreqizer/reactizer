@@ -28,6 +28,7 @@
     "eslint-plugin-node": "^11.1.0"
   },
   "peerDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "eslint": "^7.12.1",
