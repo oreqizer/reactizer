@@ -11,7 +11,7 @@
   "scripts": {},
   "dependencies": {
     "babel-loader": "8.2.4",
-    "compression-webpack-plugin": "^9.2.0",
+    "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
     "mini-css-extract-plugin": "^2.5.3",
     "webpack-bundle-analyzer": "^4.5.0",
